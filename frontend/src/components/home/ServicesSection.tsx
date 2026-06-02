@@ -46,7 +46,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 relative bg-inverse-surface text-inverse-on-surface">
+    <section className="py-20 relative bg-inverse-surface text-inverse-on-surface">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         
         <div className="flex justify-between items-end mb-12">

@@ -31,7 +31,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 relative">
+    <section className="py-20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">

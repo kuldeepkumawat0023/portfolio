@@ -7,13 +7,12 @@ import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/common/Button"
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/project" },
+  { name: "Experience", href: "/experience" },
+  { name: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
@@ -33,8 +32,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-navbar py-3 shadow-sm border-b border-outline-variant/30" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card border-b border-border shadow-sm ${
+        isScrolled ? "py-3" : "py-5"
       }`}
     >
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full flex items-center justify-between">

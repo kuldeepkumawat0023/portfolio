@@ -21,7 +21,7 @@ const technologies = [
 
 export function TechnologiesSection() {
   return (
-    <section id="skills" className="py-20 relative bg-surface-container/30">
+    <section className="py-20 relative bg-surface-container/30">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         <SectionHeading 
           subtitle="TECHNOLOGIES I WORK WITH" 

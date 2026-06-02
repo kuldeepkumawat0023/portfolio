@@ -29,7 +29,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 relative bg-surface-container/30">
+    <section className="py-20 relative bg-surface-container/30">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         <div className="flex justify-between items-end mb-12">
           <SectionHeading 

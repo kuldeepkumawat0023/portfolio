@@ -29,7 +29,6 @@ const itemVariants: Variants = {
 export function HeroSection() {
   return (
     <section
-      id="home"
       className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-background"
     >
       <div className="absolute inset-y-0 right-0 w-[25%] dark:hidden pointer-events-none z-0">
@@ -114,7 +113,7 @@ export function HeroSection() {
             </motion.p>
 
             {/* Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-4">
               <Button
                 variant="gradient"
                 className="rounded-full px-8 py-7 text-base font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all flex items-center gap-2 group"

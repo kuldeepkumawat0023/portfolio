@@ -8,7 +8,7 @@ import { GlassCard } from "@/components/common/Card"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 relative">
+    <section className="py-20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           

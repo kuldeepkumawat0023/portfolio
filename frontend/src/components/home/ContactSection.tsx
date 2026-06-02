@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 relative">
+    <section className="py-20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         
         <div className="bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/30 relative">
