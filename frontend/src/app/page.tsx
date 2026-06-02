@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <SEO props={{ 
-        title: "Home - Full Stack Developer",
-        description: "Portfolio of a passionate Full Stack Developer specializing in MERN stack.",
+        title: "Full Stack Developer Portfolio | MERN Stack Expert",
+        description: "Professional portfolio of a passionate Full Stack Developer specializing in React, Node.js, Express, and MongoDB. View my projects, skills, and experience.",
         url: "/" 
       }} />
       
