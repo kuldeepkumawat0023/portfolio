@@ -1,17 +1,75 @@
 "use client"
 
 import * as React from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { Download, PlayCircle } from "lucide-react"
 import { Button } from "@/components/common/Button"
+import { HeroImage } from "./HeroImage"
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+}
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-background">
-      {/* Subtle Background Gradients */}
-      <div className="absolute top-0 right-0 w-[55%] h-full bg-gradient-to-bl from-orange-50 via-orange-50/40 to-transparent dark:from-primary/5 dark:via-transparent pointer-events-none" />
-      <div className="absolute top-20 right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <section
+      id="home"
+      className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-background"
+    >
+      {/* ── Light Mode: warm peach half-circle right side ── */}
+      <div className="absolute inset-y-0 right-0 w-[52%] dark:hidden pointer-events-none z-0">
+        <div
+          className="absolute inset-0 rounded-l-full"
+          style={{ background: "linear-gradient(135deg, #FFF0E6 0%, #FFE4CC 60%, #FFF8F4 100%)" }}
+        />
+      </div>
+
+      {/* ── Dark Mode: deep navy / orange-tint right side ── */}
+      <div className="absolute inset-y-0 right-0 w-[52%] hidden dark:block pointer-events-none z-0">
+        <div
+          className="absolute inset-0 rounded-l-full"
+          style={{ background: "linear-gradient(135deg, rgba(251,115,0,0.08) 0%, rgba(251,115,0,0.04) 60%, transparent 100%)" }}
+        />
+      </div>
+
+      {/* ── Glow orb top-right (light) ── */}
+      <div className="absolute top-0 right-0 w-[220px] h-[220px] rounded-full bg-orange-100/60 dark:bg-primary/5 blur-[100px] pointer-events-none z-0" />
+
+      {/* ── Animated floating particles (light & dark) ── */}
+      <motion.div
+        animate={{ y: [-12, 12, -12], opacity: [0.6, 1, 0.6] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute top-24 left-[10%] w-3 h-3 rounded-full bg-primary/40 dark:bg-primary/60 pointer-events-none z-0"
+      />
+      <motion.div
+        animate={{ y: [10, -10, 10], opacity: [0.4, 0.9, 0.4] }}
+        transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1 }}
+        className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-orange-300/60 dark:bg-orange-400/40 pointer-events-none z-0"
+      />
+      <motion.div
+        animate={{ y: [-8, 14, -8], opacity: [0.5, 1, 0.5] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-40 left-[8%] w-4 h-4 rounded-full bg-primary/20 dark:bg-primary/30 pointer-events-none z-0"
+      />
+
+      {/* ── Bottom-right rotated diamond ── */}
+      <div className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90" />
 
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -96,35 +154,17 @@ export function HeroSection() {
               <circle cx="140" cy="470" r="4" fill="#ff7e1d" opacity="0.6" />
             </svg>
 
-            {/* Floating Code Editor - Top Right */}
-            <motion.div
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute top-[2%] right-[2%] w-52 md:w-60 h-36 bg-[#1e1e1e] rounded-xl shadow-2xl border border-white/10 z-30 overflow-hidden flex flex-col"
-            >
-              <div className="h-5 bg-[#2d2d2d] w-full flex items-center px-3 gap-1.5 border-b border-black/20">
-                <div className="w-2 h-2 rounded-full bg-[#ff5f56]" />
-                <div className="w-2 h-2 rounded-full bg-[#ffbd2e]" />
-                <div className="w-2 h-2 rounded-full bg-[#27c93f]" />
-              </div>
-              <div className="p-3 flex flex-col gap-2 opacity-90">
-                <div className="flex gap-2"><div className="w-6 h-1.5 rounded bg-[#c586c0]" /><div className="w-16 h-1.5 rounded bg-[#4ec9b0]" /><div className="w-8 h-1.5 rounded bg-[#569cd6]" /></div>
-                <div className="flex gap-2 pl-4"><div className="w-12 h-1.5 rounded bg-[#dcdcaa]" /><div className="w-10 h-1.5 rounded bg-[#ce9178]" /></div>
-                <div className="flex gap-2 pl-4"><div className="w-8 h-1.5 rounded bg-[#4ec9b0]" /><div className="w-14 h-1.5 rounded bg-[#569cd6]" /></div>
-                <div className="flex gap-2"><div className="w-6 h-1.5 rounded bg-[#c586c0]" /><div className="w-10 h-1.5 rounded bg-[#569cd6]" /></div>
-                <div className="flex gap-2 pl-4"><div className="w-20 h-1.5 rounded bg-[#ce9178]" /></div>
-              </div>
-            </motion.div>
+
 
             {/* The person image wrapper */}
-            <div className="relative w-full max-w-xs md:max-w-sm lg:max-w-none lg:w-[380px] h-[380px] md:h-[500px] lg:h-[560px] z-10">
+            <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] lg:h-[650px] z-10">
               {/* Soft orange glow below image */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-24 bg-primary/20 blur-3xl rounded-full z-0" />
               <Image
                 src="/images/home/user.png"
                 alt="Full Stack Developer"
                 fill
-                className="object-contain object-bottom z-10 [mix-blend-mode:multiply] dark:[mix-blend-mode:normal] drop-shadow-xl"
+                className="object-contain object-center lg:object-bottom z-10 [mix-blend-mode:multiply] dark:[mix-blend-mode:normal] drop-shadow-xl"
                 priority
               />
             </div>
@@ -194,6 +234,9 @@ export function HeroSection() {
             </motion.div>
 
           </motion.div>
+
+          {/* ─── Image Column ─── */}
+          <HeroImage />
 
         </div>
       </div>
