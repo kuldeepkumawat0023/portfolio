@@ -42,10 +42,7 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    // If asChild is false, we render a button.
-    // NOTE: In this simplified version, we just render a button. 
-    // Radix UI Slot is recommended for real asChild support, but let's stick to standard button to avoid unneeded deps if not installed.
-    const Comp = "button"
+    const Comp = asChild ? Slot : "button"
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}

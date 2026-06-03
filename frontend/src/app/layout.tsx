@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/provider/ThemeProvider";
 import HydrationGuard from "@/provider/HydrationGuard";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +35,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <HydrationGuard>
-            {children}
+            <Navbar />
+            <div className="flex-grow">
+              {children}
+            </div>
+            <Footer />
           </HydrationGuard>
         </ThemeProvider>
       </body>

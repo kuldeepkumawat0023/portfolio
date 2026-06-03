@@ -3,7 +3,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { SectionHeading } from "@/components/common/SectionHeading"
-import { GlassCard } from "@/components/common/Card"
+import { GlassCard } from "@/components/common/GlassCard"
 
 const experiences = [
   {
@@ -29,20 +29,24 @@ const experiences = [
   }
 ]
 
-export function ExperienceSection() {
+export function ExperienceSection({ props }: { props: any }) {
+  if (!props) return null;
+
   return (
     <section className="py-20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <SectionHeading 
-            subtitle="MY EXPERIENCE" 
-            title={<>My Professional <span className="text-primary">Journey</span></>} 
+            subtitle={props.subtitle || "MY EXPERIENCE"} 
+            title={props.title || <>My Professional <span className="text-primary">Journey</span></>} 
             className="mb-0"
           />
-          <button className="gradient-button text-white px-6 py-2 rounded-full font-medium shadow-lg hidden md:block">
-            Download CV ↓
-          </button>
+          {props.button && (
+            <a href={props.button.href || "#"} className="gradient-button text-white px-6 py-2 rounded-full font-medium shadow-lg hidden md:block text-center">
+              {props.button.text}
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -52,7 +56,7 @@ export function ExperienceSection() {
               {/* Desktop timeline line */}
               <div className="hidden md:block path-line" />
               
-              {experiences.map((exp, index) => (
+              {props.experiences?.map((exp: any, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -71,7 +75,7 @@ export function ExperienceSection() {
                     <p className="text-sm text-muted-foreground mb-6 flex-grow">{exp.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mt-auto">
-                      {exp.tags.map(tag => (
+                      {exp.tags.map((tag: string) => (
                         <span key={tag} className="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-md text-foreground">
                           {tag}
                         </span>
@@ -90,30 +94,22 @@ export function ExperienceSection() {
             className="lg:col-span-1"
           >
             <div className="bg-surface-container-low border border-outline-variant/30 rounded-3xl p-8 h-full flex flex-col justify-center gap-8 text-center">
-              <div>
-                <h4 className="text-4xl font-extrabold text-foreground mb-2">20+</h4>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Projects Completed</p>
-              </div>
-              <div>
-                <h4 className="text-4xl font-extrabold text-primary mb-2">10+</h4>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Happy Clients</p>
-              </div>
-              <div>
-                <h4 className="text-4xl font-extrabold text-secondary mb-2">2+</h4>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Years Experience</p>
-              </div>
-              <div>
-                <h4 className="text-4xl font-extrabold text-foreground mb-2">24/7</h4>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Support Available</p>
-              </div>
+              {props.stats?.map((stat: any, index: number) => (
+                <div key={index}>
+                  <h4 className={`text-4xl font-extrabold mb-2 ${stat.colorClass || 'text-foreground'}`}>{stat.value}</h4>
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
 
         </div>
         
-        <button className="gradient-button text-white px-6 py-2 rounded-full font-medium shadow-lg block md:hidden w-full mt-8">
-          Download CV ↓
-        </button>
+        {props.button && (
+          <a href={props.button.href || "#"} className="gradient-button text-white px-6 py-2 rounded-full font-medium shadow-lg block md:hidden w-full mt-8 text-center">
+            {props.button.text}
+          </a>
+        )}
       </div>
     </section>
   )

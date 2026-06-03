@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/common/Button"
@@ -20,6 +21,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [mounted, setMounted] = React.useState(false)
+  const pathname = usePathname()
 
   React.useEffect(() => {
     setMounted(true)
@@ -45,15 +47,22 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative text-sm font-medium transition-colors pb-1 ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                } after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Actions */}
@@ -84,17 +93,22 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-outline-variant/30 py-4 px-4 flex flex-col gap-4 shadow-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-base font-medium text-foreground py-2 border-b border-outline-variant/20"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="md:hidden absolute top-full left-0 right-0 bg-card border-t border-border py-4 px-4 flex flex-col gap-4 shadow-xl">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-base font-medium py-2 border-b border-outline-variant/20 ${
+                  isActive ? "text-primary" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            )
+          })}
           <Button variant="gradient" className="w-full mt-2 rounded-full">
             Hire Me →
           </Button>

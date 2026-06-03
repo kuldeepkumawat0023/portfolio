@@ -5,7 +5,9 @@ import { motion } from "framer-motion"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { Mail, Phone, MapPin } from "lucide-react"
 
-export function ContactSection() {
+export function ContactSection({ props }: { props: any }) {
+  if (!props) return null;
+
   return (
     <section className="py-20 relative">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
@@ -19,28 +21,22 @@ export function ContactSection() {
               
               <div className="relative z-10 flex flex-col h-full">
                 <SectionHeading 
-                  subtitle={<span className="text-white/80">LET'S WORK TOGETHER</span>} 
-                  title={<span className="text-white">Have a project in mind?</span>} 
+                  subtitle={<span className="text-white/80">{props.subtitle || "LET'S WORK TOGETHER"}</span>} 
+                  title={<span className="text-white">{props.title || "Have a project in mind?"}</span>} 
                   className="mb-6"
                 />
                 
                 <p className="text-white/80 mb-12">
-                  I'm available for freelance work. Feel free to reach out and let's discuss your next project.
+                  {props.description}
                 </p>
 
                 <div className="flex flex-col gap-6 mt-auto">
-                  <div className="flex items-center gap-4">
-                    <Mail size={20} className="text-white/80" />
-                    <span className="font-medium">hello@yourname.com</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Phone size={20} className="text-white/80" />
-                    <span className="font-medium">+91 12345 67890</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <MapPin size={20} className="text-white/80" />
-                    <span className="font-medium">India</span>
-                  </div>
+                  {props.contactDetails?.map((detail: any, index: number) => (
+                    <div key={index} className="flex items-center gap-4">
+                      {detail.icon}
+                      <span className="font-medium">{detail.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -50,47 +46,47 @@ export function ContactSection() {
               <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-sm font-medium text-foreground">Your Name</label>
+                    <label htmlFor="name" className="text-sm font-medium text-foreground">{props.form?.nameLabel || "Your Name"}</label>
                     <input 
                       type="text" 
                       id="name"
                       className="glass-input rounded-xl px-4 py-3 bg-surface-container-low" 
-                      placeholder="John Doe"
+                      placeholder={props.form?.namePlaceholder || "John Doe"}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-sm font-medium text-foreground">Your Email</label>
+                    <label htmlFor="email" className="text-sm font-medium text-foreground">{props.form?.emailLabel || "Your Email"}</label>
                     <input 
                       type="email" 
                       id="email"
                       className="glass-input rounded-xl px-4 py-3 bg-surface-container-low" 
-                      placeholder="john@example.com"
+                      placeholder={props.form?.emailPlaceholder || "john@example.com"}
                     />
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-foreground">Subject</label>
+                  <label htmlFor="subject" className="text-sm font-medium text-foreground">{props.form?.subjectLabel || "Subject"}</label>
                   <input 
                     type="text" 
                     id="subject"
                     className="glass-input rounded-xl px-4 py-3 bg-surface-container-low" 
-                    placeholder="Project Inquiry"
+                    placeholder={props.form?.subjectPlaceholder || "Project Inquiry"}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-sm font-medium text-foreground">Your Message</label>
+                  <label htmlFor="message" className="text-sm font-medium text-foreground">{props.form?.messageLabel || "Your Message"}</label>
                   <textarea 
                     id="message"
                     rows={5}
                     className="glass-input rounded-xl px-4 py-3 bg-surface-container-low resize-none" 
-                    placeholder="Tell me about your project..."
+                    placeholder={props.form?.messagePlaceholder || "Tell me about your project..."}
                   />
                 </div>
 
                 <button type="submit" className="gradient-button text-white px-8 py-4 rounded-xl font-bold mt-4 shadow-lg w-full md:w-auto self-start">
-                  Send Message 🚀
+                  {props.form?.buttonText || "Send Message 🚀"}
                 </button>
               </form>
             </div>
