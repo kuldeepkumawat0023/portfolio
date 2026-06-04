@@ -8,12 +8,13 @@ import { ServicesSection } from "@/components/home/ServicesSection"
 import { ContactSection } from "@/components/home/ContactSection"
 import { 
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
-  FaDownload, FaPlayCircle, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
+  FaDownload, FaPlayCircle, FaLinkedin, FaTwitter,FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
 } from "react-icons/fa"
 import { 
   SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman 
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
+import { ServicesCTA } from "@/components/services/ServicesCTA"
 export default function Home() {
   const heroData = {
     badgeText: "Hello, I'm",
@@ -201,30 +202,42 @@ export default function Home() {
 
   const projectsData = {
     subtitle: "MY PROJECTS",
-    title: (
-      <>
-        Some of My <span className="text-primary">Recent Work</span>
-      </>
-    ),
+    headingPart1: "Some of My",
+    headingPart2: "Recent Work",
     projects: [
       {
+        id: "1",
+        category: "Dashboard",
+        featured: true,
         title: "Task Manager App",
-        description: "A full-stack task management app with auth, CRUD & real-time updates.",
-        tags: ["MERN Stack", "JWT", "Tailwind"],
-        image: "/images/home/project1.png",
+        description: "A full stack task management application with real-time updates, team collaboration and analytics.",
+        image: "/images/projects/project1.png",
+        tags: ["MERN Stack", "Socket.io", "Tailwind CSS"],
+        liveLink: "#",
+        githubLink: "#"
       },
       {
+        id: "2",
+        category: "E-Commerce",
+        featured: true,
         title: "E-Commerce Website",
-        description: "Full-featured e-commerce platform with cart, checkout & payment gateway.",
-        tags: ["React", "Node.js", "MongoDB"],
-        image: "/images/home/project2.png",
+        description: "A complete e-commerce solution with cart, checkout, payment gateway and admin panel.",
+        image: "/images/projects/project2.png",
+        tags: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
+        liveLink: "#",
+        githubLink: "#"
       },
       {
-        title: "Portfolio Website",
-        description: "Personal portfolio website to showcase skills, projects and services.",
-        tags: ["HTML", "CSS", "JavaScript"],
-        image: "/images/home/project3.png",
-      },
+        id: "3",
+        category: "Portfolio",
+        featured: false,
+        title: "Personal Portfolio",
+        description: "My personal portfolio website to showcase skills, projects and experience.",
+        image: "/images/projects/project3.png",
+        tags: ["React", "Framer Motion", "Tailwind CSS"],
+        liveLink: "#",
+        githubLink: "#"
+      }
     ],
     button: {
       text: "View All Projects →",
@@ -304,6 +317,20 @@ export default function Home() {
       buttonText: "Send Message 🚀"
     }
   };
+    const ctaData = {
+      subtitle: "LET'S WORK TOGETHER",
+      title: "Have a project in mind?",
+      description: "I'm available for freelance work.",
+      contacts: [
+        { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
+        { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
+        { icon: <FaMapMarkerAlt size={18} />, text: "India" }
+      ],
+      button: {
+        text: "Let's Talk",
+        icon: <FaArrowRight size={20} className="text-primary" />
+      }
+    };
 
   return (
     <>
@@ -320,7 +347,7 @@ export default function Home() {
         <ExperienceSection props={experienceData} />
         <ProjectsSection props={projectsData} />
         <ServicesSection props={servicesData} />
-        <ContactSection props={contactData} />
+        <ServicesCTA props={ctaData} />
       </main>
     </>
   );

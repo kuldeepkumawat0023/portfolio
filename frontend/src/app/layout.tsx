@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/provider/ThemeProvider";
 import HydrationGuard from "@/provider/HydrationGuard";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
+import { RouteScrollReset } from "@/components/common/RouteScrollReset";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,11 +37,13 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <HydrationGuard>
+            <RouteScrollReset />
             <Navbar />
             <div className="flex-grow">
               {children}
             </div>
             <Footer />
+            <ScrollToTop />
           </HydrationGuard>
         </ThemeProvider>
       </body>
