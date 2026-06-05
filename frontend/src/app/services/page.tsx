@@ -4,12 +4,12 @@ import { SkillsList } from "@/components/services/SkillsList"
 import { ServicesGrid } from "@/components/services/ServicesGrid"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
-import { 
+import {
   FaCode, FaJs, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaArrowRight, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt,
-  FaDesktop, FaLayerGroup, FaMicrochip, FaPalette, FaBug,FaPlayCircle,
+  FaDesktop, FaLayerGroup, FaMicrochip, FaPalette, FaBug, FaPlayCircle,
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaGithub, FaFigma
 } from "react-icons/fa"
-import { 
+import {
   SiTypescript, SiNextdotjs, SiExpress, SiTailwindcss, SiPostman, SiMongodb, SiMysql
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
@@ -30,14 +30,14 @@ export default function ServicesPage() {
       },
       {
         text: "View My Work",
-    icon: <FaPlayCircle size={17} />,
+        icon: <FaPlayCircle size={17} />,
         variant: "outline",
         href: "#"
       },
     ],
     socialText: "Find Me On",
     socialLinks: [],
-    image: "/images/home/user.png",
+    image: "/images/home/kulsakmt.png",
     imageAlt: "Developer Image",
     badges: [
       {

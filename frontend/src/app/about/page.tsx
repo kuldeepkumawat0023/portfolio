@@ -16,7 +16,7 @@ import { ServicesCTA } from "@/components/services/ServicesCTA"
 
 export default function AboutPage() {
   const heroData = {
-    image: "/images/home/user1.png",
+    image: "/images/home/kuldeepkmt.png",
     imageAlt: "Kuldeep Kumawat",
     badge: {
       title: "Full Stack",

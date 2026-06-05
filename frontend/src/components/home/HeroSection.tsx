@@ -27,61 +27,35 @@ const itemVariants: Variants = {
   },
 }
 
-// Typewriter Effect Component
-const TypewriterText = ({ words }: { words: string[] }) => {
-  const [index, setIndex] = React.useState(0);
-  const [subIndex, setSubIndex] = React.useState(0);
-  const [isDeleting, setIsDeleting] = React.useState(false);
-  const [blink, setBlink] = React.useState(true);
-
-  // Blinking cursor effect
-  React.useEffect(() => {
-    const timeout = setTimeout(() => setBlink(!blink), 500);
-    return () => clearTimeout(timeout);
-  }, [blink]);
-
-  // Typing logic
-  React.useEffect(() => {
-    if (words.length === 0) return;
-    const currentWord = words[index];
-    
-    // Pause before deleting
-    if (!isDeleting && subIndex === currentWord.length) {
-      const timeout = setTimeout(() => setIsDeleting(true), 2000); // 2 second pause
-      return () => clearTimeout(timeout);
-    }
-
-    // Move to next word
-    if (isDeleting && subIndex === 0) {
-      setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % words.length);
-      return;
-    }
-
-    // Type or delete characters
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, isDeleting ? 50 : 150); // Speed: 150ms type, 50ms delete
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, isDeleting, words]);
-
+// Hover Bouncing Text Effect
+const HoverText = ({ text, className, isGradient }: { text: string, className?: string, isGradient?: boolean }) => {
   return (
-    <span className="relative inline-flex items-center">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
-        {words[index]?.substring(0, subIndex)}
-      </span>
-      <span className={`inline-block w-[5px] h-[1em] ml-1 bg-orange-500 translate-y-[2px] ${blink ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`} />
+    <span className={`inline-flex flex-wrap ${className || ""}`}>
+      {text.split(" ").map((word, wordIndex) => (
+        <span key={wordIndex} className="inline-flex mr-[0.25em] last:mr-0">
+          {word.split("").map((char, charIndex) => (
+            <motion.span
+              key={charIndex}
+              whileHover={{ y: -12, scale: 1.15 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className={`inline-block origin-bottom ${
+                isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500 py-2" : ""
+              }`}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </span>
+      ))}
     </span>
   );
 };
-
 // Magnetic Button Wrapper
 function MagneticButton({ children, className }: { children: React.ReactNode, className?: string }) {
   const ref = React.useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 });
   const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
 
@@ -134,15 +108,15 @@ export function HeroSection({ props }: { props: any }) {
   // Transforms for background elements
   const bgX = useTransform(smoothMouseX, [-1, 1], [-25, 25]);
   const bgY = useTransform(smoothMouseY, [-1, 1], [-25, 25]);
-  
+
   const particle1X = useTransform(smoothMouseX, [-1, 1], [50, -50]);
   const particle1Y = useTransform(smoothMouseY, [-1, 1], [50, -50]);
-  
+
   const particle2X = useTransform(smoothMouseX, [-1, 1], [-70, 70]);
   const particle2Y = useTransform(smoothMouseY, [-1, 1], [-70, 70]);
 
   // Tech Shapes State for Bottom-to-Top Animation (Replacing Bubbles)
-  const [shapes, setShapes] = React.useState<Array<{id: number, left: string, size: number, delay: number, duration: number, type: number}>>([]);
+  const [shapes, setShapes] = React.useState<Array<{ id: number, left: string, size: number, delay: number, duration: number, type: number }>>([]);
 
   React.useEffect(() => {
     // Generate tech shapes only on client to avoid hydration errors
@@ -190,14 +164,14 @@ export function HeroSection({ props }: { props: any }) {
       >
         <motion.div animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ repeat: Infinity, duration: 2 }} className="w-full h-full rounded-full" />
       </motion.div>
-      
+
       <motion.div
         style={{ x: particle2X, y: particle2Y }}
         className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-orange-300/60 dark:bg-orange-400/40 pointer-events-none z-0"
       >
-         <motion.div animate={{ scale: [1, 2, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ repeat: Infinity, duration: 3, delay: 1 }} className="w-full h-full rounded-full" />
+        <motion.div animate={{ scale: [1, 2, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ repeat: Infinity, duration: 3, delay: 1 }} className="w-full h-full rounded-full" />
       </motion.div>
-      
+
       <motion.div
         style={{ x: bgX, y: bgY }}
         className="absolute bottom-40 left-[8%] w-4 h-4 rounded-full bg-primary/20 dark:bg-primary/30 pointer-events-none z-0"
@@ -206,9 +180,9 @@ export function HeroSection({ props }: { props: any }) {
       </motion.div>
 
       {/* ── Bottom-right rotated diamond with Parallax ── */}
-      <motion.div 
+      <motion.div
         style={{ x: particle1X, y: particle1Y }}
-        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl" 
+        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
       />
 
       {/* ── Animated Floating 3D Tech Shapes (Bottom to Top) ── */}
@@ -273,40 +247,39 @@ export function HeroSection({ props }: { props: any }) {
 
             {/* 3D Reveal Heading */}
             <motion.h1
-              className="text-[3.2rem] sm:text-[4.5rem] lg:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-6 overflow-visible py-4 drop-shadow-xl"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-black leading-[1.1] tracking-tight mb-6 overflow-visible py-4 drop-shadow-xl"
             >
-              <motion.div 
-                 initial={{ y: 100, rotateX: -90, opacity: 0 }}
-                 animate={{ y: 0, rotateX: 0, opacity: 1 }}
-                 transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-                 style={{ transformOrigin: "bottom center" }}
+              <motion.div
+                initial={{ y: 100, rotateX: -90, opacity: 0 }}
+                animate={{ y: 0, rotateX: 0, opacity: 1 }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                style={{ transformOrigin: "bottom center" }}
+                className="cursor-default"
               >
-                <span className="text-slate-900 dark:text-white transition-colors duration-300">
-                  {props.headingPart1 || "Full Stack"}
-                </span>{" "}
+                <HoverText 
+                  text={props.headingPart1 || "Full Stack"} 
+                  className="text-slate-900 dark:text-white transition-colors duration-300"
+                />
               </motion.div>
-              
-              <motion.div 
-                 initial={{ y: 100, rotateX: -90, opacity: 0 }}
-                 animate={{ y: 0, rotateX: 0, opacity: 1 }}
-                 transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.1 }}
-                 style={{ transformOrigin: "bottom center" }}
-                 className="relative mt-2 min-h-[160px] sm:min-h-[180px] lg:min-h-[130px] flex items-center"
+
+              <motion.div
+                initial={{ y: 100, rotateX: -90, opacity: 0 }}
+                animate={{ y: 0, rotateX: 0, opacity: 1 }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.1 }}
+                style={{ transformOrigin: "bottom center" }}
+                className="relative mt-2 cursor-default"
               >
-                <span className="pb-2">
-                  <TypewriterText words={[
-                    props.headingPart2 || "Developer", 
-                    "Engineer", 
-                    "Innovator", 
-                    "Architect"
-                  ]} />
-                </span>
+                <HoverText 
+                  text={props.headingPart2 || "Developer"} 
+                  isGradient={true}
+                  className="-ml-1" // minor adjustment for the gradient letters padding
+                />
                 {/* Glint effect on text */}
-                  <motion.span 
-                    animate={{ left: ["-100%", "200%"] }}
-                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
-                    className="absolute top-0 bottom-0 w-[20%] bg-gradient-to-r from-transparent via-white to-transparent opacity-30 skew-x-12"
-                  />
+                <motion.span
+                  animate={{ left: ["-100%", "200%"] }}
+                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
+                  className="absolute top-0 bottom-0 w-[20%] bg-gradient-to-r from-transparent via-white to-transparent opacity-30 skew-x-12 pointer-events-none"
+                />
               </motion.div>
             </motion.h1>
 

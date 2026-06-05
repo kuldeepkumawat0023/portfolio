@@ -5,7 +5,7 @@ import { AboutStats } from "@/components/about/AboutStats"
 import { ExperienceSkills } from "@/components/experience/ExperienceSkills"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
-import { 
+import {
   FaDownload, FaArrowRight, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaReact, FaNodeJs, FaBriefcase, FaCode, FaUser, FaLaptopCode, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub, FaFigma, FaDocker, FaChevronUp, FaUsers, FaHeart, FaRocket, FaClock, FaCheckCircle, FaHeadphones
 } from "react-icons/fa"
 import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiPostman, SiFirebase, SiNetlify, SiVercel } from "react-icons/si"
@@ -39,7 +39,7 @@ export default function ExperiencePage() {
       { icon: <FaUser size={18} />, href: "#", label: "Twitter" },
       { icon: <FaCode size={18} />, href: "#", label: "Instagram" }
     ],
-    image: "/images/home/user1.png",
+    image: "/images/home/kuldeepkmt.png",
     imageAlt: "Developer Image",
     badges: [
       {
@@ -171,10 +171,10 @@ export default function ExperiencePage() {
       }} />
       <main className="pt-10">
         <HeroSection props={heroData} />
-        
+
         <div className="relative z-20 bg-background pt-10">
           <ExperienceTimeline props={timelineData} />
-          
+
           <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-30 -mt-10">
             <AboutStats props={{ stats: statsData }} />
           </div>

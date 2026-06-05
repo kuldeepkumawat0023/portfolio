@@ -6,12 +6,12 @@ import { ExperienceSection } from "@/components/home/ExperienceSection"
 import { ProjectsSection } from "@/components/home/ProjectsSection"
 import { ServicesSection } from "@/components/home/ServicesSection"
 import { ContactSection } from "@/components/home/ContactSection"
-import { 
+import {
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
-  FaDownload, FaPlayCircle, FaLinkedin, FaTwitter,FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
+  FaDownload, FaPlayCircle, FaLinkedin, FaTwitter, FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
 } from "react-icons/fa"
-import { 
-  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman 
+import {
+  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
@@ -46,7 +46,7 @@ export default function Home() {
       { label: "Twitter", icon: <FaTwitter size={17} />, href: "#" },
       { label: "Instagram", icon: <FaInstagram size={17} />, href: "#" },
     ],
-    image: "/images/home/user.png",
+    image: "/images/home/kulsakmt.png",
     imageAlt: "Full Stack Developer",
     badges: [
       {
@@ -101,7 +101,7 @@ export default function Home() {
   };
 
   const aboutData = {
-    imageSrc: "/images/home/user1.png",
+    imageSrc: "/images/home/kuldeepkmt.png",
     experienceYears: "2+",
     experienceLabel: "Years<br />Experience",
     subtitle: "ABOUT ME",
@@ -317,29 +317,29 @@ export default function Home() {
       buttonText: "Send Message 🚀"
     }
   };
-    const ctaData = {
-      subtitle: "LET'S WORK TOGETHER",
-      title: "Have a project in mind?",
-      description: "I'm available for freelance work.",
-      contacts: [
-        { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
-        { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
-        { icon: <FaMapMarkerAlt size={18} />, text: "India" }
-      ],
-      button: {
-        text: "Let's Talk",
-        icon: <FaArrowRight size={20} className="text-primary" />
-      }
-    };
+  const ctaData = {
+    subtitle: "LET'S WORK TOGETHER",
+    title: "Have a project in mind?",
+    description: "I'm available for freelance work.",
+    contacts: [
+      { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
+      { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
+      { icon: <FaMapMarkerAlt size={18} />, text: "India" }
+    ],
+    button: {
+      text: "Let's Talk",
+      icon: <FaArrowRight size={20} className="text-primary" />
+    }
+  };
 
   return (
     <>
-      <SEO props={{ 
+      <SEO props={{
         title: "Full Stack Developer Portfolio | MERN Stack Expert",
         description: "Professional portfolio of a passionate Full Stack Developer specializing in React, Node.js, Express, and MongoDB. View my projects, skills, and experience.",
-        url: "/" 
+        url: "/"
       }} />
-      
+
       <main className="flex-grow pt-10">
         <HeroSection props={heroData} />
         <AboutSection props={aboutData} />

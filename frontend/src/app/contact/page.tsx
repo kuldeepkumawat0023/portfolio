@@ -4,8 +4,8 @@ import { ContactForm } from "@/components/contact/ContactForm"
 import { ContactInfo } from "@/components/contact/ContactInfo"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
-import { 
-  FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock, FaPaperPlane 
+import {
+  FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock, FaPaperPlane
 } from "react-icons/fa"
 
 export default function ContactPage() {
@@ -21,8 +21,8 @@ export default function ContactPage() {
       "100% Client Satisfaction"
     ],
     // The design doesn't show buttons here, the bullets replace them.
-    buttons: [], 
-    image: "/images/home/user1.png",
+    buttons: [],
+    image: "/images/home/kuldeepkmt.png",
     imageAlt: "Developer Image",
     badges: [
       {
@@ -105,7 +105,7 @@ export default function ContactPage() {
       }} />
       <main className="pt-10">
         <HeroSection props={heroData} />
-        
+
         {/* The overlapping wrapper for Form and Info */}
         <div className="relative z-20">
           <ContactForm />

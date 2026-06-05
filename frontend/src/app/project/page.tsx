@@ -30,7 +30,7 @@ export default function ProjectsPage() {
         href: "#"
       },
     ],
-    image: "/images/home/user1.png",
+    image: "/images/home/kuldeepkmt.png",
     imageAlt: "Developer Image",
     badges: [
       {
