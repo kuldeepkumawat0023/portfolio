@@ -5,7 +5,6 @@ import { TechnologiesSection } from "@/components/home/TechnologiesSection"
 import { ExperienceSection } from "@/components/home/ExperienceSection"
 import { ProjectsSection } from "@/components/home/ProjectsSection"
 import { ServicesSection } from "@/components/home/ServicesSection"
-import { ContactSection } from "@/components/home/ContactSection"
 import {
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
   FaDownload, FaPlayCircle, FaLinkedin, FaTwitter, FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
