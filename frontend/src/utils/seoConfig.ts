@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://ai-job-portal-lime.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 export const defaultSEO = {
     // ================= BASIC GLOBAL =================
@@ -26,11 +26,11 @@ export const defaultSEO = {
     email: "support@aijobfit.com",
 
     // ================= IMAGES =================
-    image: `${BASE_URL}/images/logo/logo.png`,
+    image: `${BASE_URL}/logo.png`,
     imageAlt: "AIJobFit",
     imageType: "image/png",
 
-    ogImage: `${BASE_URL}/images/logo/logo.png`,
+    ogImage: `${BASE_URL}/logo.png`,
     ogImageAlt: "AIJobFit",
     ogImageType: "image/png",
 
@@ -49,8 +49,8 @@ export const defaultSEO = {
 
     // ================= PWA =================
     manifest: "/manifest.json",
-    favicon: "/icons/icon-192.png",
-    appleTouchIcon: "/icons/icon-512.png",
+    favicon: "/logo.png",
+    appleTouchIcon: "/logo.png",
 
     // ================= ROBOTS =================
     noIndex: false,
@@ -68,7 +68,7 @@ export const defaultSEO = {
     prefetch: [],
     preload: [
         {
-            href: "/images/logo/logo.png",
+            href: "/logo.png",
             as: "image",
         },
     ],
