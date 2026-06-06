@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO"
+import { SEO } from "@/components/seo"
 import { HeroSection } from "@/components/home/HeroSection"
 import { SkillsList } from "@/components/services/SkillsList"
 import { ServicesGrid } from "@/components/services/ServicesGrid"
@@ -13,6 +13,12 @@ import {
   SiTypescript, SiNextdotjs, SiExpress, SiTailwindcss, SiPostman, SiMongodb, SiMysql
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
+
+export const metadata = SEO({
+  title: "Services & Skills | Kuldeep Kumawat",
+  description: "Frontend Development, Backend Development, API Development, Database Design and Full Stack Development services.",
+  url: "/services",
+});
 
 export default function ServicesPage() {
   const heroData = {
@@ -196,11 +202,6 @@ export default function ServicesPage() {
 
   return (
     <>
-      <SEO props={{
-        title: "Skills & Services | DevPortfolio",
-        description: "Explore my technical skills and the professional services I provide, including Full Stack Development, API Development, and UI/UX Design.",
-        url: "/services"
-      }} />
       <main className="pt-10">
         <HeroSection props={heroData} />
         <SkillsList props={skillsData} />

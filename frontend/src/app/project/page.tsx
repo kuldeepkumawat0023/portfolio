@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO"
+import { SEO } from "@/components/seo"
 import { HeroSection } from "@/components/home/HeroSection"
 import { AboutStats } from "@/components/about/AboutStats"
 import { ProjectsGrid } from "@/components/project/ProjectsGrid"
@@ -8,6 +8,12 @@ import {
   FaGithub, FaArrowRight, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaReact, FaJsSquare, FaPlayCircle
 } from "react-icons/fa"
 import { SiTypescript } from "react-icons/si"
+
+export const metadata = SEO({
+  title: "Projects | Kuldeep Kumawat",
+  description: "Explore modern web applications and portfolio projects developed by Kuldeep Kumawat.",
+  url: "/project",
+});
 
 export default function ProjectsPage() {
   const heroData = {
@@ -180,11 +186,6 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <SEO props={{
-        title: "Projects | DevPortfolio",
-        description: "Explore my recent web development projects and case studies.",
-        url: "/project"
-      }} />
       <main className="pt-10">
         <div className="relative">
           <HeroSection props={heroData} />

@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO"
+import { SEO } from "@/components/seo"
 import { HeroSection } from "@/components/home/HeroSection"
 import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline"
 import { AboutStats } from "@/components/about/AboutStats"
@@ -10,6 +10,12 @@ import {
 } from "react-icons/fa"
 import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiPostman, SiFirebase, SiNetlify, SiVercel } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
+
+export const metadata = SEO({
+  title: "Experience | Kuldeep Kumawat",
+  description: "Professional work experience, achievements and technical expertise of Kuldeep Kumawat.",
+  url: "/experience",
+});
 
 export default function ExperiencePage() {
   const heroData = {
@@ -172,11 +178,6 @@ export default function ExperiencePage() {
 
   return (
     <>
-      <SEO props={{
-        title: "Experience | DevPortfolio",
-        description: "My professional journey, work experience, and the technologies I use.",
-        url: "/experience"
-      }} />
       <main className="pt-10">
         <HeroSection props={heroData} />
 
