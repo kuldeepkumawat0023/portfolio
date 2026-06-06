@@ -41,10 +41,10 @@ export default function Home() {
     ],
     socialText: "Find Me On",
     socialLinks: [
-      { label: "GitHub", icon: <FaGithub size={17} />, href: "#" },
-      { label: "LinkedIn", icon: <FaLinkedin size={17} />, href: "#" },
-      { label: "Twitter", icon: <FaTwitter size={17} />, href: "#" },
-      { label: "Instagram", icon: <FaInstagram size={17} />, href: "#" },
+      { label: "GitHub", icon: <FaGithub size={17} />, href: "https://github.com/kuldeepkumawat0023" },
+      { label: "LinkedIn", icon: <FaLinkedin size={17} />, href: "https://www.linkedin.com/in/kuldeep-kumawat-23284236a/" },
+      { label: "GitLab", icon: <SiGitlab size={17} />, href: "https://gitlab.com/kuldeepkumawat2383" },
+      { label: "Instagram", icon: <FaInstagram size={17} />, href: "https://www.instagram.com/itz_kuldeep_0023/" },
     ],
     image: "/images/home/kulsakmt.png",
     imageAlt: "Full Stack Developer",
@@ -322,14 +322,26 @@ export default function Home() {
     title: "Have a project in mind?",
     description: "I'm available for freelance work.",
     contacts: [
-      { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
-      { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
-      { icon: <FaMapMarkerAlt size={18} />, text: "India" }
+      {
+        icon: <FaEnvelope size={18} />,
+        text: "kuldeepkumawat2383@gmail.com",
+        link: "mailto:kuldeepkumawat2383@gmail.com",
+      },
+      {
+        icon: <FaPhoneAlt size={18} />,
+        text: "+91 7296824595",
+        link: "tel:+917296824595",
+      },
+      {
+        icon: <FaMapMarkerAlt size={18} />,
+        text: "Kuchaman City, Rajasthan",
+        link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
+      },
     ],
     button: {
       text: "Let's Talk",
-      icon: <FaArrowRight size={20} className="text-primary" />
-    }
+      icon: <FaArrowRight size={20} className="text-primary" />,
+    },
   };
 
   return (

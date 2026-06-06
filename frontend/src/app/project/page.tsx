@@ -161,8 +161,16 @@ export default function ProjectsPage() {
     title: "Have a project in mind?",
     description: "I'm available for freelance work.",
     contacts: [
-      { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
-      { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
+      {
+        icon: <FaEnvelope size={18} />,
+        text: "kuldeepkumawat2383@gmail.com",
+        link: "mailto:kuldeepkumawat2383@gmail.com",
+      },
+      {
+        icon: <FaPhoneAlt size={18} />,
+        text: "+91 7296824595",
+        link: "tel:+917296824595",
+      },
     ],
     button: {
       text: "Let's Talk",

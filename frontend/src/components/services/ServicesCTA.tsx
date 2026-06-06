@@ -67,17 +67,17 @@ const codeContainerVariants: Variants = {
 };
 
 const codeLineVariants: Variants = {
-  hidden: { 
+  hidden: {
     clipPath: "inset(0 100% 0 0)", // Hide from right to left
-    opacity: 0 
+    opacity: 0
   },
-  visible: { 
+  visible: {
     clipPath: "inset(0 0% 0 0)", // Reveal fully
-    opacity: 1, 
-    transition: { 
+    opacity: 1,
+    transition: {
       opacity: { duration: 0.01 }, // Make it visible instantly (but fully clipped)
       clipPath: { duration: 0.8, ease: "linear" } // "Type" out over 0.8 seconds
-    } 
+    }
   }
 };
 
@@ -154,7 +154,7 @@ export function ServicesCTA({ props }: { props: any }) {
 
   return (
     <section className="py-20 relative z-10 overflow-hidden bg-background">
-      
+
       {/* ── SECTION BACKGROUND METEOR SHOWER ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         {meteors.map(meteor => (
@@ -223,7 +223,7 @@ export function ServicesCTA({ props }: { props: any }) {
                   <div className="w-64 h-40 bg-zinc-900 rounded-t-2xl shadow-[0_0_40px_rgba(255,255,255,0.2)] border-8 border-gray-200 flex flex-col relative overflow-hidden group/laptop">
                     {/* Screen Glow */}
                     <div className="absolute inset-0 bg-primary/10 opacity-50 group-hover/laptop:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    
+
                     {/* Mac OS Window Header */}
                     <div className="w-full bg-zinc-800/80 px-3 py-1.5 flex items-center gap-1.5 border-b border-white/5 relative z-10">
                       <div className="w-2 h-2 rounded-full bg-red-500" />
@@ -249,8 +249,8 @@ export function ServicesCTA({ props }: { props: any }) {
                                 {line}
                                 {/* Blinking Cursor on the last line */}
                                 {idx === codeSnippets[codeIndex].length - 1 && (
-                                  <motion.span 
-                                    animate={{ opacity: [1, 0, 1] }} 
+                                  <motion.span
+                                    animate={{ opacity: [1, 0, 1] }}
                                     transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
                                     className="inline-block w-1 h-2.5 bg-white ml-0.5"
                                   />
@@ -296,14 +296,17 @@ export function ServicesCTA({ props }: { props: any }) {
 
                 <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-6 font-medium">
                   {props.contacts?.map((contact: any, index: number) => (
-                    <motion.div
+                    <motion.a
                       key={index}
+                      href={contact.link}
+                      target={contact.link?.startsWith("http") ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       className="flex items-center gap-2 whitespace-nowrap bg-white/10 px-4 py-2 rounded-full border border-white/20 shadow-sm backdrop-blur-sm"
                     >
                       {contact.icon}
                       <span>{contact.text}</span>
-                    </motion.div>
+                    </motion.a>
                   ))}
                 </motion.div>
               </motion.div>

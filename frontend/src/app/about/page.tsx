@@ -31,10 +31,10 @@ export default function AboutPage() {
     ],
     personalInfo: [
       { label: "Name:", value: "Kuldeep Kumawat", icon: <FaUser size={18} className="text-primary" /> },
-      { label: "Phone:", value: "+91 1234567890", icon: <FaPhoneAlt size={18} className="text-primary" /> },
-      { label: "Email:", value: "hello@yourname.com", icon: <FaEnvelope size={18} className="text-primary" /> },
+      { label: "Phone:", value: "+91 7296824595", icon: <FaPhoneAlt size={18} className="text-primary" /> },
+      { label: "Email:", value: "kuldeepkumawat2383@gmail.com", icon: <FaEnvelope size={18} className="text-primary" /> },
       { label: "Experience:", value: "2+ Years", icon: <FaClock size={18} className="text-primary" /> },
-      { label: "Location:", value: "India", icon: <FaMapMarkerAlt size={18} className="text-primary" /> },
+      { label: "Location:", value: "Kuchaman City, Rajasthan", icon: <FaMapMarkerAlt size={18} className="text-primary" /> },
       { label: "Freelance:", value: "Available", icon: <FaBriefcase size={18} className="text-primary" /> },
     ],
     buttons: [
@@ -136,20 +136,32 @@ export default function AboutPage() {
     }
   };
 
-  const ctaData = {
-    subtitle: "LET'S WORK TOGETHER",
-    title: "Have a project in mind?",
-    description: "I'm available for freelance work.",
-    contacts: [
-      { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
-      { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
-      { icon: <FaMapMarkerAlt size={18} />, text: "India" }
-    ],
-    button: {
-      text: "Let's Talk",
-      icon: <FaArrowRight size={20} className="text-primary" />
-    }
-  };
+const ctaData = {
+  subtitle: "LET'S WORK TOGETHER",
+  title: "Have a project in mind?",
+  description: "I'm available for freelance work.",
+  contacts: [
+    {
+      icon: <FaEnvelope size={18} />,
+      text: "kuldeepkumawat2383@gmail.com",
+      link: "mailto:kuldeepkumawat2383@gmail.com",
+    },
+    {
+      icon: <FaPhoneAlt size={18} />,
+      text: "+91 7296824595",
+      link: "tel:+917296824595",
+    },
+    {
+      icon: <FaMapMarkerAlt size={18} />,
+      text: "Kuchaman City, Rajasthan",
+      link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
+    },
+  ],
+  button: {
+    text: "Let's Talk",
+    icon: <FaArrowRight size={20} className="text-primary" />,
+  },
+};
 
   return (
     <>

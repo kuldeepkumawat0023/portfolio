@@ -38,9 +38,8 @@ const HoverText = ({ text, className, isGradient }: { text: string, className?: 
               key={charIndex}
               whileHover={{ y: -12, scale: 1.15 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className={`inline-block origin-bottom ${
-                isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500 py-2" : ""
-              }`}
+              className={`inline-block origin-bottom ${isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500 py-2" : ""
+                }`}
             >
               {char}
             </motion.span>
@@ -256,8 +255,8 @@ export function HeroSection({ props }: { props: any }) {
                 style={{ transformOrigin: "bottom center" }}
                 className="cursor-default"
               >
-                <HoverText 
-                  text={props.headingPart1 || "Full Stack"} 
+                <HoverText
+                  text={props.headingPart1 || "Full Stack"}
                   className="text-slate-900 dark:text-white transition-colors duration-300"
                 />
               </motion.div>
@@ -269,8 +268,8 @@ export function HeroSection({ props }: { props: any }) {
                 style={{ transformOrigin: "bottom center" }}
                 className="relative mt-2 cursor-default"
               >
-                <HoverText 
-                  text={props.headingPart2 || "Developer"} 
+                <HoverText
+                  text={props.headingPart2 || "Developer"}
                   isGradient={true}
                   className="-ml-1" // minor adjustment for the gradient letters padding
                 />
@@ -357,7 +356,7 @@ export function HeroSection({ props }: { props: any }) {
                 <div className="flex gap-2 z-50">
                   {props.socialLinks.map((social: any, i: number) => (
                     <MagneticButton key={i}>
-                      <a href={social.href} aria-label={social.label} className="w-10 h-10 rounded-xl flex items-center justify-center bg-muted hover:bg-primary hover:-translate-y-1 hover:text-white text-muted-foreground transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-primary/30">
+                      <a href={social.href} target="_blank" aria-label={social.label} className="w-10 h-10 rounded-xl flex items-center justify-center bg-muted hover:bg-primary hover:-translate-y-1 hover:text-white text-muted-foreground transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-primary/30">
                         {social.icon}
                       </a>
                     </MagneticButton>
