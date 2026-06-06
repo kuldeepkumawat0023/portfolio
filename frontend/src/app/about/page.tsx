@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO"
+import { SEO } from "@/components/seo"
 import { AboutHero } from "@/components/about/AboutHero"
 import { AboutStats } from "@/components/about/AboutStats"
 import { JourneyValues } from "@/components/about/JourneyValues"
@@ -13,6 +13,12 @@ import {
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
+
+export const metadata = SEO({
+  title: "About Kuldeep Kumawat | Full Stack Developer",
+  description: "Discover the professional journey, technical expertise, skills, and experience of Kuldeep Kumawat, a Full Stack Developer specializing in React.js, Next.js, Node.js, Express.js, MongoDB, and MySQL.",
+  url: "/about",
+});
 
 export default function AboutPage() {
   const heroData = {
@@ -136,40 +142,35 @@ export default function AboutPage() {
     }
   };
 
-const ctaData = {
-  subtitle: "LET'S WORK TOGETHER",
-  title: "Have a project in mind?",
-  description: "I'm available for freelance work.",
-  contacts: [
-    {
-      icon: <FaEnvelope size={18} />,
-      text: "kuldeepkumawat2383@gmail.com",
-      link: "mailto:kuldeepkumawat2383@gmail.com",
+  const ctaData = {
+    subtitle: "LET'S WORK TOGETHER",
+    title: "Have a project in mind?",
+    description: "I'm available for freelance work.",
+    contacts: [
+      {
+        icon: <FaEnvelope size={18} />,
+        text: "kuldeepkumawat2383@gmail.com",
+        link: "mailto:kuldeepkumawat2383@gmail.com",
+      },
+      {
+        icon: <FaPhoneAlt size={18} />,
+        text: "+91 7296824595",
+        link: "tel:+917296824595",
+      },
+      {
+        icon: <FaMapMarkerAlt size={18} />,
+        text: "Kuchaman City, Rajasthan",
+        link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
+      },
+    ],
+    button: {
+      text: "Let's Talk",
+      icon: <FaArrowRight size={20} className="text-primary" />,
     },
-    {
-      icon: <FaPhoneAlt size={18} />,
-      text: "+91 7296824595",
-      link: "tel:+917296824595",
-    },
-    {
-      icon: <FaMapMarkerAlt size={18} />,
-      text: "Kuchaman City, Rajasthan",
-      link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
-    },
-  ],
-  button: {
-    text: "Let's Talk",
-    icon: <FaArrowRight size={20} className="text-primary" />,
-  },
-};
+  };
 
   return (
     <>
-      <SEO props={{
-        title: "About Me | DevPortfolio",
-        description: "Learn more about my professional journey, core values, and the technologies I work with as a Full Stack Developer.",
-        url: "/about"
-      }} />
       <main className="pt-20">
 
         <div className="flex flex-col">

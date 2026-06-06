@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO"
+import { SEO } from "@/components/seo";
 import { HeroSection } from "@/components/home/HeroSection"
 import { ContactForm } from "@/components/contact/ContactForm"
 import { ContactInfo } from "@/components/contact/ContactInfo"
@@ -7,7 +7,11 @@ import { ServicesCTA } from "@/components/services/ServicesCTA"
 import {
   FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock, FaPaperPlane
 } from "react-icons/fa"
-
+export const metadata = SEO({
+  title: "Contact Kuldeep Kumawat",
+  description: "Contact Kuldeep Kumawat for freelance projects, web applications, and technical collaboration.",
+  url: "/contact",
+});
 export default function ContactPage() {
   const heroData = {
     badgeText: "CONTACT ME",
@@ -97,23 +101,16 @@ export default function ContactPage() {
   };
 
   return (
-    <>
-      <SEO props={{
-        title: "Contact | DevPortfolio",
-        description: "Get in touch with me for freelance projects or collaborations.",
-        url: "/contact"
-      }} />
-      <main className="pt-10">
-        <HeroSection props={heroData} />
+    <main className="pt-10">
+      <HeroSection props={heroData} />
 
-        {/* The overlapping wrapper for Form and Info */}
-        <div className="relative z-20">
-          <ContactForm />
-          <ContactInfo props={contactInfoData} />
-          <ServicesCTA props={ctaData} />
-        </div>
-      </main>
-    </>
+      {/* The overlapping wrapper for Form and Info */}
+      <div className="relative z-20">
+        <ContactForm />
+        <ContactInfo props={contactInfoData} />
+        <ServicesCTA props={ctaData} />
+      </div>
+    </main>
   )
 }
 

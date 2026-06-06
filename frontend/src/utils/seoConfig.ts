@@ -1,116 +1,39 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL ||
+  "https://your-domain.com";
 
 export const defaultSEO = {
-    // ================= BASIC GLOBAL =================
-    author: "AIJobFit",
-    siteName: "AIJobFit",
-    appName: "AIJobFit",
+  siteName: "Kuldeep Kumawat",
 
-    // ================= DEFAULT FALLBACK SEO =================
-    title: "AIJobFit - Smart Career & Job Matching Platform",
-    description:
-        "AIJobFit helps you discover the best jobs, build your career, and match with opportunities using AI-powered technology.",
-    keywords: "AIJobFit, AI jobs, career platform, job matching, resume builder, hiring platform",
-    url: "/",
+  author: "Kuldeep Kumawat",
 
-    // ================= DOMAIN =================
-    metadataBase: new URL(BASE_URL),
-    baseUrl: BASE_URL,
+  title: "Kuldeep Kumawat | Full Stack Developer",
 
-    // ================= LANGUAGE =================
-    language: "en",
-    locale: "en_IN",
-    charset: "UTF-8",
+  description:
+    "Full Stack Developer specializing in React.js, Next.js, Node.js, Express.js, MongoDB and MySQL.",
 
-    // ================= CONTACT =================
-    email: "support@aijobfit.com",
+  baseUrl: BASE_URL,
 
-    // ================= IMAGES =================
-    image: `${BASE_URL}/logo.png`,
-    imageAlt: "AIJobFit",
-    imageType: "image/png",
+  metadataBase: new URL(BASE_URL),
 
-    ogImage: `${BASE_URL}/logo.png`,
-    ogImageAlt: "AIJobFit",
-    ogImageType: "image/png",
+  ogImage: `${BASE_URL}/og-image.jpg`,
 
-    // ================= SOCIAL =================
-    ogType: "website",
-    twitterCard: "summary_large_image",
-    twitterSite: "@aijobfit",
-    twitterCreator: "@aijobfit",
+  ogImageAlt: "Kuldeep Kumawat - Full Stack Developer",
 
-    // ================= THEME =================
-    themeColor: "#2563eb",
+  locale: "en_US",
 
-    // ================= GEO =================
-    geoRegion: "IN-RJ",
-    geoPlace: "Rajasthan, India",
+  twitterCreator: "@kuldeepkumawat",
 
-    // ================= PWA =================
-    manifest: "/manifest.json",
-    favicon: "/logo.png",
-    appleTouchIcon: "/logo.png",
-
-    // ================= ROBOTS =================
-    noIndex: false,
-    noFollow: false,
-
-    // ================= VERIFICATION =================
-    googleVerification: "",
-    bingVerification: "",
-
-    // ================= PERFORMANCE =================
-    preconnect: [
-        "https://fonts.googleapis.com",
-        "https://fonts.gstatic.com",
-    ],
-    prefetch: [],
-    preload: [
-        {
-            href: "/logo.png",
-            as: "image",
-        },
-    ],
-
-    // ================= SEO ADVANCED =================
-    canonical: "",
-    alternateLanguages: [
-        { hrefLang: "en-IN", href: BASE_URL },
-    ],
-
-    // ================= STRUCTURED =================
-    organization: {
-        name: "AIJobFit",
-        url: BASE_URL,
-        logo: `${BASE_URL}/images/logo/logo.png`,
-
-        sameAs: [
-            "https://twitter.com/aijobfit",
-            "https://facebook.com/aijobfit",
-            "https://instagram.com/aijobfit",
-            "https://linkedin.com/company/aijobfit",
-            "https://youtube.com/@aijobfit",
-        ],
-
-        contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+91-0000000000",
-            contactType: "customer support",
-            areaServed: "IN",
-            availableLanguage: ["English", "Hindi"],
-        },
-    },
-
-    // ================= SECURITY =================
-    referrer: "origin-when-cross-origin",
-
-    // ================= EXTRA =================
-    category: "Career & Jobs",
-    tags: ["jobs", "career", "AI", "hiring", "resume"],
-
-    publishedTime: "",
-    updatedTime: "",
-
-    trailingSlash: false,
+  keywords: [
+    "Kuldeep Kumawat",
+    "Full Stack Developer",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "Portfolio",
+    "MERN Stack Developer",
+  ],
 };

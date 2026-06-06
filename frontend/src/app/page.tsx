@@ -1,10 +1,10 @@
-import SEO from "@/components/SEO"
 import { HeroSection } from "@/components/home/HeroSection"
 import { AboutSection } from "@/components/home/AboutSection"
 import { TechnologiesSection } from "@/components/home/TechnologiesSection"
 import { ExperienceSection } from "@/components/home/ExperienceSection"
 import { ProjectsSection } from "@/components/home/ProjectsSection"
 import { ServicesSection } from "@/components/home/ServicesSection"
+import { SEO } from "@/components/seo";
 import {
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
   FaDownload, FaPlayCircle, FaLinkedin, FaTwitter, FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
@@ -14,6 +14,14 @@ import {
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
+
+
+export const metadata = SEO({
+  title: "Kuldeep Kumawat | Full Stack Developer",
+  description: "Portfolio of Kuldeep Kumawat showcasing React.js, Next.js, Node.js, Express.js, MongoDB and MySQL projects.",
+  url: "/",
+});
+
 export default function Home() {
   const heroData = {
     badgeText: "Hello, I'm",
@@ -345,12 +353,6 @@ export default function Home() {
 
   return (
     <>
-      <SEO props={{
-        title: "Full Stack Developer Portfolio | MERN Stack Expert",
-        description: "Professional portfolio of a passionate Full Stack Developer specializing in React, Node.js, Express, and MongoDB. View my projects, skills, and experience.",
-        url: "/"
-      }} />
-
       <main className="flex-grow pt-10">
         <HeroSection props={heroData} />
         <AboutSection props={aboutData} />
