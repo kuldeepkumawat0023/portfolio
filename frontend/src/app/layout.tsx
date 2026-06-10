@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { RouteScrollReset } from "@/components/common/RouteScrollReset";
+import { CursorParticles } from "@/components/common/CursorParticles";
 import "./globals.css";
 
 
@@ -98,6 +99,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <HydrationGuard>
             <RouteScrollReset />
+            <CursorParticles />
             <Navbar />
             <div className="flex-grow">
               {children}

@@ -30,7 +30,6 @@ export default function AboutPage() {
       icon: <FaCode size={24} className="text-primary" />
     },
     subtitle: "ABOUT ME",
-    title: <>I'm Kuldeep Kumawat, <br />a Passionate <span className="text-primary">Full Stack Developer</span></>,
     descriptions: [
       "I build modern, responsive and scalable web applications that provide real value to users. I love turning ideas into digital products using clean code and modern technologies.",
       "With a strong foundation in both frontend and backend development, I enjoy solving problems and creating seamless user experiences."
@@ -63,21 +62,21 @@ export default function AboutPage() {
     journeyTitle: <>My Professional <span className="text-primary">Journey</span></>,
     experiences: [
       {
-        period: "2023 - Present",
-        title: "Full Stack Developer (Freelance)",
-        description: "Building scalable web apps using MERN stack and delivering high quality solutions.",
+        period: "2026 - Present",
+        title: "Full Stack Developer - Artifact Geeks",
+        description: "Working as a full-time employee in Jaipur, building high-quality, scalable web applications.",
         icon: <FaBriefcase size={20} className="text-primary" />
       },
       {
-        period: "2022 - 2023",
-        title: "Frontend Developer - TechSolutions Inc.",
+        period: "2025 - 2026",
+        title: "Frontend Developer (Freelance)",
         description: "Developed responsive UI with React & Tailwind CSS. Improved performance and user experience.",
         icon: <FaLaptopCode size={20} className="text-primary" />
       },
       {
-        period: "2021 - 2022",
-        title: "Web Developer Intern - CodeCraft Labs",
-        description: "Worked on real-world projects and improved coding skills.",
+        period: "2024 - 2025",
+        title: "Web Developer Intern - A2 Logic Group",
+        description: "Completed internship in Jaipur, working on real-world projects and improving core coding skills.",
         icon: <FaCode size={20} className="text-primary" />
       }
     ],
