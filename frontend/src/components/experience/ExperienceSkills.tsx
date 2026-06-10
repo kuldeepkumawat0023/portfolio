@@ -5,22 +5,118 @@ import { motion } from "framer-motion"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { GlassCard } from "@/components/common/GlassCard"
 
+const NodeNetworkBackground = () => {
+  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+
+  React.useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let particles: {x: number, y: number, vx: number, vy: number, radius: number, color: string}[] = [];
+    let animationFrameId: number;
+    let width = 0;
+    let height = 0;
+    
+    const colors = ['#ff7e1d', '#e11d48', '#61DAFB', '#F7DF1E', '#3178C6', '#47A248', '#8b5cf6', '#14b8a6'];
+
+    const init = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      particles = [];
+      const numParticles = Math.floor((width * height) / 12000); // density
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+          radius: Math.random() * 3 + 2, // Random size between 2 and 5
+          color: colors[Math.floor(Math.random() * colors.length)]
+        });
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+      
+      for (let i = 0; i < particles.length; i++) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        // Optional: add a slight glowing effect to the dot
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = p.color;
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Reset shadow for lines
+        ctx.shadowBlur = 0;
+
+        for (let j = i + 1; j < particles.length; j++) {
+          let p2 = particles[j];
+          let dx = p.x - p2.x;
+          let dy = p.y - p2.y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(249, 115, 22, ${0.25 - dist/520})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    init();
+    animate();
+
+    window.addEventListener('resize', init);
+    return () => {
+      window.removeEventListener('resize', init);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-background">
+      <canvas ref={canvasRef} className="w-full h-full opacity-80 dark:opacity-60 dark:mix-blend-screen" />
+      <div className="absolute top-0 w-full h-[150px] bg-gradient-to-b from-background via-background/80 to-transparent z-10" />
+      <div className="absolute bottom-0 w-full h-[150px] bg-gradient-to-t from-background via-background/80 to-transparent z-10" />
+    </div>
+  );
+};
+
 export function ExperienceSkills({ props }: { props: any }) {
   if (!props) return null;
 
   return (
-    <section className="py-20 relative">
-      <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full">
-        <SectionHeading 
-          subtitle={props.subtitle || "WHAT I WORKED WITH"} 
-          title={props.title || <>Technologies & <span className="text-primary">Tools</span></>} 
+    <section className="py-20 relative overflow-hidden">
+      <NodeNetworkBackground />
+      <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full relative z-20">
+        <SectionHeading
+          subtitle={props.subtitle || "WHAT I WORKED WITH"}
+          title={props.title || <>Technologies & <span className="text-primary">Tools</span></>}
           className="text-center"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-16">
-          
+
           {/* Column 1: Progress Bars */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,7 +146,7 @@ export function ExperienceSkills({ props }: { props: any }) {
           </motion.div>
 
           {/* Column 2: Tech Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -70,7 +166,7 @@ export function ExperienceSkills({ props }: { props: any }) {
           </motion.div>
 
           {/* Column 3: Tools List */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

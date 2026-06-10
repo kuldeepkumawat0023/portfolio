@@ -40,7 +40,7 @@ export default function ContactPage() {
       {
         label: "Phone",
         icon: <FaPhoneAlt size={30} className="text-orange-500" />,
-        positionClass: "top-[40%] sm:top-[45%] left-[-15%] sm:left-[-10%]",
+        positionClass: "top-[30%] right-[-10%] sm:right-[0%]",
         animateY: [-8, 12, -8],
         duration: 4.5,
         delay: 0.5
@@ -48,7 +48,7 @@ export default function ContactPage() {
       {
         label: "Send",
         icon: <FaPaperPlane size={30} className="text-orange-500" />,
-        positionClass: "top-[20%] right-[-5%] sm:right-[5%]",
+        positionClass: "bottom-[20%] right-[0%] sm:right-[10%]",
         animateY: [8, -12, 8],
         duration: 4.8,
         delay: 1.5
@@ -60,15 +60,15 @@ export default function ContactPage() {
     items: [
       {
         title: "Email",
-        description: "Drop me an email anytime",
-        value: "hello@yourname.com",
+        description: "Let's discuss your next project",
+        value: "kuldeepkumawat2383@gmail.com",
         icon: <FaEnvelope size={20} />,
         highlight: true
       },
       {
         title: "Phone",
         description: "Call me for quick discussion",
-        value: "+91 12345 67890",
+        value: "+91 7296824595",
         icon: <FaPhoneAlt size={20} />,
         highlight: true
       },

@@ -1,8 +1,41 @@
 "use client"
 
-import { motion } from "framer-motion"
+import React, { useEffect, useRef } from "react"
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion"
 import { Users, Heart, Clock, HeadphonesIcon, ThumbsUp, Settings } from "lucide-react"
 import { GlassCard } from "@/components/common/GlassCard"
+
+const AnimatedCounter = ({ value }: { value: string }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
+  const numMatch = typeof value === 'string' ? value.match(/\d+/) : null;
+  const number = numMatch ? parseInt(numMatch[0]) : (typeof value === 'number' ? value : 0);
+  const suffix = typeof value === 'string' ? value.replace(/\d+/g, "") : "";
+
+  useEffect(() => {
+    if (isInView) {
+      const animation = animate(count, number, { duration: 2.5, ease: "easeOut" });
+      return animation.stop;
+    }
+  }, [number, isInView, count]);
+
+  return (
+    <motion.h4 
+      ref={ref}
+      initial={{ opacity: 0, y: -30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
+      className="text-2xl font-bold text-foreground mb-1 flex items-center justify-center"
+    >
+      <motion.span>{rounded}</motion.span>
+      <span>{suffix}</span>
+    </motion.h4>
+  );
+};
 
 export function AboutStats({ props }: { props: any }) {
   if (!props || !props.stats) return null;
@@ -30,7 +63,7 @@ export function AboutStats({ props }: { props: any }) {
                 <div className="mb-3">
                   {stat.icon}
                 </div>
-                <h4 className="text-2xl font-bold text-foreground mb-1">{stat.value}</h4>
+                <AnimatedCounter value={stat.value} />
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{stat.label}</p>
               </motion.div>
             ))}
