@@ -43,7 +43,7 @@ export default function AboutPage() {
       { label: "Freelance:", value: "Available", icon: <FaBriefcase size={18} className="text-primary" /> },
     ],
     buttons: [
-      { text: "Download CV", href: "#", variant: "gradient", icon: <FaDownload size={18} /> },
+      { text: "Download CV", href: "/pdf/Amit_Sharma_Resume.pdf", download: "Kuldeep_Kumawat_Resume.pdf", variant: "gradient", icon: <FaDownload size={18} /> },
       { text: "Let's Talk", href: "#", variant: "outline", icon: <FaPlayCircle size={18} className="text-primary" /> }
     ]
   };
@@ -114,6 +114,56 @@ export default function AboutPage() {
   const technologiesData = {
     subtitle: "TECHNOLOGIES I WORK WITH",
     title: "My Skills",
+    categories: [
+      {
+        name: "Frontend",
+        emoji: "🧠",
+        description: "Building responsive, fast, and interactive user interfaces.",
+        technologies: [
+          { name: "HTML5", icon: <FaHtml5 size={36} />, color: "text-orange-500" },
+          { name: "CSS3", icon: <FaCss3Alt size={36} />, color: "text-blue-500" },
+          { name: "Bootstrap", icon: <FaBootstrap size={36} />, color: "text-purple-600" },
+          { name: "JavaScript", icon: <FaJsSquare size={36} />, color: "text-yellow-500" },
+          { name: "TypeScript", icon: <SiTypescript size={36} />, color: "text-blue-400" },
+          { name: "React.js", icon: <FaReact size={36} />, color: "text-cyan-400" },
+          { name: "Next.js", icon: <SiNextdotjs size={36} />, color: "text-foreground" },
+          { name: "Tailwind CSS", icon: <SiTailwindcss size={36} />, color: "text-cyan-500" },
+        ]
+      },
+      {
+        name: "Backend & Database",
+        emoji: "⚙️",
+        description: "Developing secure APIs, routing, and database schemas.",
+        technologies: [
+          { name: "Node.js", icon: <FaNodeJs size={36} />, color: "text-green-500" },
+          { name: "Express.js", icon: <SiExpress size={36} />, color: "text-foreground" },
+          { name: "MongoDB", icon: <SiMongodb size={36} />, color: "text-green-600" },
+          { name: "MySQL", icon: <SiMysql size={36} />, color: "text-blue-600" },
+        ]
+      },
+      {
+        name: "Tools & DevOps",
+        emoji: "🛠️",
+        description: "Managing environments, pipelines, and developer operations.",
+        technologies: [
+          { name: "Git", icon: <FaGitAlt size={36} />, color: "text-orange-600" },
+          { name: "GitHub", icon: <FaGithub size={36} />, color: "text-foreground" },
+          { name: "GitLab", icon: <SiGitlab size={36} />, color: "text-orange-500" },
+          { name: "Figma", icon: <FaFigma size={36} />, color: "text-pink-500" },
+          { name: "Postman", icon: <SiPostman size={36} />, color: "text-orange-500" },
+          { name: "VS Code", icon: <VscVscode size={36} />, color: "text-blue-500" },
+        ]
+      },
+      {
+        name: "AI & Automation",
+        emoji: "🤖",
+        description: "Leveraging advanced artificial intelligence systems.",
+        technologies: [
+          { name: "Gemini", icon: <FaRocket size={36} />, color: "text-blue-400" },
+          { name: "Antigravity", icon: <FaRocket size={36} />, color: "text-red-500" },
+        ]
+      }
+    ],
     technologies: [
       { name: "HTML5", icon: <FaHtml5 size={36} />, color: "text-orange-500" },
       { name: "CSS3", icon: <FaCss3Alt size={36} />, color: "text-blue-500" },
@@ -135,10 +185,7 @@ export default function AboutPage() {
       { name: "VS Code", icon: <VscVscode size={36} />, color: "text-blue-500" },
       { name: "Antigravity", icon: <FaRocket size={36} />, color: "text-red-500" },
     ],
-    button: {
-      text: "View All Skills →",
-      href: "/skills",
-    }
+
   };
 
   const ctaData = {

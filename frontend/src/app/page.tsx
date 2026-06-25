@@ -39,6 +39,8 @@ export default function Home() {
         text: "Download CV",
         icon: <FaDownload size={18} />,
         variant: "gradient",
+        href: "/pdf/Amit_Sharma_Resume.pdf",
+        download: "Kuldeep_Kumawat_Resume.pdf"
       },
       {
         text: "View My Work",
@@ -209,7 +211,7 @@ export default function Home() {
     ],
     button: {
       text: "View All Skills →",
-      href: "/skills",
+      href: "/services",
     }
   };
 
@@ -233,11 +235,11 @@ export default function Home() {
       {
         period: "Jun 2024 - Aug 2024",
         role: "Full Stack Developer Intern",
-        company: "Pace Infotech",
+        company: "A2 Logic Group",
         type: "Internship",
         description:
-          "Specialized in the MERN Stack to develop and scale client projects. Managed database schemas in MongoDB, authored backend routes in Express, and integrated responsive React components.",
-        tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Architecture"],
+          "Completed a structured Full Stack Web Development internship at A2 Logic Group — a leading IT training & development institute in Jaipur. Built and deployed MERN stack applications, worked on React components, Node.js APIs, and MongoDB database schemas under industry mentorship.",
+        tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Stack"],
       },
       {
         period: "Jun 2022 - Jul 2022",
@@ -254,11 +256,8 @@ export default function Home() {
       { value: "10+", label: "Happy Clients", colorClass: "text-primary" },
       { value: "2+", label: "Years Experience", colorClass: "text-secondary" },
       { value: "24/7", label: "Support Available", colorClass: "text-foreground" },
-    ],
-    button: {
-      text: "Download CV ↓",
-      href: "#",
-    },
+    ]
+
   };
 
   const projectsData = {
@@ -268,48 +267,37 @@ export default function Home() {
     projects: [
       {
         id: "1",
-        category: "Community Platform",
+        category: "AI Platforms",
         featured: true,
-        title: "Shree Namdev Community",
-        description: "A full-stack community platform providing matrimonial, job listings, and business hubs. Features permission-based dashboards (Super Admin, Moderator, User), secure Google OAuth & JWT, and Cloudinary media uploading.",
-        image: "/images/projects/project1.png",
-        tags: ["Next.js", "Node.js", "Express", "MongoDB", "Tailwind"],
-        liveLink: "#",
-        githubLink: "https://github.com/kuldeepkumawat0023"
+        title: "AIJobFit — AI Recruitment Platform",
+        description: "An AI-powered precision hiring platform connecting job seekers and recruiters. Features AI-based resume matching, smart candidate scoring, role-fit analysis, and automated screening workflows.",
+        image: "/images/projects/aijobfit.png",
+        tags: ["Next.js", "Node.js", "MongoDB", "AI APIs", "Tailwind"],
+        liveLink: "https://aijobfit.artifactgeeks.com/",
+        githubLink: "#"
       },
       {
         id: "2",
-        category: "AI Tool",
+        category: "Web Applications",
         featured: true,
-        title: "AI Website Builder",
-        description: "An AI-powered generator that builds production-ready websites from text prompts. Users can edit output in a built-in code editor or request refinements via AI. Supports one-click deployment.",
-        image: "/images/projects/project2.png",
-        tags: ["Next.js", "Node.js", "Express", "MongoDB", "AI APIs"],
-        liveLink: "#",
-        githubLink: "https://github.com/kuldeepkumawat0023"
+        title: "ArtifactGeeks — Company Website",
+        description: "Full company website for ArtifactGeeks — a leading IT training institute in Jaipur. Features online/offline course listings, corporate training solutions, blog, career guides, and a student LMS portal.",
+        image: "/images/projects/artifactgeeks.png",
+        tags: ["Next.js", "Node.js", "Tailwind", "Vercel"],
+        liveLink: "https://artifactgeeks.com/",
+        githubLink: "#"
       },
       {
         id: "3",
-        category: "E-Commerce",
+        category: "Landing Pages",
         featured: false,
-        title: "Grocery Store Management",
-        description: "A full-stack store platform incorporating Role-Based Access Control (RBAC) for managing inventory, items, shopping cart sessions, and billing transactions. Built with secure JWT routes.",
-        image: "/images/projects/project3.png",
-        tags: ["Node.js", "Express", "MongoDB", "JWT", "RBAC", "EJS"],
-        liveLink: "#",
-        githubLink: "https://github.com/kuldeepkumawat0023"
+        title: "CRT Guide — Campus Recruitment Training",
+        description: "A comprehensive interactive digital guide for colleges, students & TPOs covering the complete Artifact Geeks CRT program. 90-day structure across 13 chapters: aptitude, DSA, communication, mock interviews.",
+        image: "/images/projects/crt.png",
+        tags: ["HTML5", "CSS3", "JavaScript", "Cloudflare Pages"],
+        liveLink: "https://dev.ag-crt.pages.dev/",
+        githubLink: "#"
       },
-      {
-        id: "4",
-        category: "AI Application",
-        featured: false,
-        title: "AI Image Generator",
-        description: "MERN stack application utilizing AI APIs to transform prompts into custom images. Features an OTP email validation system, password encryption, and dynamic user feeds.",
-        image: "/images/projects/project1.png",
-        tags: ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
-        liveLink: "#",
-        githubLink: "https://github.com/kuldeepkumawat0023"
-      }
     ],
     button: {
       text: "View All Projects →",

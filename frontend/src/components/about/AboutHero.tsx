@@ -246,6 +246,7 @@ export function AboutHero({ props }: { props: any }) {
                 <a
                   key={index}
                   href={btn.href || "#"}
+                  download={btn.download || undefined}
                   className={btn.variant === "outline"
                     ? "relative group px-8 py-3.5 rounded-full font-medium border-2 border-border hover:border-primary text-foreground flex items-center gap-2 transition-all overflow-hidden"
                     : "relative group inline-flex items-center justify-center px-8 py-3.5 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.8)] transition-all"

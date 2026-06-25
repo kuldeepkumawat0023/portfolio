@@ -78,12 +78,12 @@ const ProjectCard = ({ project }: { project: any }) => {
           />
 
           {/* Image Container with 3D Pop & Cyber Scanline */}
-          <div className="h-56 overflow-hidden relative bg-muted/30 group/img" style={{ transform: "translateZ(30px)" }}>
+          <div className="aspect-video w-full overflow-hidden relative bg-muted/30 group/img" style={{ transform: "translateZ(30px)" }}>
             <Image 
               src={project.image} 
               alt={project.title} 
               fill
-              className="object-cover transition-transform duration-700 group-hover/card:scale-110"
+              className="object-cover object-top transition-transform duration-700 group-hover/card:scale-110"
             />
             
             {/* Cyber Scan-line on Hover */}

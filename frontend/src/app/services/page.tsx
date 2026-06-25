@@ -32,17 +32,15 @@ export default function ServicesPage() {
         text: "Hire Me",
         icon: <FaArrowRight size={18} />,
         variant: "gradient",
-        href: "#"
+        href: "/contact"
       },
       {
         text: "View My Work",
         icon: <FaPlayCircle size={17} />,
         variant: "outline",
-        href: "#"
+        href: "/project"
       },
     ],
-    socialText: "Find Me On",
-    socialLinks: [],
     image: "/images/home/kulsakmt.png",
     imageAlt: "Developer Image",
     badges: [
@@ -190,9 +188,9 @@ export default function ServicesPage() {
     title: "Have a project in mind?",
     description: "I'm available for freelance work.",
     contacts: [
-      { icon: <FaEnvelope size={18} />, text: "hello@yourname.com" },
-      { icon: <FaPhoneAlt size={18} />, text: "+91 1234567890" },
-      { icon: <FaMapMarkerAlt size={18} />, text: "India" }
+      { icon: <FaEnvelope size={18} />, text: "kuldeepkumawat2383@gmail.com", link: "mailto:kuldeepkumawat2383@gmail.com" },
+      { icon: <FaPhoneAlt size={18} />, text: "+91 7296824595", link: "tel:+917296824595" },
+      { icon: <FaMapMarkerAlt size={18} />, text: "Kuchaman City, Rajasthan", link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan" }
     ],
     button: {
       text: "Let's Talk",

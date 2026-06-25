@@ -151,18 +151,6 @@ export function ExperienceSection({ props }: { props: any }) {
             title={props.title || <>My Professional <span className="text-primary">Journey</span></>} 
             className="mb-0"
           />
-          {props.button && (
-            <motion.a 
-              href={props.button.href || "#"} 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative group hidden md:inline-flex items-center justify-center px-8 py-3 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] transition-all"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 transition-transform duration-300" />
-              <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
-              <span className="relative z-10">{props.button.text}</span>
-            </motion.a>
-          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 relative z-20">
@@ -269,19 +257,6 @@ export function ExperienceSection({ props }: { props: any }) {
           </motion.div>
 
         </div>
-        
-        {/* Mobile Button */}
-        {props.button && (
-          <motion.a 
-            href={props.button.href || "#"} 
-            whileTap={{ scale: 0.95 }}
-            className="relative group md:hidden flex items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)] mt-12"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
-            <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
-            <span className="relative z-10">{props.button.text}</span>
-          </motion.a>
-        )}
       </div>
     </section>
   )
