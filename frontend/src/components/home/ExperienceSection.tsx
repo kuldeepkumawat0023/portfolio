@@ -208,7 +208,18 @@ export function ExperienceSection({ props }: { props: any }) {
                   <TiltGlassCard className="p-6 h-full flex flex-col bg-card/80">
                     <span className="text-sm font-bold text-primary mb-2 inline-block px-3 py-1 rounded-full bg-primary/10 w-fit">{exp.period}</span>
                     <h3 className="text-xl md:text-2xl font-black text-foreground mb-1">{exp.role}</h3>
-                    <span className="text-sm text-muted-foreground font-semibold mb-4 block">{exp.company}</span>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-sm text-muted-foreground font-semibold">{exp.company}</span>
+                      {exp.type && (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                          exp.type === "Full-Time"
+                            ? "bg-green-500/10 text-green-500 border-green-500/30"
+                            : "bg-blue-500/10 text-blue-400 border-blue-500/30"
+                        }`}>
+                          {exp.type}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-muted-foreground mb-6 flex-grow leading-relaxed">{exp.description}</p>
                     
                     {/* Staggered Magnetic Tags */}
