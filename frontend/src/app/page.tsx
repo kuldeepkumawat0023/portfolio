@@ -7,10 +7,10 @@ import { ServicesSection } from "@/components/home/ServicesSection"
 import { SEO } from "@/components/seo";
 import {
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
-  FaDownload, FaPlayCircle, FaLinkedin, FaTwitter, FaArrowRight, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt
+  FaDownload, FaPlayCircle, FaLinkedin, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight
 } from "react-icons/fa"
 import {
-  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman
+  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman, SiBootstrap
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
@@ -39,6 +39,8 @@ export default function Home() {
         text: "Download CV",
         icon: <FaDownload size={18} />,
         variant: "gradient",
+        href: "/pdf/Amit_Sharma_Resume.pdf",
+        download: "Kuldeep_Kumawat_Resume.pdf"
       },
       {
         text: "View My Work",
@@ -54,7 +56,7 @@ export default function Home() {
       { label: "Instagram", icon: <FaInstagram size={17} />, href: "https://www.instagram.com/itz_kuldeep_0023/" },
     ],
     image: "/images/home/kulsakmt.png",
-    imageAlt: "Full Stack Developer",
+    imageAlt: "Kuldeep Kumawat - Full Stack Developer",
     badges: [
       {
         label: "React",
@@ -135,30 +137,81 @@ export default function Home() {
   const technologiesData = {
     subtitle: "TECHNOLOGIES I WORK WITH",
     title: "My Skills",
+    categories: [
+      {
+        name: "Frontend",
+        emoji: "🧠",
+        description: "Building responsive, fast, and interactive user interfaces.",
+        technologies: [
+          { name: "HTML5", icon: <FaHtml5 size={36} />, color: "text-orange-500" },
+          { name: "CSS3", icon: <FaCss3Alt size={36} />, color: "text-blue-500" },
+          { name: "Bootstrap", icon: <FaBootstrap size={36} />, color: "text-purple-600" },
+          { name: "JavaScript", icon: <FaJsSquare size={36} />, color: "text-yellow-500" },
+          { name: "TypeScript", icon: <SiTypescript size={36} />, color: "text-blue-400" },
+          { name: "React.js", icon: <FaReact size={36} />, color: "text-cyan-400" },
+          { name: "Next.js", icon: <SiNextdotjs size={36} />, color: "text-foreground" },
+          { name: "Tailwind CSS", icon: <SiTailwindcss size={36} />, color: "text-cyan-500" },
+        ]
+      },
+      {
+        name: "Backend & Database",
+        emoji: "⚙️",
+        description: "Developing secure APIs, routing, and database schemas.",
+        technologies: [
+          { name: "Node.js", icon: <FaNodeJs size={36} />, color: "text-green-500" },
+          { name: "Express.js", icon: <SiExpress size={36} />, color: "text-foreground" },
+          { name: "MongoDB", icon: <SiMongodb size={36} />, color: "text-green-600" },
+          { name: "MySQL", icon: <SiMysql size={36} />, color: "text-blue-600" },
+        ]
+      },
+      {
+        name: "Tools & DevOps",
+        emoji: "🛠️",
+        description: "Managing environments, pipelines, and developer operations.",
+        technologies: [
+          { name: "Git", icon: <FaGitAlt size={36} />, color: "text-orange-600" },
+          { name: "GitHub", icon: <FaGithub size={36} />, color: "text-foreground" },
+          { name: "GitLab", icon: <SiGitlab size={36} />, color: "text-orange-500" },
+          { name: "Figma", icon: <FaFigma size={36} />, color: "text-pink-500" },
+          { name: "Postman", icon: <SiPostman size={36} />, color: "text-orange-500" },
+          { name: "VS Code", icon: <VscVscode size={36} />, color: "text-blue-500" },
+        ]
+      },
+      {
+        name: "AI & Automation",
+        emoji: "🤖",
+        description: "Leveraging advanced artificial intelligence systems.",
+        technologies: [
+          { name: "Gemini", icon: <FaRocket size={36} />, color: "text-blue-400" },
+          { name: "Antigravity", icon: <FaRocket size={36} />, color: "text-red-500" },
+        ]
+      }
+    ],
+    // Flat list for orbit view (all techs combined)
     technologies: [
       { name: "HTML5", icon: <FaHtml5 size={36} />, color: "text-orange-500" },
       { name: "CSS3", icon: <FaCss3Alt size={36} />, color: "text-blue-500" },
       { name: "Bootstrap", icon: <FaBootstrap size={36} />, color: "text-purple-600" },
       { name: "JavaScript", icon: <FaJsSquare size={36} />, color: "text-yellow-500" },
       { name: "TypeScript", icon: <SiTypescript size={36} />, color: "text-blue-400" },
-      { name: "React", icon: <FaReact size={36} />, color: "text-cyan-400" },
+      { name: "React.js", icon: <FaReact size={36} />, color: "text-cyan-400" },
       { name: "Next.js", icon: <SiNextdotjs size={36} />, color: "text-foreground" },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={36} />, color: "text-cyan-500" },
       { name: "Node.js", icon: <FaNodeJs size={36} />, color: "text-green-500" },
       { name: "Express.js", icon: <SiExpress size={36} />, color: "text-foreground" },
       { name: "MongoDB", icon: <SiMongodb size={36} />, color: "text-green-600" },
       { name: "MySQL", icon: <SiMysql size={36} />, color: "text-blue-600" },
-      { name: "Tailwind CSS", icon: <SiTailwindcss size={36} />, color: "text-cyan-500" },
       { name: "Git", icon: <FaGitAlt size={36} />, color: "text-orange-600" },
       { name: "GitHub", icon: <FaGithub size={36} />, color: "text-foreground" },
       { name: "GitLab", icon: <SiGitlab size={36} />, color: "text-orange-500" },
       { name: "Figma", icon: <FaFigma size={36} />, color: "text-pink-500" },
       { name: "Postman", icon: <SiPostman size={36} />, color: "text-orange-500" },
       { name: "VS Code", icon: <VscVscode size={36} />, color: "text-blue-500" },
-      { name: "Antigravity", icon: <FaRocket size={36} />, color: "text-red-500" },
+      { name: "Antigravity AI", icon: <FaRocket size={36} />, color: "text-red-500" },
     ],
     button: {
       text: "View All Skills →",
-      href: "/skills",
+      href: "/services",
     }
   };
 
@@ -171,28 +224,31 @@ export default function Home() {
     ),
     experiences: [
       {
-        period: "2023 - Present",
+        period: "Feb 2026 - Present",
         role: "Full Stack Developer",
-        company: "Freelancer",
+        company: "Artifact Geeks",
+        type: "Full-Time",
         description:
-          "Building scalable web apps using MERN stack. Working with clients worldwide to deliver solutions.",
-        tags: ["React", "Node.js", "MongoDB"],
+          "Architecting the frontend using Next.js for optimized SEO and performance. Implementing core backend features with Node.js, Express, MongoDB, and REST APIs. Responsible for full-stack deployment and scaling on Vercel and CapRover.",
+        tags: ["Next.js", "Node.js", "Express", "MongoDB", "REST APIs", "Vercel", "CapRover"],
       },
       {
-        period: "2022 - 2023",
-        role: "Frontend Developer",
-        company: "TechSolutions Inc.",
+        period: "Jun 2024 - Aug 2024",
+        role: "Full Stack Developer Intern",
+        company: "A2 Logic Group",
+        type: "Internship",
         description:
-          "Developed responsive UI with React and Tailwind CSS. Integrated REST APIs and optimized performance.",
-        tags: ["React", "Tailwind CSS", "API"],
+          "Completed a structured Full Stack Web Development internship at A2 Logic Group — a leading IT training & development institute in Jaipur. Built and deployed MERN stack applications, worked on React components, Node.js APIs, and MongoDB database schemas under industry mentorship.",
+        tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Stack"],
       },
       {
-        period: "2021 - 2022",
-        role: "Web Developer Intern",
-        company: "CodeCraft Labs",
+        period: "Jun 2022 - Jul 2022",
+        role: "Web Development Intern",
+        company: "Learn and Build",
+        type: "Internship",
         description:
-          "Worked on real-world projects and learned modern web technologies and best coding practices.",
-        tags: ["HTML", "CSS", "JavaScript"],
+          "Built responsive, cross-compatible pages using HTML5, CSS3, and JavaScript. Translated complex design wireframes into mobile-first frontend code.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
       },
     ],
     stats: [
@@ -200,11 +256,8 @@ export default function Home() {
       { value: "10+", label: "Happy Clients", colorClass: "text-primary" },
       { value: "2+", label: "Years Experience", colorClass: "text-secondary" },
       { value: "24/7", label: "Support Available", colorClass: "text-foreground" },
-    ],
-    button: {
-      text: "Download CV ↓",
-      href: "#",
-    },
+    ]
+
   };
 
   const projectsData = {
@@ -214,37 +267,37 @@ export default function Home() {
     projects: [
       {
         id: "1",
-        category: "Dashboard",
+        category: "AI Platforms",
         featured: true,
-        title: "Task Manager App",
-        description: "A full stack task management application with real-time updates, team collaboration and analytics.",
-        image: "/images/projects/project1.png",
-        tags: ["MERN Stack", "Socket.io", "Tailwind CSS"],
-        liveLink: "#",
+        title: "AIJobFit — AI Recruitment Platform",
+        description: "An AI-powered precision hiring platform connecting job seekers and recruiters. Features AI-based resume matching, smart candidate scoring, role-fit analysis, and automated screening workflows.",
+        image: "/images/projects/aijobfit.png",
+        tags: ["Next.js", "Node.js", "MongoDB", "AI APIs", "Tailwind"],
+        liveLink: "https://aijobfit.artifactgeeks.com/",
         githubLink: "#"
       },
       {
         id: "2",
-        category: "E-Commerce",
+        category: "Web Applications",
         featured: true,
-        title: "E-Commerce Website",
-        description: "A complete e-commerce solution with cart, checkout, payment gateway and admin panel.",
-        image: "/images/projects/project2.png",
-        tags: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-        liveLink: "#",
+        title: "ArtifactGeeks — Company Website",
+        description: "Full company website for ArtifactGeeks — a leading IT training institute in Jaipur. Features online/offline course listings, corporate training solutions, blog, career guides, and a student LMS portal.",
+        image: "/images/projects/artifactgeeks.png",
+        tags: ["Next.js", "Node.js", "Tailwind", "Vercel"],
+        liveLink: "https://artifactgeeks.com/",
         githubLink: "#"
       },
       {
         id: "3",
-        category: "Portfolio",
+        category: "Landing Pages",
         featured: false,
-        title: "Personal Portfolio",
-        description: "My personal portfolio website to showcase skills, projects and experience.",
-        image: "/images/projects/project3.png",
-        tags: ["React", "Framer Motion", "Tailwind CSS"],
-        liveLink: "#",
+        title: "CRT Guide — Campus Recruitment Training",
+        description: "A comprehensive interactive digital guide for colleges, students & TPOs covering the complete Artifact Geeks CRT program. 90-day structure across 13 chapters: aptitude, DSA, communication, mock interviews.",
+        image: "/images/projects/crt.png",
+        tags: ["HTML5", "CSS3", "JavaScript", "Cloudflare Pages"],
+        liveLink: "https://dev.ag-crt.pages.dev/",
         githubLink: "#"
-      }
+      },
     ],
     button: {
       text: "View All Projects →",
@@ -286,8 +339,8 @@ export default function Home() {
       },
       {
         title: "Database Design",
-        description: "Optimized & secure database design with MongoDB.",
-        icon: "s️",
+        description: "Optimized & secure database design with MongoDB & MySQL.",
+        icon: "🗄️",
         color: "bg-green-500/10 text-green-500 border-green-500/20",
       },
       {
@@ -303,27 +356,6 @@ export default function Home() {
     },
   };
 
-  const contactData = {
-    subtitle: "LET'S WORK TOGETHER",
-    title: "Have a project in mind?",
-    description: "I'm available for freelance work. Feel free to reach out and let's discuss your next project.",
-    contactDetails: [
-      { icon: <FaEnvelope size={20} className="text-white/80" />, value: "hello@yourname.com" },
-      { icon: <FaPhoneAlt size={20} className="text-white/80" />, value: "+91 12345 67890" },
-      { icon: <FaMapMarkerAlt size={20} className="text-white/80" />, value: "India" },
-    ],
-    form: {
-      nameLabel: "Your Name",
-      namePlaceholder: "John Doe",
-      emailLabel: "Your Email",
-      emailPlaceholder: "john@example.com",
-      subjectLabel: "Subject",
-      subjectPlaceholder: "Project Inquiry",
-      messageLabel: "Your Message",
-      messagePlaceholder: "Tell me about your project...",
-      buttonText: "Send Message 🚀"
-    }
-  };
   const ctaData = {
     subtitle: "LET'S WORK TOGETHER",
     title: "Have a project in mind?",

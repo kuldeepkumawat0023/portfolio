@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { Moon, Sun, Menu, X } from "lucide-react"
-import { Button } from "@/components/common/Button"
+import { FaGithub } from "react-icons/fa"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -74,9 +74,15 @@ export function Navbar() {
             </button>
           )}
 
-          <Button variant="gradient" className="hidden md:inline-flex rounded-full">
-            Hire Me <span className="ml-2">→</span>
-          </Button>
+          <a
+            href="https://github.com/kuldeepkumawat0023"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.7)] hover:scale-105"
+          >
+            <FaGithub size={18} />
+            Connect on GitHub
+          </a>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -105,9 +111,16 @@ export function Navbar() {
               </Link>
             )
           })}
-          <Button variant="gradient" className="w-full mt-2 rounded-full">
-            Hire Me →
-          </Button>
+          <a
+            href="https://github.com/kuldeepkumawat0023"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-3 w-full mt-2 rounded-full text-base font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.7)]"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <FaGithub size={20} />
+            Connect on GitHub
+          </a>
         </div>
       )}
     </header>

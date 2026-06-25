@@ -27,7 +27,7 @@ export default function ProjectsPage() {
         text: "View GitHub",
         icon: <FaGithub size={18} />,
         variant: "gradient",
-        href: "#"
+        href: "https://github.com/kuldeepkumawat0023"
       },
       {
         text: "Let's Work Together",
@@ -74,86 +74,52 @@ export default function ProjectsPage() {
   ];
 
   const projectsData = {
-    categories: ["All Projects", "Web Applications", "E-Commerce", "Dashboard", "Landing Pages", "Others"],
+    categories: ["All Projects", "Web Applications", "AI Platforms", "Community", "Landing Pages"],
     projects: [
       {
         id: "1",
-        category: "Dashboard",
+        category: "AI Platforms",
         featured: true,
-        title: "Task Manager App",
-        description: "A full stack task management application with real-time updates, team collaboration and analytics.",
-        image: "/images/projects/project1.png",
-        tags: ["MERN Stack", "Socket.io", "Tailwind CSS"],
-        liveLink: "#",
-        githubLink: "#"
+        title: "AIJobFit — AI Recruitment Platform",
+        description: "An AI-powered precision hiring platform connecting job seekers and recruiters. Features AI-based resume matching, smart candidate scoring, role-fit analysis, and automated screening workflows.",
+        image: "/images/projects/aijobfit.png",
+        tags: ["Next.js", "Node.js", "MongoDB", "AI APIs", "Tailwind"],
+        liveLink: "https://aijobfit.artifactgeeks.com/",
+        githubLink: "https://github.com/kuldeepkumawat0023"
       },
       {
         id: "2",
-        category: "E-Commerce",
+        category: "Web Applications",
         featured: true,
-        title: "E-Commerce Website",
-        description: "A complete e-commerce solution with cart, checkout, payment gateway and admin panel.",
-        image: "/images/projects/project2.png",
-        tags: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-        liveLink: "#",
-        githubLink: "#"
+        title: "ArtifactGeeks — Company Website",
+        description: "Full company website for ArtifactGeeks — a leading IT training institute in Jaipur. Features online/offline course listings, corporate training solutions, blog, career guides, and a student LMS portal.",
+        image: "/images/projects/artifactgeeks.png",
+        tags: ["Next.js", "Node.js", "Tailwind", "Vercel"],
+        liveLink: "https://artifactgeeks.com/",
+        githubLink: "https://github.com/kuldeepkumawat0023"
       },
       {
         id: "3",
-        category: "Portfolio",
+        category: "Landing Pages",
         featured: false,
-        title: "Personal Portfolio",
-        description: "My personal portfolio website to showcase skills, projects and experience.",
-        image: "/images/projects/project3.png",
-        tags: ["React", "Framer Motion", "Tailwind CSS"],
-        liveLink: "#",
-        githubLink: "#"
+        title: "CRT Guide — Campus Recruitment Training",
+        description: "A comprehensive interactive digital guide for colleges, students & TPOs covering the complete Artifact Geeks CRT program. 90-day structure across 13 chapters: aptitude, DSA, communication, mock interviews.",
+        image: "/images/projects/crt.png",
+        tags: ["HTML5", "CSS3", "JavaScript", "Cloudflare Pages"],
+        liveLink: "https://dev.ag-crt.pages.dev/",
+        githubLink: "https://github.com/kuldeepkumawat0023"
       },
       {
         id: "4",
-        category: "Web Application",
+        category: "Community",
         featured: false,
-        title: "Chat Application",
-        description: "Real-time chat application with private rooms and authentication.",
-        image: "/images/projects/project1.png",
-        tags: ["MERN Stack", "Socket.io", "JWT", "Tailwind CSS"],
-        liveLink: "#",
-        githubLink: "#"
-      },
-      {
-        id: "5",
-        category: "Web Application",
-        featured: false,
-        title: "Job Finder Platform",
-        description: "A platform to search and apply jobs with filters, authentication and dashboard.",
-        image: "/images/projects/project2.png",
-        tags: ["Next.js", "MongoDB", "Prisma", "Tailwind CSS"],
-        liveLink: "#",
-        githubLink: "#"
-      },
-      {
-        id: "6",
-        category: "Web Application",
-        featured: false,
-        title: "Weather App",
-        description: "Get real-time weather updates of any location with beautiful UI.",
-        image: "/images/projects/project3.png",
-        tags: ["JavaScript", "API", "HTML", "CSS"],
-        liveLink: "#",
-        githubLink: "#"
-      },
-      {
-        id: "7",
-        category: "Web Application",
-        featured: false,
-        title: "Weather App",
-        description: "Get real-time weather updates of any location with beautiful UI.",
-        image: "/images/projects/project3.png",
-        tags: ["JavaScript", "API", "HTML", "CSS"],
-        liveLink: "#",
-        githubLink: "#"
+        title: "Naamdev Community Platform",
+        description: "A full-stack digital sanctuary for the Namdev collective — empowering the community through unified matrimonial, career, and business hubs. Includes role-based dashboards, Google OAuth, JWT auth.",
+        image: "/images/projects/naamdev.png",
+        tags: ["Next.js", "Node.js", "MongoDB", "Tailwind", "Vercel"],
+        liveLink: "https://naamdev-community.vercel.app/",
+        githubLink: "https://github.com/kuldeepkumawat0023"
       }
-
     ],
     button: {
       text: "View More Projects",

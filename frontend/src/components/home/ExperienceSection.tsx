@@ -151,18 +151,6 @@ export function ExperienceSection({ props }: { props: any }) {
             title={props.title || <>My Professional <span className="text-primary">Journey</span></>} 
             className="mb-0"
           />
-          {props.button && (
-            <motion.a 
-              href={props.button.href || "#"} 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative group hidden md:inline-flex items-center justify-center px-8 py-3 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] transition-all"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 transition-transform duration-300" />
-              <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
-              <span className="relative z-10">{props.button.text}</span>
-            </motion.a>
-          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 relative z-20">
@@ -208,7 +196,18 @@ export function ExperienceSection({ props }: { props: any }) {
                   <TiltGlassCard className="p-6 h-full flex flex-col bg-card/80">
                     <span className="text-sm font-bold text-primary mb-2 inline-block px-3 py-1 rounded-full bg-primary/10 w-fit">{exp.period}</span>
                     <h3 className="text-xl md:text-2xl font-black text-foreground mb-1">{exp.role}</h3>
-                    <span className="text-sm text-muted-foreground font-semibold mb-4 block">{exp.company}</span>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-sm text-muted-foreground font-semibold">{exp.company}</span>
+                      {exp.type && (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                          exp.type === "Full-Time"
+                            ? "bg-green-500/10 text-green-500 border-green-500/30"
+                            : "bg-blue-500/10 text-blue-400 border-blue-500/30"
+                        }`}>
+                          {exp.type}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-muted-foreground mb-6 flex-grow leading-relaxed">{exp.description}</p>
                     
                     {/* Staggered Magnetic Tags */}
@@ -258,19 +257,6 @@ export function ExperienceSection({ props }: { props: any }) {
           </motion.div>
 
         </div>
-        
-        {/* Mobile Button */}
-        {props.button && (
-          <motion.a 
-            href={props.button.href || "#"} 
-            whileTap={{ scale: 0.95 }}
-            className="relative group md:hidden flex items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)] mt-12"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
-            <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
-            <span className="relative z-10">{props.button.text}</span>
-          </motion.a>
-        )}
       </div>
     </section>
   )

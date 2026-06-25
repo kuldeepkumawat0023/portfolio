@@ -94,10 +94,6 @@ export default function ContactPage() {
     title: "Have a project in mind?",
     description: "I'm available for freelance work.",
     contacts: [], // Overriding default contacts as design just has a button
-    button: {
-      text: "Let's Talk",
-      icon: <FaArrowRight size={20} className="text-primary" />
-    }
   };
 
   return (

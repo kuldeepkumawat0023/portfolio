@@ -189,12 +189,12 @@ export function ProjectsGrid({ props }: { props: any }) {
               >
                 <Tilt3DCard className="group cursor-pointer">
                   {/* Image Container */}
-                  <div className="h-56 overflow-hidden relative bg-muted/30" style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }}>
+                  <div className="aspect-video w-full overflow-hidden relative bg-muted/30" style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }}>
                     <Image 
                       src={project.image} 
                       alt={project.title} 
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     />
                     
                     {/* Featured Badge */}

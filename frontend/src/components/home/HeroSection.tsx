@@ -319,7 +319,7 @@ export function HeroSection({ props }: { props: any }) {
                         asChild={!!btn.href}
                       >
                         {btn.href ? (
-                          <a href={btn.href}>
+                          <a href={btn.href} download={btn.download || undefined}>
                             {/* Ripple overlay */}
                             <span className="absolute inset-0 w-full h-full bg-white/20 scale-0 group-active:scale-150 rounded-full transition-transform duration-500 ease-out origin-center" />
                             <span className="relative z-10">{btn.text}</span>

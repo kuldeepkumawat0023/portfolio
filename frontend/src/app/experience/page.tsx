@@ -6,9 +6,9 @@ import { ExperienceSkills } from "@/components/experience/ExperienceSkills"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
 import {
-  FaDownload, FaArrowRight, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaReact, FaNodeJs, FaBriefcase, FaCode, FaUser, FaLaptopCode, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub, FaFigma, FaDocker, FaChevronUp, FaUsers, FaHeart, FaRocket, FaClock, FaCheckCircle, FaHeadphones
+  FaDownload, FaArrowRight, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaReact, FaNodeJs, FaBriefcase, FaCode, FaUser, FaLaptopCode, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub, FaFigma, FaDocker, FaChevronUp, FaUsers, FaHeart, FaRocket, FaClock, FaCheckCircle, FaHeadphones, FaLinkedin, FaInstagram
 } from "react-icons/fa"
-import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiPostman, SiFirebase, SiNetlify, SiVercel } from "react-icons/si"
+import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiPostman, SiFirebase, SiNetlify, SiVercel, SiGitlab } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 
 export const metadata = SEO({
@@ -29,21 +29,22 @@ export default function ExperiencePage() {
         text: "Download CV",
         icon: <FaDownload size={16} />,
         variant: "gradient",
-        href: "#"
+        href: "/pdf/Amit_Sharma_Resume.pdf",
+        download: "Kuldeep_Kumawat_Resume.pdf"
       },
       {
         text: "Let's Work Together",
         icon: <FaArrowRight size={16} />,
         variant: "outline",
-        href: "#"
+        href: "/contact"
       },
     ],
     socialText: "Connect with me",
     socialLinks: [
-      { icon: <FaGithub size={18} />, href: "#", label: "GitHub" },
-      { icon: <FaLaptopCode size={18} />, href: "#", label: "LinkedIn" },
-      { icon: <FaUser size={18} />, href: "#", label: "Twitter" },
-      { icon: <FaCode size={18} />, href: "#", label: "Instagram" }
+      { icon: <FaGithub size={18} />, href: "https://github.com/kuldeepkumawat0023", label: "GitHub" },
+      { icon: <FaLinkedin size={18} />, href: "https://www.linkedin.com/in/kuldeep-kumawat-23284236a/", label: "LinkedIn" },
+      { icon: <SiGitlab size={18} />, href: "https://gitlab.com/kuldeepkumawat2383", label: "GitLab" },
+      { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/itz_kuldeep_0023/", label: "Instagram" }
     ],
     image: "/images/home/kuldeepkmt.png",
     imageAlt: "Developer Image",
@@ -80,36 +81,28 @@ export default function ExperiencePage() {
     title: <>Where I've <span className="text-primary">Worked & Grown</span></>,
     experiences: [
       {
-        period: "2023 - Present",
-        role: "Full Stack Developer (Freelance)",
-        company: "Self-Employed",
-        description: "Building modern web applications using MERN stack. Working with clients worldwide to deliver scalable and user-friendly solutions.",
+        period: "Feb 2026 - Present",
+        role: "Full Stack Developer",
+        company: "Artifact Geeks",
+        description: "Architecting the frontend using Next.js for optimized SEO and performance. Implementing core backend features with Node.js, Express, MongoDB, and REST APIs. Responsible for full-stack deployment and scaling on Vercel and CapRover.",
         icon: <FaBriefcase size={20} />,
-        tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+        tags: ["Next.js", "Node.js", "Express", "MongoDB", "REST APIs", "Vercel", "CapRover"]
       },
       {
-        period: "2022 - 2023",
-        role: "Web Developer Intern",
-        company: "CodeCraft Labs",
-        description: "Worked on real-world projects, implemented UI designs and integrated APIs. Gained hands-on experience in modern web technologies.",
-        icon: <FaLaptopCode size={20} />,
-        tags: ["HTML", "CSS", "JavaScript", "PHP"]
-      },
-      {
-        period: "2021 - 2023",
-        role: "Frontend Developer",
-        company: "TechSolutions Inc.",
-        description: "Developed responsive and interactive user interfaces using React, Redux and Tailwind CSS. Improved performance and user experience.",
+        period: "Jun 2024 - Aug 2024",
+        role: "Full Stack Developer Intern",
+        company: "A2 Logic Group",
+        description: "Completed a structured Full Stack Web Development internship at A2 Logic Group — a leading IT training & development institute in Jaipur. Built and deployed MERN stack applications, worked on React components, Node.js APIs, and MongoDB database schemas under industry mentorship.",
         icon: <FaCode size={20} />,
-        tags: ["React", "Redux", "Tailwind CSS", "JavaScript"]
+        tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Stack"]
       },
       {
-        period: "2020 - 2021",
-        role: "Junior Web Developer",
-        company: "Digital Web Agency",
-        description: "Assisted in building and maintaining websites for clients. Collaborated with designers and backend developers to ship projects.",
-        icon: <FaUser size={20} />,
-        tags: ["HTML", "CSS", "JavaScript", "jQuery"]
+        period: "Jun 2022 - Jul 2022",
+        role: "Web Development Intern",
+        company: "Learn and Build",
+        description: "Built responsive, cross-compatible pages using HTML5, CSS3, and JavaScript. Translated complex design wireframes into mobile-first frontend code.",
+        icon: <FaLaptopCode size={20} />,
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
       }
     ]
   };
