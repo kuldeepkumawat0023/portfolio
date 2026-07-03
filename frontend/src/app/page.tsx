@@ -301,7 +301,7 @@ export default function Home() {
     ],
     button: {
       text: "View All Projects →",
-      href: "/projects",
+      href: "/project",
     },
   };
 

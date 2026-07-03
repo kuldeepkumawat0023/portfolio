@@ -4,16 +4,16 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Moon, Sun, Menu, X, Home, User, Layers, Code, Briefcase, Mail } from "lucide-react"
 import { FaGithub } from "react-icons/fa"
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Projects", href: "/project" },
-  { name: "Experience", href: "/experience" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "/", icon: Home, color: "text-blue-500", bg: "bg-blue-500/10" },
+  { name: "About", href: "/about", icon: User, color: "text-purple-500", bg: "bg-purple-500/10" },
+  { name: "Services", href: "/services", icon: Layers, color: "text-pink-500", bg: "bg-pink-500/10" },
+  { name: "Projects", href: "/project", icon: Code, color: "text-orange-500", bg: "bg-orange-500/10" },
+  { name: "Experience", href: "/experience", icon: Briefcase, color: "text-green-500", bg: "bg-green-500/10" },
+  { name: "Contact", href: "/contact", icon: Mail, color: "text-rose-500", bg: "bg-rose-500/10" },
 ]
 
 export function Navbar() {
@@ -34,7 +34,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card border-b border-border shadow-sm ${isScrolled ? "py-3" : "py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/80 backdrop-blur-md border-b border-border shadow-sm ${isScrolled ? "py-3" : "py-5"
         }`}
     >
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full flex items-center justify-between">
@@ -95,19 +95,28 @@ export function Navbar() {
       </div>
 
       {/* Mobile Nav */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-card border-t border-border py-4 px-4 flex flex-col gap-4 shadow-xl">
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-2xl transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? "max-h-[500px] py-6 opacity-100 rounded-b-3xl" : "max-h-0 py-0 opacity-0"
+          }`}
+      >
+        <div className="flex flex-col gap-2 px-6">
           {navLinks.map((link) => {
             const isActive = pathname === link.href
+            const Icon = link.icon
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-base font-medium py-2 border-b border-outline-variant/20 ${isActive ? "text-primary" : "text-foreground"
+                className={`flex items-center gap-4 py-3 px-4 rounded-2xl transition-all duration-200 ${isActive
+                    ? "bg-accent text-primary shadow-sm"
+                    : "text-foreground hover:bg-accent/50"
                   }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {link.name}
+                <div className={`p-2 rounded-xl ${isActive ? link.bg : "bg-muted"} transition-colors`}>
+                  <Icon size={20} className={isActive ? link.color : "text-muted-foreground"} />
+                </div>
+                <span className="text-base font-semibold">{link.name}</span>
               </Link>
             )
           })}
@@ -115,14 +124,14 @@ export function Navbar() {
             href="https://github.com/kuldeepkumawat0023"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-3 w-full mt-2 rounded-full text-base font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.7)]"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-3.5 w-full mt-4 rounded-xl text-base font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)]"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <FaGithub size={20} />
             Connect on GitHub
           </a>
         </div>
-      )}
+      </div>
     </header>
   )
 }
