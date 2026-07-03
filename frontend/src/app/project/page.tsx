@@ -119,6 +119,17 @@ export default function ProjectsPage() {
         tags: ["Next.js", "Node.js", "MongoDB", "Tailwind", "Vercel"],
         liveLink: "https://naamdev-community.vercel.app/",
         githubLink: "https://github.com/kuldeepkumawat0023"
+      },
+      {
+        id: "5",
+        category: "Web Applications",
+        featured: true,
+        title: "Developer Portfolio — Kuldeep Kumawat",
+        description: "A modern, fully responsive personal developer portfolio website built with Next.js, Tailwind CSS and Framer Motion. Features animated hero, skills showcase, project gallery, experience timeline, services & contact sections.",
+        image: "/images/projects/portfolio.png",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+        liveLink: "https://kuldeep-kmt-portfolio.vercel.app/",
+        githubLink: "https://github.com/kuldeepkumawat0023"
       }
     ],
     button: {
