@@ -24,7 +24,7 @@
 
 A **modern, fully responsive personal developer portfolio** website built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. It showcases my skills, experience, and projects in a clean, animated, and professional design.
 
-🔗 **Live:** [kuldeep-kmt-portfolio.vercel.app](https://kuldeep-kmt-portfolio.vercel.app/)
+🔗 **Live:** <a href="https://kuldeep-kmt-portfolio.vercel.app/" target="_blank">kuldeep-kmt-portfolio.vercel.app</a>
 
 ---
 
@@ -107,7 +107,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser.
 
 ### Build for Production
 
@@ -132,11 +132,11 @@ npm run build
 
 ## 🌟 Projects Showcased
 
-- **[AIJobFit](https://aijobfit.artifactgeeks.com/)** — AI Recruitment Platform
-- **[ArtifactGeeks](https://artifactgeeks.com/)** — Company Website
-- **[CRT Guide](https://dev.ag-crt.pages.dev/)** — Campus Recruitment Training Guide
-- **[Naamdev Community](https://naamdev-community.vercel.app/)** — Community Platform
-- **[Developer Portfolio](https://kuldeep-kmt-portfolio.vercel.app/)** — This Portfolio
+- **<a href="https://aijobfit.artifactgeeks.com/" target="_blank">AIJobFit</a>** — AI Recruitment Platform
+- **<a href="https://artifactgeeks.com/" target="_blank">ArtifactGeeks</a>** — Company Website
+- **<a href="https://dev.ag-crt.pages.dev/" target="_blank">CRT Guide</a>** — Campus Recruitment Training Guide
+- **<a href="https://naamdev-community.vercel.app/" target="_blank">Naamdev Community</a>** — Community Platform
+- **<a href="https://kuldeep-kmt-portfolio.vercel.app/" target="_blank">Developer Portfolio</a>** — This Portfolio
 
 ---
 
@@ -144,9 +144,9 @@ npm run build
 
 | Platform | Link |
 |----------|------|
-| 📧 Email | [kuldeepkumawat2383@gmail.com](mailto:kuldeepkumawat2383@gmail.com) |
-| 💼 LinkedIn | [kuldeep-kumawat-23284236a](https://www.linkedin.com/in/kuldeep-kumawat-23284236a/) |
-| 🐙 GitHub | [kuldeepkumawat0023](https://github.com/kuldeepkumawat0023) |
+| 📧 Email | <a href="mailto:kuldeepkumawat2383@gmail.com" target="_blank">kuldeepkumawat2383@gmail.com</a> |
+| 💼 LinkedIn | <a href="https://www.linkedin.com/in/kuldeep-kumawat-23284236a/" target="_blank">kuldeep-kumawat-23284236a</a> |
+| 🐙 GitHub | <a href="https://github.com/kuldeepkumawat0023" target="_blank">kuldeepkumawat0023</a> |
 | 📍 Location | Kuchaman City, Rajasthan, India |
 
 ---
