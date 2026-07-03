@@ -1,6 +1,6 @@
 const BASE_URL =
     process.env.NEXT_PUBLIC_APP_URL ||
-    "https://portfolio-rouge-six-pvlkuo2ijn.vercel.app";
+    "https://kuldeep-kmt-portfolio.vercel.app";
 
 export const defaultSEO = {
     siteName: "Kuldeep Kumawat",
@@ -8,7 +8,6 @@ export const defaultSEO = {
     author: "Kuldeep Kumawat",
 
     title: "Kuldeep Kumawat | Full Stack Developer",
-
     description:
         "Full Stack Developer specializing in React.js, Next.js, Node.js, Express.js, MongoDB and MySQL.",
 
