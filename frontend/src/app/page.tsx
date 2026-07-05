@@ -39,7 +39,7 @@ export default function Home() {
         text: "Download CV",
         icon: <FaDownload size={18} />,
         variant: "gradient",
-        href: "/pdf/Amit_Sharma_Resume.pdf",
+        href: "/pdf/Kuldeep_Kumawat_Resume.pdf",
         download: "Kuldeep_Kumawat_Resume.pdf"
       },
       {
