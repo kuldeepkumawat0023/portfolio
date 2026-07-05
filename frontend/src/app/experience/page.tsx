@@ -29,7 +29,7 @@ export default function ExperiencePage() {
         text: "Download CV",
         icon: <FaDownload size={16} />,
         variant: "gradient",
-        href: "/pdf/Amit_Sharma_Resume.pdf",
+        href: "/pdf/Kuldeep_Kumawat_Resume.pdf",
         download: "Kuldeep_Kumawat_Resume.pdf"
       },
       {

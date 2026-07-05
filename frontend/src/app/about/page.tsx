@@ -43,7 +43,7 @@ export default function AboutPage() {
       { label: "Freelance:", value: "Available", icon: <FaBriefcase size={18} className="text-primary" /> },
     ],
     buttons: [
-      { text: "Download CV", href: "/pdf/Amit_Sharma_Resume.pdf", download: "Kuldeep_Kumawat_Resume.pdf", variant: "gradient", icon: <FaDownload size={18} /> },
+      { text: "Download CV", href: "/pdf/Kuldeep_Kumawat_Resume.pdf", download: "Kuldeep_Kumawat_Resume.pdf", variant: "gradient", icon: <FaDownload size={18} /> },
       { text: "Let's Talk", href: "#", variant: "outline", icon: <FaPlayCircle size={18} className="text-primary" /> }
     ]
   };
