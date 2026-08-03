@@ -1,6 +1,7 @@
 import { SEO } from "@/components/seo";
-import { HeroSection } from "@/components/home/HeroSection"
+import { ContactHero } from "@/components/contact/ContactHero"
 import { ContactForm } from "@/components/contact/ContactForm"
+
 import { ContactInfo } from "@/components/contact/ContactInfo"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
@@ -73,9 +74,7 @@ export default function ContactPage() {
 
   return (
     <main className="pt-10">
-      <HeroSection props={heroData} />
-
-      {/* The overlapping wrapper for Form and Info */}
+      <ContactHero props={heroData} />
       <div className="relative z-20">
         <ContactForm />
         <ContactInfo props={contactInfoData} />
@@ -84,6 +83,7 @@ export default function ContactPage() {
     </main>
   )
 }
+
 
 // Temporary inline import for the CTA button icon since it was missed at the top
 import { FaArrowRight } from "react-icons/fa"

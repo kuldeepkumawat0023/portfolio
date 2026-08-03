@@ -65,7 +65,8 @@ const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode
       className={`relative group/spotlight h-full w-full ${className}`}
     >
       <motion.div className="absolute -inset-[1px] rounded-[24px] bg-primary/30 opacity-0 group-hover/spotlight:opacity-100 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div className="relative z-10 h-full rounded-[23px] bg-card/80 backdrop-blur-md border border-border shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
         {children}
@@ -144,8 +145,9 @@ export function ContactForm() {
 
                   {/* Submit Button */}
                   <div className="mt-2">
-                    <button className="relative w-full py-4 rounded-xl font-bold text-white overflow-hidden flex items-center justify-center gap-2 group/btn shadow-lg shadow-orange-500/20">
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 transition-transform duration-300 group-hover/btn:scale-105" />
+                    <button className="relative w-full py-4 rounded-xl font-bold text-white overflow-hidden flex items-center justify-center gap-2 group/btn shadow-lg shadow-teal-500/20">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578] transition-transform duration-300 group-hover/btn:scale-105" />
+
                       <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%] animate-[glare_1s_ease-in-out_infinite] z-0" />
                       <span className="relative z-10 flex items-center gap-2 drop-shadow-md">
                         Send Message
@@ -182,26 +184,32 @@ export function ContactForm() {
                   <div className="absolute inset-0 bg-primary/5 pointer-events-none z-10 transition-opacity group-hover/map:opacity-0"></div>
                   
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112046.73278564223!2d77.12648434455855!3d28.643642340331006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    src="https://maps.google.com/maps?q=Sunder+Vihar+Colony,+Vivek+Vihar,+Jaipur,+Rajasthan&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
                     allowFullScreen={false} 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0 z-0 grayscale-[50%] contrast-125 dark:invert dark:grayscale dark:contrast-100 transition-all duration-500 group-hover/map:grayscale-0 group-hover/map:contrast-100 group-hover/map:dark:invert-0"
+                    className="absolute inset-0 z-0 grayscale-[40%] contrast-125 dark:invert dark:grayscale dark:contrast-100 transition-all duration-500 group-hover/map:grayscale-0 group-hover/map:contrast-100 group-hover/map:dark:invert-0"
                   ></iframe>
 
                   {/* Map Info Card */}
                   <div className="absolute top-6 left-6 z-20 transition-transform duration-500 group-hover/map:scale-105 group-hover/map:-translate-y-2">
                     <div className="p-4 py-3 bg-white/90 dark:bg-card/90 backdrop-blur-md rounded-xl shadow-lg border border-border/50">
-                      <h4 className="font-bold text-foreground text-sm">India</h4>
-                      <p className="text-xs text-muted-foreground mt-0.5">Available for freelance work</p>
-                      <a href="#" className="text-xs font-semibold text-primary mt-2 inline-block hover:underline">
+                      <h4 className="font-bold text-foreground text-sm">Jaipur, Rajasthan</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">Sunder Vihar Colony, Vivek Vihar</p>
+                      <a 
+                        href="https://maps.google.com/?q=Sunder+Vihar+Colony+Vivek+Vihar+Jaipur+Rajasthan" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-xs font-semibold text-primary mt-2 inline-block hover:underline"
+                      >
                         View larger map
                       </a>
                     </div>
                   </div>
+
                 </div>
               </div>
             </SpotlightCard>

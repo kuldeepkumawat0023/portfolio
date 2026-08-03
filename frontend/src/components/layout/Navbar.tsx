@@ -11,9 +11,9 @@ const navLinks = [
   { name: "Home", href: "/", icon: Home, color: "text-blue-500", bg: "bg-blue-500/10" },
   { name: "About", href: "/about", icon: User, color: "text-purple-500", bg: "bg-purple-500/10" },
   { name: "Services", href: "/services", icon: Layers, color: "text-pink-500", bg: "bg-pink-500/10" },
-  { name: "Projects", href: "/project", icon: Code, color: "text-orange-500", bg: "bg-orange-500/10" },
-  { name: "Experience", href: "/experience", icon: Briefcase, color: "text-green-500", bg: "bg-green-500/10" },
-  { name: "Contact", href: "/contact", icon: Mail, color: "text-rose-500", bg: "bg-rose-500/10" },
+  { name: "Projects", href: "/project", icon: Code, color: "text-primary", bg: "bg-primary/10" },
+  { name: "Experience", href: "/experience", icon: Briefcase, color: "text-primary", bg: "bg-primary/10" },
+  { name: "Contact", href: "/contact", icon: Mail, color: "text-teal-400", bg: "bg-[#48A293]/10" },
 ]
 
 export function Navbar() {
@@ -78,7 +78,7 @@ export function Navbar() {
             href="https://github.com/kuldeepkumawat0023"
             target="_blank"
             rel="noreferrer"
-            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.7)] hover:scale-105"
+            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#48A293] to-[#368578] text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(72,162,147,0.4)] hover:shadow-[0_0_25px_rgba(72,162,147,0.6)] hover:scale-105"
           >
             <FaGithub size={18} />
             Connect on GitHub
@@ -124,7 +124,8 @@ export function Navbar() {
             href="https://github.com/kuldeepkumawat0023"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white px-5 py-3.5 w-full mt-4 rounded-xl text-base font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)]"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#48A293] to-[#368578] text-white px-5 py-3.5 w-full mt-4 rounded-xl text-base font-bold transition-all shadow-[0_0_15px_rgba(72,162,147,0.3)] hover:shadow-[0_0_25px_rgba(72,162,147,0.5)]"
+
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <FaGithub size={20} />

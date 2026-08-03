@@ -188,14 +188,15 @@ export default function Home() {
         tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Stack"],
       },
       {
-        period: "Jun 2022 - Jul 2022",
-        role: "Web Development Intern",
-        company: "Learn and Build",
-        type: "Internship",
+        period: "Sep 2024 - Jan 2026",
+        role: "Freelance Web Developer",
+        company: "Independent Projects",
+        type: "Freelance",
         description:
-          "Built responsive, cross-compatible pages using HTML5, CSS3, and JavaScript. Translated complex design wireframes into mobile-first frontend code.",
-        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+          "Designed and built custom responsive web applications, client landing pages, and RESTful API integrations for various freelance projects using React.js, Node.js, and Tailwind CSS.",
+        tags: ["React.js", "Node.js", "Express", "Tailwind CSS", "REST APIs"],
       },
+
     ],
     stats: [
       { value: "20+", label: "Projects Completed", colorClass: "text-foreground" },
@@ -319,8 +320,9 @@ export default function Home() {
       },
       {
         icon: <FaMapMarkerAlt size={18} />,
-        text: "Kuchaman City, Rajasthan",
-        link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
+        text: "Sunder Vihar Colony, Vivek Vihar, Jaipur",
+        link: "https://maps.google.com/?q=Sunder+Vihar+Colony+Vivek+Vihar+Jaipur+Rajasthan",
+
       },
     ],
     button: {

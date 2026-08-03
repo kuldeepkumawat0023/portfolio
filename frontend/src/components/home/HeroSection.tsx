@@ -45,8 +45,9 @@ const HoverText = ({ text, className, isGradient }: { text: string, className?: 
               key={charIndex}
               whileHover={{ y: -12, scale: 1.15 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className={`inline-block origin-bottom ${isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500 py-2" : ""
+              className={`inline-block origin-bottom ${isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578] py-2" : ""
                 }`}
+
             >
               {char}
             </motion.span>
@@ -173,21 +174,21 @@ export function HeroSection({ props }: { props: any }) {
           className="absolute inset-0 rounded-l-full"
           style={{
             background:
-              "linear-gradient(135deg, #FFFFFF 0%, #FFF8F4 35%, #FFF1EA 70%, #FFE8DD 100%)",
+              "linear-gradient(135deg, #FFFFFF 0%, #F4FBF9 35%, #EBF7F5 70%, #DEF2EE 100%)",
           }}
         />
       </motion.div>
 
-      {/* ── Dark Mode: deep navy / orange-tint right side ── */}
+      {/* ── Dark Mode: deep navy / teal-tint right side ── */}
       <motion.div style={{ x: bgX, y: bgY }} className="absolute inset-y-0 right-0 w-[25%] hidden dark:block pointer-events-none z-0">
         <div
           className="absolute inset-0 rounded-l-full"
-          style={{ background: "linear-gradient(135deg, rgba(251,115,0,0.08) 0%, rgba(251,115,0,0.04) 60%, transparent 100%)" }}
+          style={{ background: "linear-gradient(135deg, rgba(72,162,147,0.08) 0%, rgba(72,162,147,0.04) 60%, transparent 100%)" }}
         />
       </motion.div>
 
       {/* ── Glow orb top-right (light) ── */}
-      <div className="absolute top-0 right-0 w-[220px] h-[220px] rounded-full bg-orange-100/60 dark:bg-primary/5 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-0 right-0 w-[220px] h-[220px] rounded-full bg-teal-100/50 dark:bg-primary/5 blur-[100px] pointer-events-none z-0" />
 
       {/* ── Animated floating particles with Parallax ── */}
       <motion.div
@@ -199,7 +200,7 @@ export function HeroSection({ props }: { props: any }) {
 
       <motion.div
         style={{ x: particle2X, y: particle2Y }}
-        className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-orange-300/60 dark:bg-orange-400/40 pointer-events-none z-0"
+        className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-teal-400/50 dark:bg-teal-500/40 pointer-events-none z-0"
       >
         <motion.div animate={{ scale: [1, 2, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ repeat: Infinity, duration: 3, delay: 1 }} className="w-full h-full rounded-full" />
       </motion.div>
@@ -214,8 +215,9 @@ export function HeroSection({ props }: { props: any }) {
       {/* ── Bottom-right rotated diamond with Parallax ── */}
       <motion.div
         style={{ x: particle1X, y: particle1Y }}
-        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
+        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-[#48A293] to-[#368578] dark:from-[#48A293]/80 dark:to-[#2B6A60] rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
       />
+
 
       {/* ── Animated Floating Tech Skill Badges (Bottom to Top) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>

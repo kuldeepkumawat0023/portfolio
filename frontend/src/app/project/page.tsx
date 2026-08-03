@@ -1,6 +1,7 @@
 import { SEO } from "@/components/seo"
-import { HeroSection } from "@/components/home/HeroSection"
+import { ProjectHero } from "@/components/project/ProjectHero"
 import { AboutStats } from "@/components/about/AboutStats"
+
 import { ProjectsGrid } from "@/components/project/ProjectsGrid"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
@@ -139,16 +140,11 @@ export default function ProjectsPage() {
   return (
     <>
       <main className="pt-10">
-        <div className="relative">
-          <HeroSection props={heroData} />
-          <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-20 -mt-20">
-            <AboutStats props={{ stats: statsData }} />
-          </div>
-        </div>
-
+        <ProjectHero props={heroData} />
         <ProjectsGrid props={projectsData} />
         <ServicesCTA props={ctaData} />
       </main>
+
     </>
   )
 }

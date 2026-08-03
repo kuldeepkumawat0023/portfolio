@@ -39,7 +39,8 @@ export default function AboutPage() {
       { label: "Phone:", value: "+91 7296824595", icon: <FaPhoneAlt size={18} className="text-primary" /> },
       { label: "Email:", value: "kuldeepkumawat2383@gmail.com", icon: <FaEnvelope size={18} className="text-primary" /> },
       { label: "Experience:", value: "2+ Years", icon: <FaClock size={18} className="text-primary" /> },
-      { label: "Location:", value: "Kuchaman City, Rajasthan", icon: <FaMapMarkerAlt size={18} className="text-primary" /> },
+      { label: "Location:", value: "Sunder Vihar Colony, Vivek Vihar, Jaipur", icon: <FaMapMarkerAlt size={18} className="text-primary" /> },
+
       { label: "Freelance:", value: "Available", icon: <FaBriefcase size={18} className="text-primary" /> },
     ],
     buttons: [
@@ -205,8 +206,9 @@ export default function AboutPage() {
       },
       {
         icon: <FaMapMarkerAlt size={18} />,
-        text: "Kuchaman City, Rajasthan",
-        link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan",
+        text: "Sunder Vihar Colony, Vivek Vihar, Jaipur",
+        link: "https://maps.google.com/?q=Sunder+Vihar+Colony+Vivek+Vihar+Jaipur+Rajasthan",
+
       },
     ],
     button: {

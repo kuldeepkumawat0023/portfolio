@@ -58,9 +58,10 @@ function MagneticSubmitButton({ text }: { text: string }) {
       whileTap={{ scale: 0.95 }}
       style={{ x: springX, y: springY }}
       type="submit"
-      className="relative group overflow-hidden px-8 py-4 rounded-xl font-bold mt-4 shadow-lg w-full md:w-auto self-start text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:shadow-[0_0_25px_rgba(249,115,22,0.6)] z-20"
+      className="relative group overflow-hidden px-8 py-4 rounded-xl font-bold mt-4 shadow-lg w-full md:w-auto self-start text-white shadow-[0_0_20px_rgba(72,162,147,0.3)] transition-all hover:shadow-[0_0_25px_rgba(72,162,147,0.6)] z-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578]" />
+
       <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
       <span className="relative z-10 flex items-center justify-center gap-2">
         {text}
@@ -136,7 +137,7 @@ export function ContactSection({ props }: { props: any }) {
                 background: useMotionTemplate`
                   radial-gradient(
                     600px circle at ${mouseX}px ${mouseY}px,
-                    rgba(249, 115, 22, 0.4),
+                    rgba(72, 162, 147, 0.4),
                     transparent 80%
                   )
                 `
@@ -149,7 +150,8 @@ export function ContactSection({ props }: { props: any }) {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
               
               {/* ── LEFT PANEL (INFO) ── */}
-              <div className="lg:col-span-2 bg-gradient-to-br from-orange-500 to-amber-600 p-10 md:p-12 text-white relative overflow-hidden group/info">
+              <div className="lg:col-span-2 bg-gradient-to-br from-[#48A293] to-[#368578] p-10 md:p-12 text-white relative overflow-hidden group/info">
+
                 {/* Cyber Scan-line on Hover */}
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-white/20 to-transparent -translate-y-full group-hover/info:animate-scanline opacity-0 group-hover/info:opacity-100 pointer-events-none mix-blend-overlay z-0" />
                 
@@ -198,7 +200,7 @@ export function ContactSection({ props }: { props: any }) {
                       <input 
                         type="text" 
                         id="name"
-                        className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:shadow-[0_0_15px_rgba(249,115,22,0.15)] transition-all" 
+                        className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-[0_0_15px_rgba(72,162,147,0.15)] transition-all" 
                         placeholder={props.form?.namePlaceholder || "John Doe"}
                       />
                     </motion.div>
@@ -207,7 +209,7 @@ export function ContactSection({ props }: { props: any }) {
                       <input 
                         type="email" 
                         id="email"
-                        className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:shadow-[0_0_15px_rgba(249,115,22,0.15)] transition-all" 
+                        className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-[0_0_15px_rgba(72,162,147,0.15)] transition-all" 
                         placeholder={props.form?.emailPlaceholder || "john@example.com"}
                       />
                     </motion.div>
@@ -218,7 +220,7 @@ export function ContactSection({ props }: { props: any }) {
                     <input 
                       type="text" 
                       id="subject"
-                      className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:shadow-[0_0_15px_rgba(249,115,22,0.15)] transition-all" 
+                      className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-[0_0_15px_rgba(72,162,147,0.15)] transition-all" 
                       placeholder={props.form?.subjectPlaceholder || "Project Inquiry"}
                     />
                   </motion.div>
@@ -228,7 +230,8 @@ export function ContactSection({ props }: { props: any }) {
                     <textarea 
                       id="message"
                       rows={5}
-                      className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:shadow-[0_0_15px_rgba(249,115,22,0.15)] transition-all resize-none" 
+                      className="rounded-xl px-5 py-4 bg-background border border-border/50 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-[0_0_15px_rgba(72,162,147,0.15)] transition-all resize-none" 
+
                       placeholder={props.form?.messagePlaceholder || "Tell me about your project..."}
                     />
                   </motion.div>

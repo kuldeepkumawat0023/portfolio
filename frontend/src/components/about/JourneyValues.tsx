@@ -45,7 +45,8 @@ const TiltGlowCard = ({ children, className }: { children: React.ReactNode, clas
       className="h-full relative z-10 hover:z-50 perspective-[1000px]"
     >
       <motion.div variants={{ initial: { opacity: 0.5 }, hover: { opacity: 1 } }} className="absolute -inset-[2px] rounded-2xl bg-foreground/5 transition-opacity duration-500 overflow-hidden">
-        <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute inset-0 z-0 transition-opacity duration-300" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.6), transparent 80%)` }} />
+        <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute inset-0 z-0 transition-opacity duration-300" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div className={`relative z-10 h-full rounded-[14px] bg-card/90 backdrop-blur-xl border border-border/50 ${className}`}>
         <div style={{ transform: "translateZ(30px)" }} className="relative h-full z-20">
@@ -71,18 +72,15 @@ export function JourneyValues({ props }: { props: any }) {
 
   return (
     <section className="py-20 relative overflow-hidden bg-background">
-      {/* ── BOTTOM-TO-TOP BUBBLES BACKGROUND ── */}
+      {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(249,115,22,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(249,115,22,0.03)_1px,transparent_1px)] bg-[size:40px_40px] mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
-        <motion.div animate={{ x: [0, 50, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }} transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }} className="absolute top-0 -left-[10%] w-[600px] h-[600px] bg-purple-500/10 dark:bg-purple-900/20 rounded-full blur-[150px]" />
-        <motion.div animate={{ x: [0, -50, 0], y: [0, 50, 0], scale: [1.2, 1, 1.2] }} transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-0 -right-[10%] w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-600/10 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {bubbles.map(bubble => (
             <motion.div key={`bubble-${bubble.id}`} className="absolute bottom-[-150px] rounded-full shadow-lg" style={{ left: bubble.left, width: bubble.size, height: bubble.size, background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), ${bubble.color})`, backdropFilter: "blur(4px)" }} initial={{ y: '10vh', x: 0, opacity: 0 }} animate={{ y: ['10vh', '-120vh'], x: [0, Math.random() * 100 - 50, 0, Math.random() * 100 - 50], opacity: [0, 1, 0] }} transition={{ y: { duration: bubble.duration, repeat: Infinity, ease: "linear", delay: bubble.delay }, x: { duration: bubble.duration * 0.7, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: bubble.duration, repeat: Infinity, ease: "linear", delay: bubble.delay } }} />
           ))}
         </div>
       </div>
+
 
       <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">

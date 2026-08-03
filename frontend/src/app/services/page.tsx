@@ -1,6 +1,7 @@
 import { SEO } from "@/components/seo"
-import { HeroSection } from "@/components/home/HeroSection"
+import { ServicesHero } from "@/components/services/ServicesHero"
 import { SkillsList } from "@/components/services/SkillsList"
+
 import { ServicesGrid } from "@/components/services/ServicesGrid"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
@@ -51,7 +52,8 @@ export default function ServicesPage() {
     title: ["Technologies I", "Work With"],
     description: "I have hands-on experience with a wide range of technologies and tools to build efficient and scalable solutions.",
     skills: [
-      { name: "HTML5", percentage: 95, icon: <FaHtml5 size={32} className="text-orange-500" /> },
+      { name: "HTML5", percentage: 95, icon: <FaHtml5 size={32} className="text-[#E34F26]" /> },
+
       { name: "CSS3", percentage: 90, icon: <FaCss3Alt size={32} className="text-blue-500" /> },
       { name: "Bootstrap", percentage: 85, icon: <FaBootstrap size={32} className="text-purple-600" /> },
       { name: "JavaScript", percentage: 90, icon: <FaJsSquare size={32} className="text-yellow-500" /> },
@@ -141,7 +143,8 @@ export default function ServicesPage() {
     contacts: [
       { icon: <FaEnvelope size={18} />, text: "kuldeepkumawat2383@gmail.com", link: "mailto:kuldeepkumawat2383@gmail.com" },
       { icon: <FaPhoneAlt size={18} />, text: "+91 7296824595", link: "tel:+917296824595" },
-      { icon: <FaMapMarkerAlt size={18} />, text: "Kuchaman City, Rajasthan", link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan" }
+      { icon: <FaMapMarkerAlt size={18} />, text: "Sunder Vihar Colony, Vivek Vihar, Jaipur", link: "https://maps.google.com/?q=Sunder+Vihar+Colony+Vivek+Vihar+Jaipur+Rajasthan" }
+
     ],
     button: {
       text: "Let's Talk",
@@ -152,11 +155,12 @@ export default function ServicesPage() {
   return (
     <>
       <main className="pt-10">
-        <HeroSection props={heroData} />
+        <ServicesHero props={heroData} />
         <SkillsList props={skillsData} />
         <ServicesGrid props={servicesGridData} />
         <ServicesCTA props={ctaData} />
       </main>
+
     </>
   )
 }

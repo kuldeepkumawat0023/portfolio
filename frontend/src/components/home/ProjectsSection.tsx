@@ -51,14 +51,15 @@ const ProjectCard = ({ project }: { project: any }) => {
       className="h-full relative group/card perspective-[1000px] z-10"
     >
       {/* ── Outer Wrapper for Animated Border ── */}
-      <div className="relative h-full rounded-2xl overflow-hidden p-[2px] shadow-lg transition-shadow duration-500 hover:shadow-[0_8px_30px_rgb(249,115,22,0.3)]">
+      <div className="relative h-full rounded-2xl overflow-hidden p-[2px] shadow-lg transition-shadow duration-500 hover:shadow-[0_8px_30px_rgba(72,162,147,0.3)]">
         
         {/* Rotating Conic Gradient Border (visible only on hover) */}
         <motion.div
-          className="absolute inset-0 z-0 bg-[conic-gradient(from_0deg,transparent_70%,#f97316_100%)] opacity-0 group-hover/card:opacity-100"
+          className="absolute inset-0 z-0 bg-[conic-gradient(from_0deg,transparent_70%,#48A293_100%)] opacity-0 group-hover/card:opacity-100"
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
         />
+
 
         {/* ── Inner Card Content ── */}
         <div className="relative z-10 bg-card/90 backdrop-blur-xl h-full rounded-[14px] flex flex-col overflow-hidden">
@@ -70,7 +71,8 @@ const ProjectCard = ({ project }: { project: any }) => {
               background: useMotionTemplate`
                 radial-gradient(
                   450px circle at ${mouseX}px ${mouseY}px,
-                  rgba(249, 115, 22, 0.15),
+                  rgba(72, 162, 147, 0.15),
+
                   transparent 80%
                 )
               `
@@ -87,11 +89,11 @@ const ProjectCard = ({ project }: { project: any }) => {
             />
             
             {/* Cyber Scan-line on Hover */}
-            <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-orange-500/30 to-transparent -translate-y-full group-hover/card:animate-scanline opacity-0 group-hover/card:opacity-100 pointer-events-none mix-blend-overlay" />
+            <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-primary/30 to-transparent -translate-y-full group-hover/card:animate-scanline opacity-0 group-hover/card:opacity-100 pointer-events-none mix-blend-overlay" />
             
             {/* Featured Badge */}
             {project.featured && (
-              <div className="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+              <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
                 Featured
               </div>
             )}
@@ -99,7 +101,7 @@ const ProjectCard = ({ project }: { project: any }) => {
             {/* Overlay with links */}
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-20">
               {project.liveLink && (
-                <a href={project.liveLink} target="_blank" rel="noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:scale-110 transition-transform shadow-[0_0_15px_rgba(249,115,22,0.8)]">
+                <a href={project.liveLink} target="_blank" rel="noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:scale-110 transition-transform shadow-[0_0_15px_rgba(72,162,147,0.8)]">
                   <FaExternalLinkAlt size={18} />
                 </a>
               )}
@@ -114,7 +116,7 @@ const ProjectCard = ({ project }: { project: any }) => {
           {/* Text Content */}
           <div className="p-6 flex flex-col flex-grow relative z-20" style={{ transform: "translateZ(20px)" }}>
             <div className="mb-2">
-              <span className="text-[10px] font-bold tracking-wider text-orange-500 bg-orange-500/10 px-2 py-1 rounded-md uppercase">
+              <span className="text-[10px] font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-md uppercase">
                 {project.category || "Project"}
               </span>
             </div>
@@ -135,11 +137,12 @@ const ProjectCard = ({ project }: { project: any }) => {
               <motion.a 
                 whileHover={{ scale: 1.05, x: 5 }}
                 href={project.liveLink || "#"} 
-                className="flex items-center gap-2 text-sm font-bold text-orange-500 hover:text-orange-600 transition-colors"
+                className="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors"
               >
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.8)]" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(72,162,147,0.8)]" />
                 Live Demo
               </motion.a>
+
               <motion.a 
                 whileHover={{ scale: 1.05, x: -5 }}
                 href={project.githubLink || "#"} 
@@ -197,12 +200,12 @@ export function ProjectsSection({ props }: { props: any }) {
         <motion.div 
           animate={{ x: [-50, 50, -50], y: [-20, 30, -20], scale: [1, 1.2, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-10 -left-32 w-[600px] h-[600px] bg-orange-500/30 dark:bg-orange-600/20 rounded-full blur-[90px]"
+          className="absolute top-10 -left-32 w-[600px] h-[600px] bg-primary/20 dark:bg-primary/15 rounded-full blur-[90px]"
         />
         <motion.div 
           animate={{ x: [50, -50, 50], y: [30, -20, 30], scale: [1.2, 1, 1.2] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-10 -right-32 w-[500px] h-[500px] bg-amber-500/30 dark:bg-yellow-500/20 rounded-full blur-[80px]"
+          className="absolute bottom-10 -right-32 w-[500px] h-[500px] bg-teal-600/20 dark:bg-teal-700/15 rounded-full blur-[80px]"
         />
 
         {/* 3. Floating 3D Tech Tags (Like Home Section) */}
@@ -210,15 +213,16 @@ export function ProjectsSection({ props }: { props: any }) {
           {tags.map(tag => (
             <motion.div
               key={`tag-${tag.id}`}
-              className="absolute bottom-[-100px] border border-orange-500/40 dark:border-orange-400/30 shadow-[0_0_15px_rgba(249,115,22,0.3)] flex items-center justify-center font-mono font-bold text-orange-600 dark:text-orange-400/80 whitespace-nowrap"
+              className="absolute bottom-[-100px] border border-primary/40 dark:border-primary/30 shadow-[0_0_15px_rgba(72,162,147,0.3)] flex items-center justify-center font-mono font-bold text-primary dark:text-primary/80 whitespace-nowrap"
               style={{
                 left: tag.left,
                 padding: '10px 20px',
                 borderRadius: "12px",
-                background: "linear-gradient(135deg, rgba(249,115,22,0.15) 0%, rgba(249,115,22,0.02) 100%)",
+                background: "linear-gradient(135deg, rgba(72,162,147,0.15) 0%, rgba(72,162,147,0.02) 100%)",
                 backdropFilter: "blur(6px)",
                 transformStyle: "preserve-3d"
               }}
+
               initial={{ y: '10vh', rotateX: 0, rotateY: 0, rotateZ: 0, opacity: 0 }}
               animate={{
                 y: ['10vh', '-120vh'],
@@ -281,9 +285,9 @@ export function ProjectsSection({ props }: { props: any }) {
             viewport={{ once: true }}
             className="relative group mb-4"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-500 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#48A293] to-[#368578] rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse" />
             <div className="relative px-6 py-2 bg-background border border-primary/20 rounded-full">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500 font-bold tracking-widest text-sm uppercase">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBBB0] to-[#48A293] font-bold tracking-widest text-sm uppercase">
                 {props.subtitle || "MY PROJECTS"}
               </span>
             </div>
@@ -299,20 +303,20 @@ export function ProjectsSection({ props }: { props: any }) {
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-center drop-shadow-xl text-foreground">
               {props.headingPart1 || "Some of My"}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-orange-400 relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578] relative inline-block">
                 {props.headingPart2 || "Recent Work"}
                 {/* Sparkles */}
                 <motion.span 
                   animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5], rotate: [0, 15, -15, 0] }} 
                   transition={{ duration: 2, repeat: Infinity }} 
-                  className="absolute -top-4 -right-6 text-amber-300 text-2xl drop-shadow-lg"
+                  className="absolute -top-4 -right-6 text-teal-300 text-2xl drop-shadow-lg"
                 >
                   ✨
                 </motion.span>
                 <motion.span 
                   animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5], rotate: [0, -15, 15, 0] }} 
                   transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }} 
-                  className="absolute -bottom-2 -left-6 text-orange-400 text-xl drop-shadow-lg"
+                  className="absolute -bottom-2 -left-6 text-teal-400 text-xl drop-shadow-lg"
                 >
                   ✨
                 </motion.span>
@@ -325,7 +329,7 @@ export function ProjectsSection({ props }: { props: any }) {
             whileInView={{ width: "80px" }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="h-1 bg-gradient-to-r from-orange-500 to-amber-500 mt-6 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)]"
+            className="h-1 bg-gradient-to-r from-[#48A293] to-[#368578] mt-6 rounded-full shadow-[0_0_15px_rgba(72,162,147,0.8)]"
           />
         </div>
 
@@ -347,9 +351,10 @@ export function ProjectsSection({ props }: { props: any }) {
           <motion.a 
             whileTap={{ scale: 0.95 }}
             href={props.button.href || "#"} 
-            className="md:hidden mt-12 flex relative group items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)]"
+            className="md:hidden mt-12 flex relative group items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(72,162,147,0.3)]"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578]" />
+
             <span className="relative z-10">{props.button.text}</span>
           </motion.a>
         )}

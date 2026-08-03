@@ -19,7 +19,8 @@ const NodeNetworkBackground = () => {
     let width = 0;
     let height = 0;
     
-    const colors = ['#ff7e1d', '#e11d48', '#61DAFB', '#F7DF1E', '#3178C6', '#47A248', '#8b5cf6', '#14b8a6'];
+    const colors = ['#48A293', '#368578', '#61DAFB', '#F7DF1E', '#3178C6', '#47A248', '#8b5cf6', '#14b8a6'];
+
 
     const init = () => {
       width = window.innerWidth;
@@ -137,7 +138,8 @@ export function ExperienceSkills({ props }: { props: any }) {
                       whileInView={{ width: `${skill.percentage}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
-                      className="bg-orange-500 h-2 rounded-full"
+                      className="bg-primary h-2 rounded-full"
+
                     />
                   </div>
                 </div>

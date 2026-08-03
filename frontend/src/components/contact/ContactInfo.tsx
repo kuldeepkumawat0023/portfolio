@@ -41,7 +41,8 @@ const Tilt3DCard = ({ children, className = "" }: { children: React.ReactNode, c
       className={`relative z-10 hover:z-50 perspective-[1000px] h-full w-full ${className}`}
     >
       <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute -inset-[1px] rounded-[24px] bg-primary/30 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div style={{ transformStyle: "preserve-3d" }} className="relative z-10 h-full rounded-[23px] bg-card/80 backdrop-blur-md border border-border shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
         {children}
@@ -68,13 +69,14 @@ export function ContactInfo({ props }: { props: any }) {
             >
               <Tilt3DCard>
                 <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="p-6 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 h-full">
-                  <div style={{ transform: "translateZ(20px)" }} className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-500 text-white shadow-md shadow-orange-500/20">
+                  <div style={{ transform: "translateZ(20px)" }} className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-primary text-white shadow-md shadow-primary/20">
                     {item.icon}
                   </div>
                   <div className="flex flex-col min-w-0">
                     <h3 style={{ transform: "translateZ(15px)" }} className="font-bold text-foreground text-lg mb-1">{item.title}</h3>
                     <p style={{ transform: "translateZ(10px)" }} className="text-xs font-medium text-muted-foreground mb-3">{item.description}</p>
-                    <p style={{ transform: "translateZ(25px)" }} className={`text-sm font-bold break-all ${item.highlight ? "text-orange-500" : "text-foreground"}`}>
+                    <p style={{ transform: "translateZ(25px)" }} className={`text-sm font-bold break-all ${item.highlight ? "text-primary" : "text-foreground"}`}>
+
                       {item.value}
                     </p>
                   </div>

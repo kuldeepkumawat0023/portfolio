@@ -175,7 +175,7 @@ export function AboutSection({ props }: { props: any }) {
           rotate: [0, 90, 180, 360]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-gradient-to-br from-orange-400/10 to-primary/10 blur-[60px] z-0 pointer-events-none"
+        className="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-gradient-to-br from-primary/15 to-[#368578]/10 blur-[60px] z-0 pointer-events-none"
       />
 
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10">
@@ -230,9 +230,10 @@ export function AboutSection({ props }: { props: any }) {
                 initial={{ z: 60 }}
                 animate={{ y: [-10, 10, -10], z: 60 }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute top-[75%] sm:top-[60%] left-2 sm:-left-12 lg:-left-24 -translate-y-1/2 glass-card bg-card/95 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl z-50 flex flex-col items-center shadow-[0_0_20px_rgba(249,115,22,0.15)] border border-primary/30"
+                className="absolute top-[75%] sm:top-[60%] left-2 sm:-left-12 lg:-left-24 -translate-y-1/2 glass-card bg-card/95 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl z-50 flex flex-col items-center shadow-[0_0_20px_rgba(72,162,147,0.15)] border border-primary/30"
               >
-                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-orange-400">
+                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578]">
+
                   <CountUpNumber value={props.experienceYears || "2+"} />
                 </span>
                 <span className="text-xs sm:text-sm font-medium text-foreground text-center mt-1 leading-tight" dangerouslySetInnerHTML={{ __html: props.experienceLabel || "Years<br />Experience" }} />
@@ -325,10 +326,11 @@ export function AboutSection({ props }: { props: any }) {
                 >
                   <Link 
                     href={props.button.href || "#"} 
-                    className="relative group inline-flex items-center justify-center px-8 py-3.5 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.8)] transition-all"
+                    className="relative group inline-flex items-center justify-center px-8 py-3.5 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(72,162,147,0.4)] hover:shadow-[0_0_30px_rgba(72,162,147,0.8)] transition-all"
                   >
                     {/* Background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 transition-transform duration-300 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578] transition-transform duration-300 group-hover:scale-105" />
+
                     
                     {/* Animated pulse border */}
                     <div className="absolute inset-0 border-2 border-white/20 rounded-full group-hover:animate-ping opacity-0 group-hover:opacity-100 transition-opacity" />

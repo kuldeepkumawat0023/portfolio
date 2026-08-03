@@ -43,7 +43,8 @@ const Tilt3DCard = ({ children, className = "" }: { children: React.ReactNode, c
       className={`relative z-10 hover:z-50 perspective-[1000px] h-full ${className}`}
     >
       <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute -inset-[1px] rounded-[32px] bg-primary/20 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div style={{ transformStyle: "preserve-3d" }} className="relative z-10 h-full rounded-[31px] bg-card/80 backdrop-blur-md border border-border shadow-lg p-6 md:p-8 flex flex-col justify-between">
         {children}
@@ -207,18 +208,19 @@ export function ServicesGrid({ props }: { props: any }) {
                 <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="flex flex-col sm:flex-row gap-5 mb-4">
                   {/* Number + Icon */}
                   <div className="flex items-center sm:flex-col gap-3 shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-sm shadow-[0_0_10px_rgba(249,115,22,0.5)]">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-sm shadow-[0_0_10px_rgba(72,162,147,0.4)]">
                       {service.id}
                     </div>
 
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-orange-400 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
                       {service.icon}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex flex-col flex-grow">
-                    <h4 className="text-lg font-bold text-foreground mb-3 tracking-wide drop-shadow-[0_0_5px_rgba(249,115,22,0.3)]">
+                    <h4 className="text-lg font-bold text-foreground mb-3 tracking-wide drop-shadow-[0_0_5px_rgba(72,162,147,0.2)]">
+
                       {service.title}
                     </h4>
 
@@ -233,7 +235,8 @@ export function ServicesGrid({ props }: { props: any }) {
                 <div style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }} className="mt-auto flex justify-end">
                   <Link
                     href={service.linkHref || "#"}
-                    className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-orange-500 transition-colors bg-primary/10 px-4 py-2 rounded-full border border-primary/20 hover:bg-primary/30 shadow-[0_0_10px_rgba(249,115,22,0.2)]"
+                    className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/10 px-4 py-2 rounded-full border border-primary/20 hover:bg-primary/30 shadow-[0_0_10px_rgba(72,162,147,0.2)]"
+
                   >
                     {service.linkText}
                     {service.linkIcon}

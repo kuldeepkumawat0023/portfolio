@@ -16,7 +16,7 @@ const generateParticles = (count: number) => {
     size: Math.random() * 7 + 2, // particle size
     delay: Math.random() * 0.5, // stagger disintegration
     duration: 1.0 + Math.random() * 0.8,
-    color: i % 3 === 0 ? "#ff7e1d" : i % 3 === 1 ? "#e11d48" : "#ffffff",
+    color: i % 3 === 0 ? "#48A293" : i % 3 === 1 ? "#368578" : "#ffffff",
   }));
 };
 
@@ -58,7 +58,7 @@ export function WelcomeSplash({ onComplete }: WelcomeSplashProps) {
             opacity: 0,
             transition: { duration: 0.8, ease: "easeInOut" },
           }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#050811] text-white overflow-hidden select-none px-4 sm:px-8"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0d1015] text-white overflow-hidden select-none px-4 sm:px-8"
         >
           {/* Background Ambient Glow */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,7 +68,7 @@ export function WelcomeSplash({ onComplete }: WelcomeSplashProps) {
                 opacity: [0.25, 0.45, 0.25],
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#ff7e1d]/30 via-[#e11d48]/25 to-[#ff7e1d]/30 rounded-full blur-[150px]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#48A293]/30 via-[#368578]/25 to-[#48A293]/30 rounded-full blur-[150px]"
             />
           </div>
 
@@ -96,7 +96,7 @@ export function WelcomeSplash({ onComplete }: WelcomeSplashProps) {
                     </span>
 
                     {/* My Portfolio in vibrant brand gradient */}
-                    <span className="bg-gradient-to-r from-[#ff7e1d] via-[#f43f5e] to-[#e11d48] bg-clip-text text-transparent font-black drop-shadow-[0_0_40px_rgba(255,126,29,0.5)]">
+                    <span className="bg-gradient-to-r from-[#5BBBB0] via-[#48A293] to-[#368578] bg-clip-text text-transparent font-black drop-shadow-[0_0_40px_rgba(72,162,147,0.5)]">
                       My Portfolio
                     </span>
 
@@ -115,9 +115,10 @@ export function WelcomeSplash({ onComplete }: WelcomeSplashProps) {
                         : { opacity: 0 }
                     }
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    className="w-full h-[4px] rounded-full bg-gradient-to-r from-transparent via-[#ff7e1d] to-transparent shadow-[0_0_25px_#ff7e1d]"
+                    className="w-full h-[4px] rounded-full bg-gradient-to-r from-transparent via-[#48A293] to-transparent shadow-[0_0_25px_#48A293]"
                   />
                 )}
+
 
                 {/* Sweep Shine Glare Beam moving Center -> Left & Right */}
                 {(phase === "shine" || phase === "enter") && (
