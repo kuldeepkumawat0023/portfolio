@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Mail } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"
 
 export function Footer() {
@@ -56,23 +56,33 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Get In Touch */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Subscribe to Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-4">Get the latest updates on my projects and blog posts.</p>
-            <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="glass-input rounded-md px-4 py-2 text-sm w-full"
-                required
-              />
-              <button type="submit" className="gradient-button text-white text-sm font-medium py-2 px-4 rounded-md w-full">
-                Subscribe
-              </button>
-            </form>
+            <h3 className="font-semibold text-foreground mb-4">Get In Touch</h3>
+            <ul className="space-y-3 mb-4">
+              <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+                <a href="mailto:kuldeepkumawat2383@gmail.com" className="hover:text-primary transition-colors">
+                  kuldeepkumawat2383@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                <span>Sunder Vihar Colony, Vivek Vihar, Jaipur, Rajasthan</span>
+              </li>
+            </ul>
+
+            {/* Availability Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Available for Projects
+            </div>
           </div>
         </div>
+
 
         <div className="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
