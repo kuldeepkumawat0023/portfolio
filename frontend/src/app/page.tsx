@@ -1,9 +1,3 @@
-import { HeroSection } from "@/components/home/HeroSection"
-import { AboutSection } from "@/components/home/AboutSection"
-import { TechnologiesSection } from "@/components/home/TechnologiesSection"
-import { ExperienceSection } from "@/components/home/ExperienceSection"
-import { ProjectsSection } from "@/components/home/ProjectsSection"
-import { ServicesSection } from "@/components/home/ServicesSection"
 import { SEO } from "@/components/seo";
 import {
   FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaRocket,
@@ -13,8 +7,8 @@ import {
   SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman, SiBootstrap
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
-import { ServicesCTA } from "@/components/services/ServicesCTA"
 import { HomePageWrapper } from "@/components/home/HomePageWrapper"
+
 
 
 export const metadata = SEO({
