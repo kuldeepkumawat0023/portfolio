@@ -37,34 +37,9 @@ export default function ProjectsPage() {
       },
     ],
     image: "/images/home/kuldeepkmt.png",
-    imageAlt: "Developer Image",
-    badges: [
-      {
-        label: "React",
-        icon: <FaReact size={40} color="#61DAFB" />,
-        positionClass: "top-[10%] sm:top-[15%] left-[0%] sm:left-[2%] lg:left-[2%]",
-        animateY: [-10, 10, -10],
-        duration: 4,
-        delay: 0
-      },
-      {
-        label: "JavaScript",
-        icon: <FaJsSquare size={40} color="#F7DF1E" />,
-        positionClass: "bottom-[10%] sm:bottom-[15%] left-[0%] sm:left-[2%] lg:left-[2%]",
-        animateY: [-8, 12, -8],
-        duration: 4.5,
-        delay: 0.5
-      },
-      {
-        label: "TypeScript",
-        icon: <SiTypescript size={40} color="#3178C6" />,
-        positionClass: "top-[42%] sm:top-[45%] right-[-8%] sm:right-[-5%] lg:right-[-5%]",
-        animateY: [8, -12, 8],
-        duration: 4.8,
-        delay: 1.5
-      }
-    ]
+    imageAlt: "Developer Image"
   };
+
 
   const statsData = [
     { value: "20+", label: "Projects Completed" },

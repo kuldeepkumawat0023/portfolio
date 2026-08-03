@@ -27,34 +27,9 @@ export default function ContactPage() {
     // The design doesn't show buttons here, the bullets replace them.
     buttons: [],
     image: "/images/home/kuldeepkmt.png",
-    imageAlt: "Developer Image",
-    badges: [
-      {
-        label: "Email",
-        icon: <FaEnvelope size={30} className="text-orange-500" />,
-        positionClass: "top-[15%] sm:top-[20%] left-[-5%] sm:left-[0%]",
-        animateY: [-10, 10, -10],
-        duration: 4,
-        delay: 0
-      },
-      {
-        label: "Phone",
-        icon: <FaPhoneAlt size={30} className="text-orange-500" />,
-        positionClass: "top-[30%] right-[-10%] sm:right-[0%]",
-        animateY: [-8, 12, -8],
-        duration: 4.5,
-        delay: 0.5
-      },
-      {
-        label: "Send",
-        icon: <FaPaperPlane size={30} className="text-orange-500" />,
-        positionClass: "bottom-[20%] right-[0%] sm:right-[10%]",
-        animateY: [8, -12, 8],
-        duration: 4.8,
-        delay: 1.5
-      }
-    ]
+    imageAlt: "Developer Image"
   };
+
 
   const contactInfoData = {
     items: [

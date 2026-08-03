@@ -47,34 +47,9 @@ export default function ExperiencePage() {
       { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/itz_kuldeep_0023/", label: "Instagram" }
     ],
     image: "/images/home/kuldeepkmt.png",
-    imageAlt: "Developer Image",
-    badges: [
-      {
-        label: "React",
-        icon: <FaReact size={40} color="#61DAFB" />,
-        positionClass: "top-[15%] sm:top-[20%] left-[-5%] sm:left-[0%]",
-        animateY: [-10, 10, -10],
-        duration: 4,
-        delay: 0
-      },
-      {
-        label: "Node.js",
-        icon: <FaNodeJs size={40} color="#339933" />,
-        positionClass: "top-[30%] right-[-10%] sm:right-[0%]",
-        animateY: [-8, 12, -8],
-        duration: 4.5,
-        delay: 0.5
-      },
-      {
-        label: "TypeScript",
-        icon: <SiTypescript size={40} color="#3178C6" />,
-        positionClass: "bottom-[20%] right-[0%] sm:right-[10%]",
-        animateY: [8, -12, 8],
-        duration: 4.8,
-        delay: 1.5
-      }
-    ]
+    imageAlt: "Developer Image"
   };
+
 
   const timelineData = {
     subtitle: "MY PROFESSIONAL JOURNEY",

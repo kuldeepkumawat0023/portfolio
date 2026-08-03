@@ -5,6 +5,13 @@ import { motion, useMotionValue, useSpring, useTransform, Variants } from "frame
 import { Download, PlayCircle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/common/Button"
 import { HeroImage } from "./HeroImage"
+import {
+  FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma
+} from "react-icons/fa"
+import {
+  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman
+} from "react-icons/si"
+import { VscVscode } from "react-icons/vsc"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -114,21 +121,47 @@ export function HeroSection({ props }: { props: any }) {
   const particle2X = useTransform(smoothMouseX, [-1, 1], [-70, 70]);
   const particle2Y = useTransform(smoothMouseY, [-1, 1], [-70, 70]);
 
-  // Tech Shapes State for Bottom-to-Top Animation (Replacing Bubbles)
-  const [shapes, setShapes] = React.useState<Array<{ id: number, left: string, size: number, delay: number, duration: number, type: number }>>([]);
+  // Tech Skills Data for Floating Background Animation (Bottom to Top)
+  const [floatingSkills, setFloatingSkills] = React.useState<Array<{ id: number, name: string, icon: React.ReactNode, left: string, delay: number, duration: number, scale: number }>>([]);
 
   React.useEffect(() => {
-    // Generate tech shapes only on client to avoid hydration errors
-    const generatedShapes = Array.from({ length: 40 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 40 + 20, // 20px to 60px size (larger)
-      delay: Math.random() * 5, // Quick staggered delays (0 to 5s)
-      duration: Math.random() * 7 + 5, // Faster float (5s to 12s)
-      type: Math.floor(Math.random() * 3) // 0: Square, 1: Circle, 2: Diamond
-    }));
-    setShapes(generatedShapes);
+    const availableSkills = [
+      { name: "React", icon: <FaReact size={24} color="#61DAFB" /> },
+      { name: "Node.js", icon: <FaNodeJs size={24} color="#339933" /> },
+      { name: "MongoDB", icon: <SiMongodb size={24} color="#47A248" /> },
+      { name: "Next.js", icon: <SiNextdotjs size={24} className="text-foreground" /> },
+      { name: "Express", icon: <SiExpress size={24} className="text-foreground" /> },
+      { name: "JavaScript", icon: <FaJsSquare size={24} color="#F7DF1E" /> },
+      { name: "TypeScript", icon: <SiTypescript size={24} color="#3178C6" /> },
+      { name: "Tailwind", icon: <SiTailwindcss size={24} color="#06B6D4" /> },
+      { name: "HTML5", icon: <FaHtml5 size={24} color="#E34F26" /> },
+      { name: "CSS3", icon: <FaCss3Alt size={24} color="#1572B6" /> },
+      { name: "Bootstrap", icon: <FaBootstrap size={24} color="#7952B3" /> },
+      { name: "MySQL", icon: <SiMysql size={24} color="#4479A1" /> },
+      { name: "Git", icon: <FaGitAlt size={24} color="#F05032" /> },
+      { name: "GitHub", icon: <FaGithub size={24} className="text-foreground" /> },
+      { name: "GitLab", icon: <SiGitlab size={24} color="#FC6D26" /> },
+      { name: "Figma", icon: <FaFigma size={24} color="#F24E1E" /> },
+      { name: "Postman", icon: <SiPostman size={24} color="#FF6C37" /> },
+      { name: "VS Code", icon: <VscVscode size={24} color="#007ACC" /> },
+    ];
+
+    const generated = Array.from({ length: 24 }).map((_, i) => {
+      const skill = availableSkills[i % availableSkills.length];
+      return {
+        id: i,
+        name: skill.name,
+        icon: skill.icon,
+        left: `${(i * 4) + Math.random() * 4}%`,
+        delay: Math.random() * 6,
+        duration: Math.random() * 8 + 8, // 8s to 16s smooth float
+        scale: Math.random() * 0.3 + 0.75, // 0.75 to 1.05
+      };
+    });
+
+    setFloatingSkills(generated);
   }, []);
+
 
   return (
     <section
@@ -184,46 +217,38 @@ export function HeroSection({ props }: { props: any }) {
         className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
       />
 
-      {/* ── Animated Floating 3D Tech Shapes (Bottom to Top) ── */}
+      {/* ── Animated Floating Tech Skill Badges (Bottom to Top) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
-        {shapes.map(shape => {
-          let borderRadius = "0%";
-          let rotateOffset = 0;
-          if (shape.type === 1) borderRadius = "50%"; // Circle
-          if (shape.type === 2) rotateOffset = 45; // Diamond
-
-          return (
-            <motion.div
-              key={`shape-${shape.id}`}
-              className="absolute bottom-[-100px] border-[2px] border-orange-500/80 dark:border-orange-400/60 shadow-[0_0_25px_rgba(249,115,22,0.6)]"
-              style={{
-                left: shape.left,
-                width: shape.size,
-                height: shape.size,
-                borderRadius,
-                background: "linear-gradient(135deg, rgba(249,115,22,0.3) 0%, rgba(249,115,22,0.05) 100%)",
-                backdropFilter: "blur(4px)",
-                transformStyle: "preserve-3d"
-              }}
-              initial={{ y: '10vh', rotateX: 0, rotateY: 0, rotateZ: rotateOffset, opacity: 0 }}
-              animate={{
-                y: ['10vh', '-120vh'],
-                rotateX: [0, 360],
-                rotateY: [0, 360],
-                rotateZ: [rotateOffset, rotateOffset + 360],
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                y: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateX: { duration: shape.duration * 0.8, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateY: { duration: shape.duration * 1.2, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateZ: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay },
-                opacity: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay }
-              }}
-            />
-          );
-        })}
+        {floatingSkills.map(item => (
+          <motion.div
+            key={`floating-skill-${item.id}`}
+            className="absolute bottom-[-80px] flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-card/75 dark:bg-card/85 backdrop-blur-md border border-primary/30 dark:border-primary/40 shadow-lg shadow-primary/10 hover:border-primary transition-colors"
+            style={{
+              left: item.left,
+              scale: item.scale,
+            }}
+            initial={{ y: '10vh', opacity: 0, rotate: 0 }}
+            animate={{
+              y: ['10vh', '-120vh'],
+              opacity: [0, 0.9, 0.9, 0],
+              rotate: [-12, 12, -12],
+            }}
+            transition={{
+              y: { duration: item.duration, repeat: Infinity, ease: "linear", delay: item.delay },
+              opacity: { duration: item.duration, repeat: Infinity, ease: "easeInOut", delay: item.delay },
+              rotate: { duration: item.duration * 0.6, repeat: Infinity, ease: "easeInOut", delay: item.delay },
+            }}
+          >
+            <div className="w-6 h-6 flex items-center justify-center shrink-0">
+              {item.icon}
+            </div>
+            <span className="text-xs font-bold text-foreground whitespace-nowrap">
+              {item.name}
+            </span>
+          </motion.div>
+        ))}
       </div>
+
 
       {/* ── Container ── */}
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10">
