@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:f97316,100:f59e0b&height=300&section=header&text=Kuldeep%20Kumawat&fontSize=70&fontColor=ffffff&fontAlignY=40&desc=Full%20Stack%20Developer%20Portfolio&descColor=ffffff&descAlignY=60&animation=fadeIn" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:48A293,100:368578&height=300&section=header&text=Kuldeep%20Kumawat&fontSize=70&fontColor=ffffff&fontAlignY=40&desc=Full%20Stack%20Developer%20Portfolio&descColor=ffffff&descAlignY=60&animation=fadeIn" width="100%" />
 </div>
 
 <div align="center">
   <a href="https://kuldeep-kmt-portfolio.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Demo-FF7E1D?style=for-the-badge" alt="Live Demo"/>
+    <img src="https://img.shields.io/badge/Live_Demo-48A293?style=for-the-badge" alt="Live Demo"/>
   </a>
   &nbsp;
   <a href="https://github.com/kuldeepkumawat0023" target="_blank">
@@ -31,7 +31,7 @@ A **modern, fully responsive personal developer portfolio** website built with *
 ## ✨ Features
 
 - ⚡ **Next.js 15 App Router** with static export
-- 🎨 **Dark theme** with orange accent color system
+- 🎨 **Dark & Light themes** with **Muted Teal Green (`#48A293`)** accent color system
 - 💫 **Framer Motion animations** on all sections
 - 📱 **Fully responsive** — Mobile, Tablet, Desktop
 - 🔍 **SEO optimized** — Meta tags, OG images, sitemap ready
@@ -50,7 +50,7 @@ A **modern, fully responsive personal developer portfolio** website built with *
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS |
 | **Animations** | Framer Motion |
-| **Icons** | React Icons (FontAwesome, Simple Icons) |
+| **Icons** | React Icons (FontAwesome, Simple Icons, Lucide) |
 | **Deployment** | Vercel |
 
 ---
@@ -147,12 +147,12 @@ npm run build
 | 📧 Email | <a href="mailto:kuldeepkumawat2383@gmail.com" target="_blank">kuldeepkumawat2383@gmail.com</a> |
 | 💼 LinkedIn | <a href="https://www.linkedin.com/in/kuldeep-kumawat-23284236a/" target="_blank">kuldeep-kumawat-23284236a</a> |
 | 🐙 GitHub | <a href="https://github.com/kuldeepkumawat0023" target="_blank">kuldeepkumawat0023</a> |
-| 📍 Location | Kuchaman City, Rajasthan, India |
+| 📍 Location | Sunder Vihar Colony, Vivek Vihar, Jaipur, Rajasthan, India |
 
 ---
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f59e0b,50:f97316,100:0f172a&height=120&section=footer" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:368578,50:48A293,100:0f172a&height=120&section=footer" width="100%" />
   <p><i>"Building the future, one line of code at a time."</i></p>
   <p>Made with ❤️ by <b>Kuldeep Kumawat</b></p>
 </div>
