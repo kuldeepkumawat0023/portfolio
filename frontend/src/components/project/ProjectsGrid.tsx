@@ -117,8 +117,9 @@ const Tilt3DCard = ({ children, className = "" }: { children: React.ReactNode, c
       className={`relative z-10 hover:z-50 perspective-[1000px] h-full ${className}`}
     >
       <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute -inset-[1px] rounded-[32px] bg-primary/20 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
       </motion.div>
+
       <div style={{ transformStyle: "preserve-3d" }} className="relative z-10 h-full rounded-[31px] bg-card/80 backdrop-blur-md border border-border shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col overflow-hidden">
         {children}
       </div>
@@ -199,18 +200,18 @@ export function ProjectsGrid({ props }: { props: any }) {
                     
                     {/* Featured Badge */}
                     {project.featured && (
-                      <div style={{ transform: "translateZ(40px)" }} className="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.8)] z-20">
+                      <div style={{ transform: "translateZ(40px)" }} className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(72,162,147,0.8)] z-20">
                         Featured
                       </div>
                     )}
 
                     {/* Cyber Scan-line on Hover */}
-                    <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-orange-500/30 to-transparent -translate-y-full group-hover:animate-scanline opacity-0 group-hover:opacity-100 pointer-events-none mix-blend-overlay z-10" />
+                    <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-primary/30 to-transparent -translate-y-full group-hover:animate-scanline opacity-0 group-hover:opacity-100 pointer-events-none mix-blend-overlay z-10" />
 
                     {/* Overlay with links */}
                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-20">
                       {project.liveLink && (
-                        <a href={project.liveLink} target="_blank" rel="noreferrer" className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-primary hover:scale-110 hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(249,115,22,0.4)] border border-white/20">
+                        <a href={project.liveLink} target="_blank" rel="noreferrer" className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-primary hover:scale-110 hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(72,162,147,0.4)] border border-white/20">
                           <FaExternalLinkAlt size={18} />
                         </a>
                       )}
@@ -225,10 +226,10 @@ export function ProjectsGrid({ props }: { props: any }) {
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-grow bg-card/40 relative z-10">
                     <div style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}>
-                      <span className="text-[10px] font-bold tracking-wider text-orange-500 bg-orange-500/10 border border-orange-500/20 px-2 py-1 rounded-md uppercase shadow-[0_0_8px_rgba(249,115,22,0.2)] inline-block mb-3">
+                      <span className="text-[10px] font-bold tracking-wider text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded-md uppercase shadow-[0_0_8px_rgba(72,162,147,0.2)] inline-block mb-3">
                         {project.category}
                       </span>
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors tracking-wide drop-shadow-[0_0_5px_rgba(249,115,22,0.1)]">{project.title}</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors tracking-wide drop-shadow-[0_0_5px_rgba(72,162,147,0.1)]">{project.title}</h3>
                       <p className="text-sm text-muted-foreground mb-6 font-mono leading-relaxed border-l-2 border-primary/30 pl-3 group-hover:text-muted-foreground/90 transition-colors">
                         {`> ${project.description}`}
                       </p>
@@ -237,7 +238,7 @@ export function ProjectsGrid({ props }: { props: any }) {
                     {/* Tags */}
                     <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="flex flex-wrap gap-2 mb-6 mt-auto">
                       {project.tags?.map((tag: string) => (
-                        <span key={tag} className="text-xs font-semibold px-2.5 py-1 bg-primary/10 rounded-md text-primary border border-primary/20 shadow-[0_0_8px_rgba(249,115,22,0.1)]">
+                        <span key={tag} className="text-xs font-semibold px-2.5 py-1 bg-primary/10 rounded-md text-primary border border-primary/20 shadow-[0_0_8px_rgba(72,162,147,0.1)]">
                           {tag}
                         </span>
                       ))}
@@ -245,14 +246,15 @@ export function ProjectsGrid({ props }: { props: any }) {
 
                     {/* Footer Links */}
                     <div style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }} className="flex items-center justify-between pt-4 border-t border-border/50">
-                      <a href={project.liveLink || "#"} className="flex items-center gap-2 text-sm font-bold text-orange-500 hover:text-orange-400 transition-colors drop-shadow-[0_0_5px_rgba(249,115,22,0.5)]">
-                        <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_8px_rgba(249,115,22,1)]" />
+                      <a href={project.liveLink || "#"} className="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors drop-shadow-[0_0_5px_rgba(72,162,147,0.5)]">
+                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(72,162,147,1)]" />
                         Live Demo
                       </a>
                       <a href={project.githubLink || "#"} className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors">
                         GitHub <FaGithub size={16} />
                       </a>
                     </div>
+
                   </div>
                 </Tilt3DCard>
               </motion.div>

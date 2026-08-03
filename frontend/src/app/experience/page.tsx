@@ -1,6 +1,7 @@
 import { SEO } from "@/components/seo"
-import { HeroSection } from "@/components/home/HeroSection"
+import { ExperienceHero } from "@/components/experience/ExperienceHero"
 import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline"
+
 import { AboutStats } from "@/components/about/AboutStats"
 import { ExperienceSkills } from "@/components/experience/ExperienceSkills"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
@@ -47,34 +48,9 @@ export default function ExperiencePage() {
       { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/itz_kuldeep_0023/", label: "Instagram" }
     ],
     image: "/images/home/kuldeepkmt.png",
-    imageAlt: "Developer Image",
-    badges: [
-      {
-        label: "React",
-        icon: <FaReact size={40} color="#61DAFB" />,
-        positionClass: "top-[15%] sm:top-[20%] left-[-5%] sm:left-[0%]",
-        animateY: [-10, 10, -10],
-        duration: 4,
-        delay: 0
-      },
-      {
-        label: "Node.js",
-        icon: <FaNodeJs size={40} color="#339933" />,
-        positionClass: "top-[30%] right-[-10%] sm:right-[0%]",
-        animateY: [-8, 12, -8],
-        duration: 4.5,
-        delay: 0.5
-      },
-      {
-        label: "TypeScript",
-        icon: <SiTypescript size={40} color="#3178C6" />,
-        positionClass: "bottom-[20%] right-[0%] sm:right-[10%]",
-        animateY: [8, -12, 8],
-        duration: 4.8,
-        delay: 1.5
-      }
-    ]
+    imageAlt: "Developer Image"
   };
+
 
   const timelineData = {
     subtitle: "MY PROFESSIONAL JOURNEY",
@@ -97,23 +73,25 @@ export default function ExperiencePage() {
         tags: ["React.js", "Node.js", "Express", "MongoDB", "MERN Stack"]
       },
       {
-        period: "Jun 2022 - Jul 2022",
-        role: "Web Development Intern",
-        company: "Learn and Build",
-        description: "Built responsive, cross-compatible pages using HTML5, CSS3, and JavaScript. Translated complex design wireframes into mobile-first frontend code.",
+        period: "Sep 2024 - Jan 2026",
+        role: "Freelance Web Developer",
+        company: "Independent Projects",
+        description: "Designed and built custom responsive web applications, client landing pages, and RESTful API integrations for various freelance projects using React.js, Node.js, and Tailwind CSS.",
         icon: <FaLaptopCode size={20} />,
-        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
+        tags: ["React.js", "Node.js", "Express", "Tailwind CSS", "REST APIs"]
       }
+
     ]
   };
 
   const statsData = [
-    { value: "2+", label: "Years of Experience", icon: <FaClock size={28} className="text-orange-500 mb-2" /> },
-    { value: "20+", label: "Projects Completed", icon: <FaHeart size={28} className="text-orange-500 mb-2" /> },
-    { value: "10+", label: "Happy Clients", icon: <FaUsers size={28} className="text-orange-500 mb-2" /> },
-    { value: "100+", label: "Commitments Delivered", icon: <FaRocket size={28} className="text-orange-500 mb-2" /> },
-    { value: "24/7", label: "Support Available", icon: <FaHeadphones size={28} className="text-orange-500 mb-2" /> }
+    { value: "2+", label: "Years of Experience", icon: <FaClock size={28} className="text-[#48A293] mb-2" /> },
+    { value: "20+", label: "Projects Completed", icon: <FaHeart size={28} className="text-[#48A293] mb-2" /> },
+    { value: "10+", label: "Happy Clients", icon: <FaUsers size={28} className="text-[#48A293] mb-2" /> },
+    { value: "100+", label: "Commitments Delivered", icon: <FaRocket size={28} className="text-[#48A293] mb-2" /> },
+    { value: "24/7", label: "Support Available", icon: <FaHeadphones size={28} className="text-[#48A293] mb-2" /> }
   ];
+
 
   const skillsData = {
     progressSkills: [
@@ -172,19 +150,12 @@ export default function ExperiencePage() {
   return (
     <>
       <main className="pt-10">
-        <HeroSection props={heroData} />
-
-        <div className="relative z-20 bg-background pt-10">
-          <ExperienceTimeline props={timelineData} />
-
-          <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-30 -mt-10">
-            <AboutStats props={{ stats: statsData }} />
-          </div>
-
-          <ExperienceSkills props={skillsData} />
-          <ServicesCTA props={ctaData} />
-        </div>
+        <ExperienceHero props={heroData} />
+        <ExperienceTimeline props={timelineData} />
+        <ExperienceSkills props={skillsData} />
+        <ServicesCTA props={ctaData} />
       </main>
+
     </>
   )
 }

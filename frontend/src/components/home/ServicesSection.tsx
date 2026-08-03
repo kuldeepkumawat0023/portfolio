@@ -69,7 +69,7 @@ const TiltGlowCard = ({ children, className }: { children: React.ReactNode, clas
             background: useMotionTemplate`
               radial-gradient(
                 400px circle at ${mouseX}px ${mouseY}px,
-                rgba(249, 115, 22, 0.6),
+                rgba(72, 162, 147, 0.4),
                 transparent 80%
               )
             `
@@ -97,7 +97,7 @@ export function ServicesSection({ props }: { props: any }) {
       "rgba(59, 130, 246, 0.5)", // Blue
       "rgba(168, 85, 247, 0.5)", // Purple
       "rgba(236, 72, 153, 0.5)", // Pink
-      "rgba(249, 115, 22, 0.5)",  // Orange
+      "rgba(72, 162, 147, 0.5)",  // Teal
       "rgba(20, 184, 166, 0.5)",  // Teal
       "rgba(234, 179, 8, 0.5)"    // Yellow
     ];
@@ -108,9 +108,9 @@ export function ServicesSection({ props }: { props: any }) {
       return {
         id: i,
         left: `${Math.random() * 100}%`,
-        size: Math.random() * 60 + 20, // 20px to 80px size
+        size: Math.random() * 30 + 10,
         delay: Math.random() * 5,
-        duration: Math.random() * 10 + 10, // 10s to 20s float time
+        duration: Math.random() * 10 + 10,
         color: color
       };
     });
@@ -120,12 +120,38 @@ export function ServicesSection({ props }: { props: any }) {
   if (!props) return null;
 
   return (
-    <section className="py-24 relative bg-background overflow-hidden" id="services">
-      
-      {/* ── BOTTOM-TO-TOP BUBBLES BACKGROUND ── */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        
-        {/* Subtle Tech Grid */}
+    <section className="relative py-28 overflow-hidden bg-background" id="services">
+      {/* ── Dynamic Floating Bubbles Background (Bottom to Top) ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {bubbles.map((bubble) => (
+          <motion.div
+            key={`service-bubble-${bubble.id}`}
+            className="absolute rounded-full blur-[2px] opacity-40 dark:opacity-30"
+            style={{
+              left: bubble.left,
+              width: `${bubble.size}px`,
+              height: `${bubble.size}px`,
+              backgroundColor: bubble.color,
+              bottom: "-50px"
+            }}
+            animate={{
+              y: ["0vh", "-120vh"],
+              x: ["0px", `${(bubble.id % 2 === 0 ? 1 : -1) * (bubble.id * 3)}px`],
+              scale: [1, 1.3, 0.8, 1],
+              opacity: [0, 0.5, 0.3, 0]
+            }}
+            transition={{
+              duration: bubble.duration,
+              repeat: Infinity,
+              delay: bubble.delay,
+              ease: "linear"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* ── Background Gradients & Glow ── */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(249,115,22,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(249,115,22,0.03)_1px,transparent_1px)] bg-[size:40px_40px] mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
         
         {/* Giant Purple Nebula (Slow Float) */}
@@ -179,7 +205,7 @@ export function ServicesSection({ props }: { props: any }) {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 relative">
           <SectionHeading 
             subtitle={props.subtitle || "SERVICES I PROVIDE"} 
-            title={props.title || <>How Can I <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Help You?</span></>} 
+            title={props.title || <>How Can I <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBBB0] to-[#48A293]">Help You?</span></>} 
             className="mb-0 text-foreground"
           />
           
@@ -189,9 +215,10 @@ export function ServicesSection({ props }: { props: any }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={props.button.href || "#"} 
-              className="hidden md:inline-flex relative group items-center justify-center px-8 py-3 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all"
+              className="hidden md:inline-flex relative group items-center justify-center px-8 py-3 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(72,162,147,0.3)] transition-all"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578]" />
+
               <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
               <span className="relative z-10">{props.button.text}</span>
             </motion.a>
@@ -224,8 +251,8 @@ export function ServicesSection({ props }: { props: any }) {
                       hover: { 
                         scale: 1.2, 
                         rotate: 10,
-                        backgroundColor: "rgba(249, 115, 22, 0.1)",
-                        borderColor: "rgba(249, 115, 22, 0.5)"
+                        backgroundColor: "rgba(72, 162, 147, 0.1)",
+                        borderColor: "rgba(72, 162, 147, 0.5)"
                       }
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -245,7 +272,7 @@ export function ServicesSection({ props }: { props: any }) {
                     <motion.h3 
                       variants={{
                         initial: { color: "var(--foreground)" },
-                        hover: { color: "#f97316" } // orange-500
+                        hover: { color: "#48A293" }
                       }}
                       className="text-lg font-bold mb-2 transition-colors"
                     >
@@ -258,8 +285,9 @@ export function ServicesSection({ props }: { props: any }) {
                   <motion.div 
                     variants={{
                       initial: { width: "3rem", background: "rgba(var(--border), 0.5)" },
-                      hover: { width: "100%", background: "linear-gradient(to right, #f97316, #f59e0b)" } // orange-500 to amber-500
+                      hover: { width: "100%", background: "linear-gradient(to right, #48A293, #368578)" }
                     }}
+
                     className="h-1 rounded-full mt-auto" 
                   />
                 </div>
@@ -273,9 +301,10 @@ export function ServicesSection({ props }: { props: any }) {
           <motion.a 
             whileTap={{ scale: 0.95 }}
             href={props.button.href || "#"} 
-            className="md:hidden mt-12 flex relative group items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.3)]"
+            className="md:hidden mt-12 flex relative group items-center justify-center px-8 py-4 text-white font-bold tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(72,162,147,0.3)]"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578]" />
+
             <span className="relative z-10">{props.button.text}</span>
           </motion.a>
         )}

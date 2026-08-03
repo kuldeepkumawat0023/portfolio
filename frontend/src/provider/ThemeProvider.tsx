@@ -8,7 +8,8 @@ function ThemeColorUpdater() {
 
   React.useEffect(() => {
     if (!resolvedTheme) return;
-    const color = resolvedTheme === 'dark' ? '#0B0F19' : '#ff7e1d';
+    const color = resolvedTheme === 'dark' ? '#121417' : '#48A293';
+
 
     let metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (!metaThemeColor) {

@@ -71,7 +71,8 @@ const TypingHeading = ({ part1, part2, highlight }: { part1: string, part2: stri
       <span>{currentP1}</span>
       <br />
       <span>{currentP2}</span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500">
+      <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578]">
+
         {currentHighlight}
       </span>
       <motion.span
@@ -254,7 +255,8 @@ export function AboutHero({ props }: { props: any }) {
                 >
                   {btn.variant !== "outline" && (
                     <>
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 transition-transform duration-300 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578] transition-transform duration-300 group-hover:scale-105" />
+
                       <div className="absolute inset-0 border-2 border-white/20 rounded-full group-hover:animate-ping opacity-0 group-hover:opacity-100 transition-opacity" />
                       <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
                     </>

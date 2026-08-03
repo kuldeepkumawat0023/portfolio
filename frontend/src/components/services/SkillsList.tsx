@@ -43,7 +43,8 @@ const Tilt3DCard = ({ children, className = "" }: { children: React.ReactNode, c
       className={`relative z-10 hover:z-50 perspective-[1000px] h-full ${className}`}
     >
       <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute -inset-[1px] rounded-2xl bg-primary/20 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div style={{ transformStyle: "preserve-3d" }} className="relative z-10 h-full rounded-2xl bg-card/80 backdrop-blur-md border border-border shadow-lg p-6 flex flex-col justify-between">
         {children}
@@ -132,7 +133,8 @@ const SkillsBackground = () => {
           rotate: [0, 90, 180, 360]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-gradient-to-br from-orange-400/10 to-primary/10 blur-[60px] z-0 pointer-events-none"
+        className="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-gradient-to-br from-primary/15 to-[#368578]/10 blur-[60px] z-0 pointer-events-none"
+
       />
     </div>
   );

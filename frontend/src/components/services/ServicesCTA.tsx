@@ -193,7 +193,8 @@ export function ServicesCTA({ props }: { props: any }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-          className="bg-gradient-to-r from-primary to-orange-500 dark:bg-none dark:bg-white/5 dark:border dark:border-white/10 rounded-[40px] p-8 md:p-16 relative overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-none group/cta"
+          className="bg-gradient-to-r from-[#48A293] to-[#368578] dark:bg-none dark:bg-white/5 dark:border dark:border-white/10 rounded-[40px] p-8 md:p-16 relative overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-none group/cta"
+
         >
           {/* ── BACKGROUND ANIMATIONS ── */}
           {/* Animated Gradient Blob */}

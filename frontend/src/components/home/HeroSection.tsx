@@ -5,6 +5,13 @@ import { motion, useMotionValue, useSpring, useTransform, Variants } from "frame
 import { Download, PlayCircle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/common/Button"
 import { HeroImage } from "./HeroImage"
+import {
+  FaHtml5, FaCss3Alt, FaBootstrap, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma
+} from "react-icons/fa"
+import {
+  SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiMysql, SiTailwindcss, SiGitlab, SiPostman
+} from "react-icons/si"
+import { VscVscode } from "react-icons/vsc"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -38,8 +45,9 @@ const HoverText = ({ text, className, isGradient }: { text: string, className?: 
               key={charIndex}
               whileHover={{ y: -12, scale: 1.15 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className={`inline-block origin-bottom ${isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500 py-2" : ""
+              className={`inline-block origin-bottom ${isGradient ? "text-transparent bg-clip-text bg-gradient-to-br from-[#5BBBB0] via-[#48A293] to-[#368578] py-2" : ""
                 }`}
+
             >
               {char}
             </motion.span>
@@ -114,21 +122,47 @@ export function HeroSection({ props }: { props: any }) {
   const particle2X = useTransform(smoothMouseX, [-1, 1], [-70, 70]);
   const particle2Y = useTransform(smoothMouseY, [-1, 1], [-70, 70]);
 
-  // Tech Shapes State for Bottom-to-Top Animation (Replacing Bubbles)
-  const [shapes, setShapes] = React.useState<Array<{ id: number, left: string, size: number, delay: number, duration: number, type: number }>>([]);
+  // Tech Skills Data for Floating Background Animation (Bottom to Top)
+  const [floatingSkills, setFloatingSkills] = React.useState<Array<{ id: number, name: string, icon: React.ReactNode, left: string, delay: number, duration: number, scale: number }>>([]);
 
   React.useEffect(() => {
-    // Generate tech shapes only on client to avoid hydration errors
-    const generatedShapes = Array.from({ length: 40 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 40 + 20, // 20px to 60px size (larger)
-      delay: Math.random() * 5, // Quick staggered delays (0 to 5s)
-      duration: Math.random() * 7 + 5, // Faster float (5s to 12s)
-      type: Math.floor(Math.random() * 3) // 0: Square, 1: Circle, 2: Diamond
-    }));
-    setShapes(generatedShapes);
+    const availableSkills = [
+      { name: "React", icon: <FaReact size={24} color="#61DAFB" /> },
+      { name: "Node.js", icon: <FaNodeJs size={24} color="#339933" /> },
+      { name: "MongoDB", icon: <SiMongodb size={24} color="#47A248" /> },
+      { name: "Next.js", icon: <SiNextdotjs size={24} className="text-foreground" /> },
+      { name: "Express", icon: <SiExpress size={24} className="text-foreground" /> },
+      { name: "JavaScript", icon: <FaJsSquare size={24} color="#F7DF1E" /> },
+      { name: "TypeScript", icon: <SiTypescript size={24} color="#3178C6" /> },
+      { name: "Tailwind", icon: <SiTailwindcss size={24} color="#06B6D4" /> },
+      { name: "HTML5", icon: <FaHtml5 size={24} color="#E34F26" /> },
+      { name: "CSS3", icon: <FaCss3Alt size={24} color="#1572B6" /> },
+      { name: "Bootstrap", icon: <FaBootstrap size={24} color="#7952B3" /> },
+      { name: "MySQL", icon: <SiMysql size={24} color="#4479A1" /> },
+      { name: "Git", icon: <FaGitAlt size={24} color="#F05032" /> },
+      { name: "GitHub", icon: <FaGithub size={24} className="text-foreground" /> },
+      { name: "GitLab", icon: <SiGitlab size={24} color="#FC6D26" /> },
+      { name: "Figma", icon: <FaFigma size={24} color="#F24E1E" /> },
+      { name: "Postman", icon: <SiPostman size={24} color="#FF6C37" /> },
+      { name: "VS Code", icon: <VscVscode size={24} color="#007ACC" /> },
+    ];
+
+    const generated = Array.from({ length: 24 }).map((_, i) => {
+      const skill = availableSkills[i % availableSkills.length];
+      return {
+        id: i,
+        name: skill.name,
+        icon: skill.icon,
+        left: `${(i * 4) + Math.random() * 4}%`,
+        delay: Math.random() * 6,
+        duration: Math.random() * 8 + 8, // 8s to 16s smooth float
+        scale: Math.random() * 0.3 + 0.75, // 0.75 to 1.05
+      };
+    });
+
+    setFloatingSkills(generated);
   }, []);
+
 
   return (
     <section
@@ -140,21 +174,21 @@ export function HeroSection({ props }: { props: any }) {
           className="absolute inset-0 rounded-l-full"
           style={{
             background:
-              "linear-gradient(135deg, #FFFFFF 0%, #FFF8F4 35%, #FFF1EA 70%, #FFE8DD 100%)",
+              "linear-gradient(135deg, #FFFFFF 0%, #F4FBF9 35%, #EBF7F5 70%, #DEF2EE 100%)",
           }}
         />
       </motion.div>
 
-      {/* ── Dark Mode: deep navy / orange-tint right side ── */}
+      {/* ── Dark Mode: deep navy / teal-tint right side ── */}
       <motion.div style={{ x: bgX, y: bgY }} className="absolute inset-y-0 right-0 w-[25%] hidden dark:block pointer-events-none z-0">
         <div
           className="absolute inset-0 rounded-l-full"
-          style={{ background: "linear-gradient(135deg, rgba(251,115,0,0.08) 0%, rgba(251,115,0,0.04) 60%, transparent 100%)" }}
+          style={{ background: "linear-gradient(135deg, rgba(72,162,147,0.08) 0%, rgba(72,162,147,0.04) 60%, transparent 100%)" }}
         />
       </motion.div>
 
       {/* ── Glow orb top-right (light) ── */}
-      <div className="absolute top-0 right-0 w-[220px] h-[220px] rounded-full bg-orange-100/60 dark:bg-primary/5 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-0 right-0 w-[220px] h-[220px] rounded-full bg-teal-100/50 dark:bg-primary/5 blur-[100px] pointer-events-none z-0" />
 
       {/* ── Animated floating particles with Parallax ── */}
       <motion.div
@@ -166,7 +200,7 @@ export function HeroSection({ props }: { props: any }) {
 
       <motion.div
         style={{ x: particle2X, y: particle2Y }}
-        className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-orange-300/60 dark:bg-orange-400/40 pointer-events-none z-0"
+        className="absolute top-40 left-[18%] w-2 h-2 rounded-full bg-teal-400/50 dark:bg-teal-500/40 pointer-events-none z-0"
       >
         <motion.div animate={{ scale: [1, 2, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ repeat: Infinity, duration: 3, delay: 1 }} className="w-full h-full rounded-full" />
       </motion.div>
@@ -181,49 +215,42 @@ export function HeroSection({ props }: { props: any }) {
       {/* ── Bottom-right rotated diamond with Parallax ── */}
       <motion.div
         style={{ x: particle1X, y: particle1Y }}
-        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-primary/80 to-orange-400 dark:from-primary/60 dark:to-orange-500 rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
+        className="absolute -bottom-14 -right-14 md:-bottom-20 md:-right-20 w-[180px] md:w-[240px] h-[180px] md:h-[240px] bg-gradient-to-br from-[#48A293] to-[#368578] dark:from-[#48A293]/80 dark:to-[#2B6A60] rounded-[40px] rotate-45 pointer-events-none z-0 opacity-90 shadow-2xl"
       />
 
-      {/* ── Animated Floating 3D Tech Shapes (Bottom to Top) ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
-        {shapes.map(shape => {
-          let borderRadius = "0%";
-          let rotateOffset = 0;
-          if (shape.type === 1) borderRadius = "50%"; // Circle
-          if (shape.type === 2) rotateOffset = 45; // Diamond
 
-          return (
-            <motion.div
-              key={`shape-${shape.id}`}
-              className="absolute bottom-[-100px] border-[2px] border-orange-500/80 dark:border-orange-400/60 shadow-[0_0_25px_rgba(249,115,22,0.6)]"
-              style={{
-                left: shape.left,
-                width: shape.size,
-                height: shape.size,
-                borderRadius,
-                background: "linear-gradient(135deg, rgba(249,115,22,0.3) 0%, rgba(249,115,22,0.05) 100%)",
-                backdropFilter: "blur(4px)",
-                transformStyle: "preserve-3d"
-              }}
-              initial={{ y: '10vh', rotateX: 0, rotateY: 0, rotateZ: rotateOffset, opacity: 0 }}
-              animate={{
-                y: ['10vh', '-120vh'],
-                rotateX: [0, 360],
-                rotateY: [0, 360],
-                rotateZ: [rotateOffset, rotateOffset + 360],
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                y: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateX: { duration: shape.duration * 0.8, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateY: { duration: shape.duration * 1.2, repeat: Infinity, ease: "linear", delay: shape.delay },
-                rotateZ: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay },
-                opacity: { duration: shape.duration, repeat: Infinity, ease: "linear", delay: shape.delay }
-              }}
-            />
-          );
-        })}
+      {/* ── Animated Floating Tech Skill Badges (Bottom to Top) ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
+        {floatingSkills.map(item => (
+          <motion.div
+            key={`floating-skill-${item.id}`}
+            className="absolute bottom-[-80px] flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-card/75 dark:bg-card/85 backdrop-blur-md border border-primary/30 dark:border-primary/40 shadow-lg shadow-primary/10 hover:border-primary transition-colors"
+            style={{
+              left: item.left,
+              scale: item.scale,
+            }}
+            initial={{ y: '10vh', opacity: 0, rotate: 0 }}
+            animate={{
+              y: ['10vh', '-120vh'],
+              opacity: [0, 0.9, 0.9, 0],
+              rotate: [-12, 12, -12],
+            }}
+            transition={{
+              y: { duration: item.duration, repeat: Infinity, ease: "linear", delay: item.delay },
+              opacity: { duration: item.duration, repeat: Infinity, ease: "easeInOut", delay: item.delay },
+              rotate: { duration: item.duration * 0.6, repeat: Infinity, ease: "easeInOut", delay: item.delay },
+            }}
+          >
+            <div className="w-6 h-6 flex items-center justify-center shrink-0">
+              {item.icon}
+            </div>
+            <span className="text-xs font-bold text-foreground whitespace-nowrap">
+              {item.name}
+            </span>
+          </motion.div>
+        ))}
       </div>
+
 
       {/* ── Container ── */}
       <div className="container max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10">

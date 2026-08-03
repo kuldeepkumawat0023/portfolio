@@ -1,6 +1,7 @@
 import { SEO } from "@/components/seo"
-import { HeroSection } from "@/components/home/HeroSection"
+import { ServicesHero } from "@/components/services/ServicesHero"
 import { SkillsList } from "@/components/services/SkillsList"
+
 import { ServicesGrid } from "@/components/services/ServicesGrid"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
 
@@ -42,65 +43,17 @@ export default function ServicesPage() {
       },
     ],
     image: "/images/home/kulsakmt.png",
-    imageAlt: "Developer Image",
-    badges: [
-      {
-        label: "React",
-        icon: <FaReact size={40} color="#61DAFB" />,
-        positionClass: "top-[10%] sm:top-[15%] left-[0%] sm:left-[2%] lg:left-[2%]",
-        animateY: [-10, 10, -10],
-        duration: 4,
-        delay: 0
-      },
-      {
-        label: "Node.js",
-        icon: <FaNodeJs size={40} color="#339933" />,
-        positionClass: "top-[42%] sm:top-[45%] left-[-8%] sm:left-[-5%] lg:left-[-5%]",
-        animateY: [10, -10, 10],
-        duration: 5,
-        delay: 1
-      },
-      {
-        label: "MongoDB",
-        icon: <SiMongodb size={40} color="#47A248" />,
-        positionClass: "bottom-[10%] sm:bottom-[15%] left-[0%] sm:left-[2%] lg:left-[2%]",
-        animateY: [-8, 12, -8],
-        duration: 4.5,
-        delay: 0.5
-      },
-      {
-        label: "Next.js",
-        icon: <SiNextdotjs size={40} />,
-        positionClass: "top-[10%] sm:top-[15%] right-[0%] sm:right-[2%] lg:right-[2%]",
-        animateY: [-12, 8, -12],
-        duration: 4.2,
-        delay: 1.2
-      },
-      {
-        label: "Express.js",
-        icon: <SiExpress size={40} />,
-        positionClass: "top-[42%] sm:top-[45%] right-[-8%] sm:right-[-5%] lg:right-[-5%]",
-        animateY: [8, -12, 8],
-        duration: 4.8,
-        delay: 1.5
-      },
-      {
-        label: "JavaScript",
-        icon: <FaJs size={40} color="#F7DF1E" />,
-        positionClass: "bottom-[10%] sm:bottom-[15%] right-[0%] sm:right-[2%] lg:right-[2%]",
-        animateY: [-15, 5, -15],
-        duration: 5.5,
-        delay: 2
-      }
-    ]
+    imageAlt: "Developer Image"
   };
+
 
   const skillsData = {
     subtitle: "MY TECHNICAL SKILLS",
     title: ["Technologies I", "Work With"],
     description: "I have hands-on experience with a wide range of technologies and tools to build efficient and scalable solutions.",
     skills: [
-      { name: "HTML5", percentage: 95, icon: <FaHtml5 size={32} className="text-orange-500" /> },
+      { name: "HTML5", percentage: 95, icon: <FaHtml5 size={32} className="text-[#E34F26]" /> },
+
       { name: "CSS3", percentage: 90, icon: <FaCss3Alt size={32} className="text-blue-500" /> },
       { name: "Bootstrap", percentage: 85, icon: <FaBootstrap size={32} className="text-purple-600" /> },
       { name: "JavaScript", percentage: 90, icon: <FaJsSquare size={32} className="text-yellow-500" /> },
@@ -190,7 +143,8 @@ export default function ServicesPage() {
     contacts: [
       { icon: <FaEnvelope size={18} />, text: "kuldeepkumawat2383@gmail.com", link: "mailto:kuldeepkumawat2383@gmail.com" },
       { icon: <FaPhoneAlt size={18} />, text: "+91 7296824595", link: "tel:+917296824595" },
-      { icon: <FaMapMarkerAlt size={18} />, text: "Kuchaman City, Rajasthan", link: "https://maps.google.com/?q=Kuchaman+City+Rajasthan" }
+      { icon: <FaMapMarkerAlt size={18} />, text: "Sunder Vihar Colony, Vivek Vihar, Jaipur", link: "https://maps.google.com/?q=Sunder+Vihar+Colony+Vivek+Vihar+Jaipur+Rajasthan" }
+
     ],
     button: {
       text: "Let's Talk",
@@ -201,11 +155,12 @@ export default function ServicesPage() {
   return (
     <>
       <main className="pt-10">
-        <HeroSection props={heroData} />
+        <ServicesHero props={heroData} />
         <SkillsList props={skillsData} />
         <ServicesGrid props={servicesGridData} />
         <ServicesCTA props={ctaData} />
       </main>
+
     </>
   )
 }

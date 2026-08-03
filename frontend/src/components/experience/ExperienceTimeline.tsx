@@ -97,7 +97,8 @@ const Tilt3DCard = ({ children, className = "" }: { children: React.ReactNode, c
       className={`relative z-10 hover:z-50 perspective-[1000px] h-full w-full ${className}`}
     >
       <motion.div variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }} className="absolute -inset-[1px] rounded-[24px] bg-primary/30 transition-opacity duration-300 overflow-hidden z-0">
-        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(249, 115, 22, 0.4), transparent 80%)` }} />
+        <motion.div className="absolute inset-0 z-0" style={{ background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(72, 162, 147, 0.4), transparent 80%)` }} />
+
       </motion.div>
       <div style={{ transformStyle: "preserve-3d" }} className="relative z-10 h-full rounded-[23px] bg-card/80 backdrop-blur-md border border-border shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
         {children}
@@ -145,7 +146,7 @@ export function ExperienceTimeline({ props }: { props: any }) {
                   >
                     {isEven ? (
                       <div className="hidden md:block text-right pr-8 w-full">
-                        <span className="font-bold text-orange-500 text-lg tracking-wider block drop-shadow-sm">{exp.period}</span>
+                        <span className="font-bold text-primary text-lg tracking-wider block drop-shadow-sm">{exp.period}</span>
                       </div>
                     ) : (
                       <Tilt3DCard className="ml-14 md:ml-0">
@@ -173,7 +174,7 @@ export function ExperienceTimeline({ props }: { props: any }) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                    className="absolute left-[28px] md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-card border-[3px] border-orange-500 shadow-lg text-orange-500 z-20 group-hover:scale-125 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300"
+                    className="absolute left-[28px] md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-card border-[3px] border-primary shadow-lg text-primary z-20 group-hover:scale-125 group-hover:bg-primary group-hover:text-white transition-all duration-300"
                   >
                     {exp.icon}
                   </motion.div>
@@ -190,7 +191,7 @@ export function ExperienceTimeline({ props }: { props: any }) {
                       <Tilt3DCard className="ml-14 md:ml-0 mt-2 md:mt-0">
                         <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="w-full p-6 md:p-8">
                           <div className="md:hidden mb-4">
-                            <span className="font-bold text-orange-500 text-sm tracking-wider block drop-shadow-sm">{exp.period}</span>
+                            <span className="font-bold text-primary text-sm tracking-wider block drop-shadow-sm">{exp.period}</span>
                           </div>
                           <h3 className="text-xl font-bold text-foreground mb-1 drop-shadow-sm">{exp.role}</h3>
                           <h4 style={{ transform: "translateZ(20px)" }} className="text-sm font-semibold text-primary mb-4">{exp.company}</h4>
@@ -208,15 +209,16 @@ export function ExperienceTimeline({ props }: { props: any }) {
                       </Tilt3DCard>
                     ) : (
                       <div className="hidden md:block text-left pl-8 w-full">
-                        <span className="font-bold text-orange-500 text-lg tracking-wider block drop-shadow-sm">{exp.period}</span>
+                        <span className="font-bold text-primary text-lg tracking-wider block drop-shadow-sm">{exp.period}</span>
                       </div>
                     )}
                     {/* Mobile Period when odd */}
                     {!isEven && (
                       <div className="md:hidden absolute top-[-30px] left-14">
-                        <span className="font-bold text-orange-500 text-sm tracking-wider block drop-shadow-sm">{exp.period}</span>
+                        <span className="font-bold text-primary text-sm tracking-wider block drop-shadow-sm">{exp.period}</span>
                       </div>
                     )}
+
                   </motion.div>
                 </div>
               );

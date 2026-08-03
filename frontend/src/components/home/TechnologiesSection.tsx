@@ -178,16 +178,17 @@ const OrbitView = ({ techs }: { techs: Tech[] }) => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.45] xs:scale-[0.55] sm:scale-[0.75] md:scale-[0.85] lg:scale-100 flex items-center justify-center w-[750px] h-[750px]">
                     {/* Central Sun */}
                     <motion.div
-                        className="absolute w-32 h-32 rounded-full bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-300 flex items-center justify-center z-50 cursor-pointer border-2 border-yellow-200/50"
+                        className="absolute w-32 h-32 rounded-full bg-gradient-to-tr from-[#368578] via-[#48A293] to-[#5BBBB0] flex items-center justify-center z-50 cursor-pointer border-2 border-teal-200/50"
                         animate={{
                             boxShadow: [
-                                "0 0 60px rgba(252,211,77,0.5), inset 0 0 20px rgba(255,255,255,0.5)",
-                                "0 0 120px rgba(252,211,77,0.9), inset 0 0 40px rgba(255,255,255,0.8)",
-                                "0 0 60px rgba(252,211,77,0.5), inset 0 0 20px rgba(255,255,255,0.5)",
+                                "0 0 60px rgba(72,162,147,0.5), inset 0 0 20px rgba(255,255,255,0.5)",
+                                "0 0 120px rgba(72,162,147,0.9), inset 0 0 40px rgba(255,255,255,0.8)",
+                                "0 0 60px rgba(72,162,147,0.5), inset 0 0 20px rgba(255,255,255,0.5)",
                             ]
                         }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
+
                         <div className="relative z-10 text-center">
                             <span className="font-extrabold text-2xl block text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Tech</span>
                             <span className="font-bold text-sm tracking-widest text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">STACK</span>
@@ -275,7 +276,7 @@ export function TechnologiesSection({ props }: { props: any }) {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-600 font-bold tracking-widest text-sm md:text-base uppercase mb-3"
+                        className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBBB0] to-[#48A293] font-bold tracking-widest text-sm md:text-base uppercase mb-3"
                     >
                         {props.subtitle || "TECHNOLOGIES I WORK WITH"}
                     </motion.span>
@@ -309,7 +310,7 @@ export function TechnologiesSection({ props }: { props: any }) {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: [1, 0] }}
                                 transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-                                className="inline-block w-[3px] h-[0.9em] bg-orange-500 ml-2"
+                                className="inline-block w-[3px] h-[0.9em] bg-[#48A293] ml-2"
                             />
                         </motion.h2>
                     </div>
@@ -320,7 +321,7 @@ export function TechnologiesSection({ props }: { props: any }) {
                         whileInView={{ width: "100px", opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="h-1 bg-gradient-to-r from-orange-500 to-pink-500 mt-4 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)]"
+                        className="h-1 bg-gradient-to-r from-[#48A293] to-[#368578] mt-4 rounded-full shadow-[0_0_15px_rgba(72,162,147,0.8)]"
                     />
                 </div>
 
@@ -335,7 +336,8 @@ export function TechnologiesSection({ props }: { props: any }) {
                     <div className="relative flex items-center bg-card border border-border rounded-full p-1 shadow-lg gap-1">
                         {/* Sliding pill background */}
                         <motion.div
-                            className="absolute top-1 bottom-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
+                            className="absolute top-1 bottom-1 rounded-full bg-gradient-to-r from-[#48A293] to-[#368578] shadow-[0_0_15px_rgba(72,162,147,0.5)]"
+
                             animate={{
                                 left: viewMode === "orbit" ? "4px" : "50%",
                                 width: "calc(50% - 4px)",
@@ -388,14 +390,15 @@ export function TechnologiesSection({ props }: { props: any }) {
                 {/* ── Button ── */}
                 {props.button && (
                     <div className="flex justify-center mt-12 relative z-30">
-                        <a href={props.button.href || "#"} className="group relative inline-flex items-center justify-center px-8 py-3 font-bold text-white rounded-full bg-slate-900 overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-300">
+                        <a href={props.button.href || "#"} className="group relative inline-flex items-center justify-center px-8 py-3 font-bold text-white rounded-full bg-slate-900 overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(72,162,147,0.4)] transition-all duration-300">
                             <motion.div
-                                className="absolute w-[300%] h-[300%] bg-[conic-gradient(from_0deg,transparent_70%,#f97316_100%)] opacity-0 group-hover:opacity-100"
+                                className="absolute w-[300%] h-[300%] bg-[conic-gradient(from_0deg,transparent_70%,#48A293_100%)] opacity-0 group-hover:opacity-100"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
                             />
                             <div className="absolute inset-[2px] bg-slate-950 rounded-full" />
-                            <span className="relative z-10 flex items-center gap-3 tracking-wide group-hover:text-orange-400 transition-colors">
+                            <span className="relative z-10 flex items-center gap-3 tracking-wide group-hover:text-primary transition-colors">
+
                                 {props.button.text}
                                 <motion.span
                                     animate={{ x: [0, 5, 0] }}

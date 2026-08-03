@@ -95,7 +95,7 @@ export default function NotFound() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-6xl md:text-8xl font-black mb-6 tracking-tight"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBBB0] to-[#48A293]">
             System
           </span>{" "}
           <span className="text-foreground">Error</span>
@@ -119,8 +119,9 @@ export default function NotFound() {
         >
           <MagneticButton>
             <Link href="/" passHref>
-              <button className="relative group overflow-hidden px-8 py-4 rounded-xl font-bold shadow-lg text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.6)]">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500" />
+              <button className="relative group overflow-hidden px-8 py-4 rounded-xl font-bold shadow-lg text-white shadow-[0_0_20px_rgba(72,162,147,0.3)] transition-all hover:shadow-[0_0_30px_rgba(72,162,147,0.6)]">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#48A293] to-[#368578]" />
+
                 <div className="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-glare pointer-events-none" />
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   <Home className="w-5 h-5" />
