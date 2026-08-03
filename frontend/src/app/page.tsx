@@ -14,6 +14,7 @@ import {
 } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc"
 import { ServicesCTA } from "@/components/services/ServicesCTA"
+import { HomePageWrapper } from "@/components/home/HomePageWrapper"
 
 
 export const metadata = SEO({
@@ -384,16 +385,15 @@ export default function Home() {
   };
 
   return (
-    <>
-      <main className="flex-grow pt-10">
-        <HeroSection props={heroData} />
-        <AboutSection props={aboutData} />
-        <TechnologiesSection props={technologiesData} />
-        <ExperienceSection props={experienceData} />
-        <ProjectsSection props={projectsData} />
-        <ServicesSection props={servicesData} />
-        <ServicesCTA props={ctaData} />
-      </main>
-    </>
+    <HomePageWrapper
+      heroData={heroData}
+      aboutData={aboutData}
+      technologiesData={technologiesData}
+      experienceData={experienceData}
+      projectsData={projectsData}
+      servicesData={servicesData}
+      ctaData={ctaData}
+    />
   );
 }
+
